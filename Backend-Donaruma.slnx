@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Backend-Donaruma/Backend-Donaruma.csproj" />
+  <Project Path="DonarumaAPI_Data/DonarumaAPI_Data.csproj" Id="15bee659-087f-46bb-954f-64a34523d5f8" />
+  <Project Path="DonarumaAPI_DTOs/DonarumaAPI_DTOs.csproj" Id="a9df095b-a34f-4a87-bc6a-77f6b6b0eba3" />
+  <Project Path="DonarumaAPI_Model/DonarumaAPI_Model.csproj" Id="c5b7b619-272b-4c15-94d9-a727579efb7c" />
+</Solution>
