@@ -15,6 +15,8 @@ var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString));
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
+builder.Services.AddScoped<IPerfumeService, PerfumeService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
