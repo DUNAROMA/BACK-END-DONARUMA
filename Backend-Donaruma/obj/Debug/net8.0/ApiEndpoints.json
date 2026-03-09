@@ -16,6 +16,98 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerPorGenero",
+    "RelativePath": "api/Perfumes/genero/{genero}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "genero",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[DonarumaAPI_DTOs.PerfumesDTOs.PerfumeDTO, DonarumaAPI_DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerDeNoche",
+    "RelativePath": "api/Perfumes/noche",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[DonarumaAPI_DTOs.PerfumesDTOs.PerfumeDTO, DonarumaAPI_DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerPorOcasion",
+    "RelativePath": "api/Perfumes/ocasion/{ocasion}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ocasion",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[DonarumaAPI_DTOs.PerfumesDTOs.PerfumeDTO, DonarumaAPI_DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerTodos",
+    "RelativePath": "api/Perfumes/todos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[DonarumaAPI_DTOs.PerfumesDTOs.PerfumeDTO, DonarumaAPI_DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
     "Method": "CrearUsuario",
     "RelativePath": "crear",

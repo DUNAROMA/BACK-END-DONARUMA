@@ -14,8 +14,18 @@ var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
 
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString));
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
-
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
+
+// 👇 1. AQUÍ AGREGAMOS LA CONFIGURACIÓN DE CORS 👇
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirWeb", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -25,6 +35,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// 👇 2. AQUÍ ACTIVAMOS EL CORS (Debe ir antes de MapControllers) 👇
+app.UseCors("PermitirWeb");
 
 app.UseHttpsRedirection();
 
