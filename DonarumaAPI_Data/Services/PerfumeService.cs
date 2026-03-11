@@ -11,7 +11,7 @@ namespace DonarumaAPI_Data.Services
 {
     public class PerfumeService : IPerfumeService
     {
-        // 1. Traemos la configuración de PostgreSQL que hiciste en Program.cs
+        // 1. Traemos la configuración de PostgreSQL 
         private readonly PostgreSQLConfiguration _connection;
 
         public PerfumeService(PostgreSQLConfiguration connection)
@@ -29,8 +29,8 @@ namespace DonarumaAPI_Data.Services
             {
                 await conn.OpenAsync();
 
-                // 3. Escribimos la consulta SQL (Alan debe ajustar el nombre de la tabla si es distinto)
-                using (var cmd = new NpgsqlCommand("SELECT * FROM Perfumes", conn))
+                // 3. Escribimos la consulta SQL 
+                using (var cmd = new NpgsqlCommand("SELECT * FROM obtener_todos_perfumes()", conn))
                 {
                     using (var reader = await cmd.ExecuteReaderAsync())
                     {
@@ -68,7 +68,7 @@ namespace DonarumaAPI_Data.Services
             {
                 await conn.OpenAsync();
 
-                // Alan: Aquí el SQL cambia para filtrar solo los de noche
+                // Aquí el SQL cambia para filtrar solo los de noche
                 string sql = "SELECT * FROM perfumes WHERE ocasion = 'Noche'";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
@@ -90,7 +90,7 @@ namespace DonarumaAPI_Data.Services
                 await conn.OpenAsync();
 
                 // 1. Usamos el SQL con un filtro WHERE ocasion = @ocasion
-                string sql = "SELECT * FROM perfumes WHERE ocasion = @ocasion";
+                string sql = "SELECT * FROM obtener_perfumes_por_ocasion(@ocasion)";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -99,19 +99,17 @@ namespace DonarumaAPI_Data.Services
 
                     using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        // 3. Este es EL MISMO código exacto que ya usamos en ObtenerTodos
+                      
                         while (await reader.ReadAsync())
                         {
                             listaPerfumes.Add(new PerfumeDTO
                             {
                                 IdPerfume = Convert.ToInt32(reader["idperfume"]),
-                                Nombre = reader["nombreperfume"].ToString(), // Sin mayúsculas
+                                Nombre = reader["nombreperfume"].ToString(), 
                                 Marca = reader["marca"].ToString(),
                                 Genero = reader["genero"].ToString(),
                                 Ocasion = reader["ocasion"].ToString(),
-                                Precio = Convert.ToDecimal(reader["precio"]),
-
-                                // Las 3 columnas nuevas con protección contra nulos (¡y borramos EsDeNoche!)
+                                Precio = Convert.ToDecimal(reader["precio"]),                       
                                 Descripcion = reader["descripcion"]?.ToString(),
                                 Imagen_Url = reader["imagen_url"]?.ToString(),
                                 Stock = reader["stock"] != DBNull.Value ? Convert.ToInt32(reader["stock"]) : 0
@@ -132,7 +130,7 @@ namespace DonarumaAPI_Data.Services
             using (var conn = new NpgsqlConnection(_connection.ConnectionString))
             {
                 await conn.OpenAsync();
-                string sql = "SELECT * FROM perfumes WHERE genero = @genero";
+                string sql = "SELECT * FROM obtener_perfumes_por_genero(@genero)";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {
