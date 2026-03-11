@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "CrearPerfume",
+    "RelativePath": "api/Perfumes/crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "perfume",
+        "Type": "DonarumaAPI_DTOs.PerfumesDTOs.PerfumeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
     "Method": "ObtenerPorGenero",
     "RelativePath": "api/Perfumes/genero/{genero}",
     "HttpMethod": "GET",

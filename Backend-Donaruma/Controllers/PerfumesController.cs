@@ -49,5 +49,19 @@ namespace Backend_Donaruma.Controllers
             var perfumes = await _perfumeService.ObtenerPorGenero(genero);
             return Ok(perfumes);
         }
+
+        [HttpPost("crear")]
+        public async Task<IActionResult> CrearPerfume([FromBody] PerfumeDTO perfume)
+        {
+            try
+            {
+                var nuevoId = await _perfumeService.CrearPerfume(perfume);
+                return Ok(new { mensaje = "¡Perfume creado con éxito!", id = nuevoId });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error al crear el perfume: " + ex.Message);
+            }
+        }
     }
 }
