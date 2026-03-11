@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\source\\repos\\Backend-Donaruma\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {}
+    "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\source\\repos\\Backend-Donaruma\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
+    "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\source\\repos\\Backend-Donaruma\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+        "projectUniqueName": "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
         "projectName": "DonarumaAPI_DTOs",
-        "projectPath": "C:\\Users\\carlo\\source\\repos\\Backend-Donaruma\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\source\\repos\\Backend-Donaruma\\DonarumaAPI_DTOs\\obj\\",
+        "projectPath": "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+        "packagesPath": "C:\\Users\\cd17\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\DonarumaAPI_DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cd17\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

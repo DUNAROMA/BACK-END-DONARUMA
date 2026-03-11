@@ -16,6 +16,58 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "BuscarPorNombre",
+    "RelativePath": "api/Perfumes/buscar/{nombre}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerPorMarca",
+    "RelativePath": "api/Perfumes/marca/{marca}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "marca",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerPorPrecioMayor",
+    "RelativePath": "api/Perfumes/precio-mayor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerPorPrecioMenor",
+    "RelativePath": "api/Perfumes/precio-menor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
     "Method": "CrearUsuario",
     "RelativePath": "crear",

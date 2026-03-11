@@ -10,6 +10,7 @@
         "dependencies": {
           "Dapper": "2.1.66",
           "DonarumaAPI_DTOs": "1.0.0",
+          "DonarumaAPI_Model": "1.0.0",
           "Npgsql": "10.0.1"
         },
         "runtime": {
@@ -73,6 +74,17 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "DonarumaAPI_Model/1.0.0": {
+        "dependencies": {
+          "Npgsql": "10.0.1"
+        },
+        "runtime": {
+          "DonarumaAPI_Model.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -118,6 +130,11 @@
       "hashPath": "system.diagnostics.diagnosticsource.9.0.11.nupkg.sha512"
     },
     "DonarumaAPI_DTOs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DonarumaAPI_Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
