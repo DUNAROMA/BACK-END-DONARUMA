@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "BuscarPorNombre",
+    "RelativePath": "api/Perfumes/buscar/{nombre}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
     "Method": "CrearPerfume",
     "RelativePath": "api/Perfumes/crear",
     "HttpMethod": "POST",
@@ -56,6 +72,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerPorMarca",
+    "RelativePath": "api/Perfumes/marca/{marca}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "marca",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
@@ -105,6 +137,26 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerPorPrecioMayor",
+    "RelativePath": "api/Perfumes/precio-mayor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ObtenerPorPrecioMenor",
+    "RelativePath": "api/Perfumes/precio-menor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
     "Method": "ObtenerTodos",
     "RelativePath": "api/Perfumes/todos",
     "HttpMethod": "GET",
@@ -138,26 +190,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Backend_Donaruma.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Backend_Donaruma.WeatherForecast, Backend-Donaruma, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]

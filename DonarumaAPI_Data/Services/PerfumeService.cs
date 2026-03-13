@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Dapper;
+using DonarumaAPI_Data.Interfaces;
+using DonarumaAPI_DTOs.PerfumesDTOs;
+using Npgsql; // Librería para PostgreSQL
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DonarumaAPI_Data.Interfaces;
-using DonarumaAPI_DTOs.PerfumesDTOs;
-using Npgsql; // Librería para PostgreSQL
 
 namespace DonarumaAPI_Data.Services
 {
@@ -18,6 +19,11 @@ namespace DonarumaAPI_Data.Services
         {
             _connection = connection;
         }
+        protected NpgsqlConnection dbConnection()
+        {
+            return new NpgsqlConnection(_connection.ConnectionString);
+        }
+
 
         // --- FUNCIÓN 1: OBTENER TODOS ---
         public async Task<List<PerfumeDTO>> ObtenerTodos()
@@ -188,5 +194,47 @@ namespace DonarumaAPI_Data.Services
                 }
             }
         }
+        public async Task<IEnumerable<PerfumeDTO>> ObtenerPorMarcaAsync(string marca)
+        {
+            using var db = dbConnection();
+            var sql = @"SELECT idperfume AS Id, nombreperfume AS Nombre, marca AS Marca, precio AS Precio, 
+                               descripcion AS Descripcion, imagen_url AS Imagen_Url, ocasion AS Ocasion, 
+                               genero AS Genero, stock AS Stock 
+                        FROM perfumes WHERE marca = @Marca";
+            return await db.QueryAsync<PerfumeDTO>(sql, new { Marca = marca });
+        }
+
+
+        public async Task<IEnumerable<PerfumeDTO>> ObtenerPorPrecioMayorAsync()
+        {
+            using var db = dbConnection();
+            var sql = @"SELECT idperfume AS Id, nombreperfume AS Nombre, marca AS Marca, precio AS Precio, 
+                               descripcion AS Descripcion, imagen_url AS Imagen_Url, ocasion AS Ocasion, 
+                               genero AS Genero, stock AS Stock 
+                        FROM perfumes ORDER BY precio DESC";
+            return await db.QueryAsync<PerfumeDTO>(sql);
+        }
+
+        public async Task<IEnumerable<PerfumeDTO>> ObtenerPorPrecioMenorAsync()
+        {
+            using var db = dbConnection();
+            var sql = @"SELECT idperfume AS Id, nombreperfume AS Nombre, marca AS Marca, precio AS Precio, 
+                               descripcion AS Descripcion, imagen_url AS Imagen_Url, ocasion AS Ocasion, 
+                               genero AS Genero, stock AS Stock 
+                        FROM perfumes ORDER BY precio ASC";
+            return await db.QueryAsync<PerfumeDTO>(sql);
+        }
+
+        public async Task<IEnumerable<PerfumeDTO>> BuscarPorNombreAsync(string nombre)
+        {
+            using var db = dbConnection();
+            var sql = @"SELECT idperfume AS IdPerfume, nombreperfume AS Nombre, marca AS Marca, precio AS Precio, 
+                       descripcion AS Descripcion, imagen_url AS Imagen_Url, ocasion AS Ocasion, 
+                       genero AS Genero, stock AS Stock 
+                FROM perfumes WHERE nombreperfume ILIKE @Nombre";
+            return await db.QueryAsync<PerfumeDTO>(sql, new { Nombre = "%" + nombre + "%" });
+        }
+
+
     }
 }

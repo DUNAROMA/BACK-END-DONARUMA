@@ -63,5 +63,32 @@ namespace Backend_Donaruma.Controllers
                 return StatusCode(500, "Error al crear el perfume: " + ex.Message);
             }
         }
+        [HttpGet("marca/{marca}")]
+        public async Task<IActionResult> ObtenerPorMarca(string marca)
+        {
+            var perfumes = await _perfumeService.ObtenerPorMarcaAsync(marca);
+            return Ok(perfumes);
+        }
+
+        [HttpGet("buscar/{nombre}")]
+        public async Task<IActionResult> BuscarPorNombre(string nombre)
+        {
+            var perfumes = await _perfumeService.BuscarPorNombreAsync(nombre);
+            return Ok(perfumes);
+        }
+
+        [HttpGet("precio-mayor")]
+        public async Task<IActionResult> ObtenerPorPrecioMayor()
+        {
+            var perfumes = await _perfumeService.ObtenerPorPrecioMayorAsync();
+            return Ok(perfumes);
+        }
+
+        [HttpGet("precio-menor")]
+        public async Task<IActionResult> ObtenerPorPrecioMenor()
+        {
+            var perfumes = await _perfumeService.ObtenerPorPrecioMenorAsync();
+            return Ok(perfumes);
+        }
     }
 }
