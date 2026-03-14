@@ -46,15 +46,13 @@ namespace DonarumaAPI_Data.Services
                             listaPerfumes.Add(new PerfumeDTO
                             {
                                 IdPerfume = Convert.ToInt32(reader["idperfume"]),
-                                Nombre = reader["nombreperfume"].ToString(),
-                                Marca = reader["marca"].ToString(),
-                                Genero = reader["genero"].ToString(),
-                                Ocasion = reader["ocasion"].ToString(),
+                                Nombre = reader["nombreperfume"]?.ToString() ?? "",
+                                Marca = reader["marca"]?.ToString() ?? "",
+                                Genero = reader["genero"]?.ToString() ?? "",
+                                Ocasion = reader["ocasion"]?.ToString() ?? "",
                                 Precio = Convert.ToDecimal(reader["precio"]),
-
-                            
-                                Descripcion = reader["descripcion"]?.ToString(),
-                                Imagen_Url = reader["imagen_url"]?.ToString(),
+                                Descripcion = reader["descripcion"]?.ToString() ?? "",
+                                Imagen_Url = reader["imagen_url"]?.ToString() ?? "",
                                 Stock = reader["stock"] != DBNull.Value ? Convert.ToInt32(reader["stock"]) : 0
                             });
                         }
@@ -111,13 +109,13 @@ namespace DonarumaAPI_Data.Services
                             listaPerfumes.Add(new PerfumeDTO
                             {
                                 IdPerfume = Convert.ToInt32(reader["idperfume"]),
-                                Nombre = reader["nombreperfume"].ToString(), 
-                                Marca = reader["marca"].ToString(),
-                                Genero = reader["genero"].ToString(),
-                                Ocasion = reader["ocasion"].ToString(),
-                                Precio = Convert.ToDecimal(reader["precio"]),                       
-                                Descripcion = reader["descripcion"]?.ToString(),
-                                Imagen_Url = reader["imagen_url"]?.ToString(),
+                                Nombre = reader["nombreperfume"]?.ToString() ?? "",
+                                Marca = reader["marca"]?.ToString() ?? "",
+                                Genero = reader["genero"]?.ToString() ?? "",
+                                Ocasion = reader["ocasion"]?.ToString() ?? "",
+                                Precio = Convert.ToDecimal(reader["precio"]),
+                                Descripcion = reader["descripcion"]?.ToString() ?? "",
+                                Imagen_Url = reader["imagen_url"]?.ToString() ?? "",
                                 Stock = reader["stock"] != DBNull.Value ? Convert.ToInt32(reader["stock"]) : 0
                             });
                         }
@@ -149,15 +147,13 @@ namespace DonarumaAPI_Data.Services
                             listaPerfumes.Add(new PerfumeDTO
                             {
                                 IdPerfume = Convert.ToInt32(reader["idperfume"]),
-                                Nombre = reader["nombreperfume"].ToString(), // Sin mayúsculas
-                                Marca = reader["marca"].ToString(),
-                                Genero = reader["genero"].ToString(),
-                                Ocasion = reader["ocasion"].ToString(),
+                                Nombre = reader["nombreperfume"]?.ToString() ?? "",
+                                Marca = reader["marca"]?.ToString() ?? "",
+                                Genero = reader["genero"]?.ToString() ?? "",
+                                Ocasion = reader["ocasion"]?.ToString() ?? "",
                                 Precio = Convert.ToDecimal(reader["precio"]),
-
-                                // Las 3 columnas nuevas con protección contra nulos (¡y borramos EsDeNoche!)
-                                Descripcion = reader["descripcion"]?.ToString(),
-                                Imagen_Url = reader["imagen_url"]?.ToString(),
+                                Descripcion = reader["descripcion"]?.ToString() ?? "",
+                                Imagen_Url = reader["imagen_url"]?.ToString() ?? "",
                                 Stock = reader["stock"] != DBNull.Value ? Convert.ToInt32(reader["stock"]) : 0
                             });
                         }
