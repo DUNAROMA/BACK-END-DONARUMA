@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DonarumaAPI_DTOs.PerfumesDTOs;
 
-
 namespace DonarumaAPI_Data.Interfaces
 {
     public interface IPerfumeService
@@ -21,5 +20,6 @@ namespace DonarumaAPI_Data.Interfaces
         Task<IEnumerable<PerfumeDTO>> BuscarPorNombreAsync(string nombre);
         Task<IEnumerable<PerfumeDTO>> ObtenerPorPrecioMayorAsync();
         Task<IEnumerable<PerfumeDTO>> ObtenerPorPrecioMenorAsync();
+
     }
 }

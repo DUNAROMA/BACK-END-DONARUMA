@@ -19,5 +19,6 @@ namespace DonarumaAPI_Model.PerfumesModel
         public string? Descripcion { get; set; }
         public string? Imagen_Url { get; set; }
         public int Stock { get; set; }
+
     }
 }

@@ -1,6 +1,8 @@
 using DonarumaAPI_Data;
 using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_Data.Services;
+using DonarumaAPI_Data.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +13,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
-
-builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString));
+builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 
-// 👇 1. AQUÍ AGREGAMOS LA CONFIGURACIÓN DE CORS 👇
+
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
+// ?? 1. AQU� AGREGAMOS LA CONFIGURACI�N DE CORS ??
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirWeb", policy =>
@@ -36,7 +44,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// 👇 2. AQUÍ ACTIVAMOS EL CORS (Debe ir antes de MapControllers) 👇
+
+// ?? 2. AQU� ACTIVAMOS EL CORS (Debe ir antes de MapControllers) ??
+
 app.UseCors("PermitirWeb");
 
 app.UseHttpsRedirection();
