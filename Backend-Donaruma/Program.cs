@@ -15,7 +15,6 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
-
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 
 
@@ -25,11 +24,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // ?? 1. AQUÍ AGREGAMOS LA CONFIGURACIÓN DE CORS ??
 
+// 1. AQUÍ AGREGAMOS LA CONFIGURACIÓN DE CORS (CORREGIDA)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirWeb", policy =>
     {
-        policy.AllowAnyOrigin()
+        // Quitamos AllowAnyOrigin() y ponemos la ruta EXACTA de tu Angular
+        policy.WithOrigins("http://localhost:4200")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -44,15 +45,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
-// ?? 2. AQUÍ ACTIVAMOS EL CORS (Debe ir antes de MapControllers) ??
+// 2. ACTIVAMOS EL CORS EN EL ORDEN CORRECTO
+app.UseRouting(); // <-- Es muy buena práctica poner UseRouting antes de UseCors
 
 app.UseCors("PermitirWeb");
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

@@ -12,7 +12,7 @@ namespace Backend_Donaruma.Controllers
     {
         private readonly IPerfumeService _perfumeService;
 
-        // Conectamos el controlador con el servicio de Alan
+        // Conectamos el controlador con el servicio 
         public PerfumesController(IPerfumeService perfumeService)
         {
             _perfumeService = perfumeService;
