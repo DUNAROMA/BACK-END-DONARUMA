@@ -80,8 +80,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -114,7 +118,7 @@
               "RelativeDocumentMoniker": "Backend-Donaruma\\Program.cs",
               "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Program.cs",
               "RelativeToolTip": "Backend-Donaruma\\Program.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAqwCsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAUwCgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T04:01:01.019Z",
               "EditorCaption": ""
@@ -137,16 +141,12 @@
               "Title": "PerfumesController.cs",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PerfumesController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\PerfumesController.cs",
-              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PerfumesController.cs",
-              "RelativeToolTip": "Backend-Donaruma\\Controllers\\PerfumesController.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAuwF8AAAABAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PerfumesController.cs*",
+              "RelativeToolTip": "Backend-Donaruma\\Controllers\\PerfumesController.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T00:50:33.875Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
