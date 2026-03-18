@@ -320,6 +320,71 @@
         }
       }
     },
+    "/api/Perfumes/actualizar/{id}": {
+      "put": {
+        "tags": [
+          "Perfumes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerfumeDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerfumeDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerfumeDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Perfumes/eliminar/{id}": {
+      "delete": {
+        "tags": [
+          "Perfumes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Perfumes/marca/{marca}": {
       "get": {
         "tags": [
@@ -624,17 +689,6 @@
             "type": "string",
             "nullable": true
           },
-          "genero": {
-            "type": "string",
-            "nullable": true
-          },
-          "ocasion": {
-            "type": "string",
-            "nullable": true
-          },
-          "esDeNoche": {
-            "type": "boolean"
-          },
           "precio": {
             "type": "number",
             "format": "double"
@@ -647,7 +701,31 @@
             "type": "string",
             "nullable": true
           },
+          "ocasion": {
+            "type": "string",
+            "nullable": true
+          },
+          "genero": {
+            "type": "string",
+            "nullable": true
+          },
           "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "intensidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dulzor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "duracion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "aromatico": {
             "type": "integer",
             "format": "int32"
           }

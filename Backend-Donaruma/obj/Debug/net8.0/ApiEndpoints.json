@@ -80,6 +80,27 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "ActualizarPerfume",
+    "RelativePath": "api/Perfumes/actualizar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "perfume",
+        "Type": "DonarumaAPI_DTOs.PerfumesDTOs.PerfumeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
     "Method": "BuscarPorNombre",
     "RelativePath": "api/Perfumes/buscar/{nombre}",
     "HttpMethod": "GET",
@@ -105,6 +126,22 @@
       {
         "Name": "perfume",
         "Type": "DonarumaAPI_DTOs.PerfumesDTOs.PerfumeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+    "Method": "EliminarPerfume",
+    "RelativePath": "api/Perfumes/eliminar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

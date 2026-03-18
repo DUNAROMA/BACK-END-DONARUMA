@@ -15,11 +15,12 @@ namespace DonarumaAPI_Data.Interfaces
         Task<List<PerfumeDTO>> ObtenerPorGenero(string genero);
         Task<int> CrearPerfume(PerfumeDTO perfume);
 
-
         Task<IEnumerable<PerfumeDTO>> ObtenerPorMarcaAsync(string marca);
         Task<IEnumerable<PerfumeDTO>> BuscarPorNombreAsync(string nombre);
         Task<IEnumerable<PerfumeDTO>> ObtenerPorPrecioMayorAsync();
         Task<IEnumerable<PerfumeDTO>> ObtenerPorPrecioMenorAsync();
+        Task<bool> ActualizarPerfume(PerfumeDTO perfume);
+        Task<bool> EliminarPerfume(int idPerfume);
 
     }
 }

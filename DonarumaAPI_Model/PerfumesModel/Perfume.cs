@@ -13,7 +13,7 @@ namespace DonarumaAPI_Model.PerfumesModel
         public string Marca { get; set; } = string.Empty;
         public string Genero { get; set; } = string.Empty;
         public string Ocasion { get; set; } = string.Empty;
-        public bool EsDeNoche { get; set; }   
+     
         public string? FamiliaOlfativa { get; set; } 
         public decimal Precio { get; set; }
         public string? Descripcion { get; set; }

@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\perfumeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_data\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A9DF095B-A34F-4A87-BC6A-77F6B6B0EBA3}|DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_dtos\\perfumesdtos\\perfumedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9DF095B-A34F-4A87-BC6A-77F6B6B0EBA3}|DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj|solutionrelative:donarumaapi_dtos\\perfumesdtos\\perfumedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,18 +19,10 @@
       "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\controllers\\perfumescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\backend-donaruma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5B7B619-272B-4C15-94D9-A727579EFB7C}|DonarumaAPI_Model\\DonarumaAPI_Model.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_model\\perfumesmodel\\perfume.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5B7B619-272B-4C15-94D9-A727579EFB7C}|DonarumaAPI_Model\\DonarumaAPI_Model.csproj|solutionrelative:donarumaapi_model\\perfumesmodel\\perfume.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_data\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -80,8 +68,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PerfumesController.cs",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PerfumesController.cs",
+              "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\PerfumesController.cs",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PerfumesController.cs",
+              "RelativeToolTip": "Backend-Donaruma\\Controllers\\PerfumesController.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAcwJAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T00:50:33.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PerfumeDTO.cs",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\PerfumesDTOs\\PerfumeDTO.cs",
+              "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\PerfumesDTOs\\PerfumeDTO.cs",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\PerfumesDTOs\\PerfumeDTO.cs",
+              "RelativeToolTip": "DonarumaAPI_DTOs\\PerfumesDTOs\\PerfumeDTO.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvxkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T00:29:11.584Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -90,33 +104,20 @@
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\PerfumeService.cs",
               "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\PerfumeService.cs",
               "RelativeToolTip": "DonarumaAPI_Data\\Services\\PerfumeService.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAkwG0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T20:55:38.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Program.cs",
-              "RelativeDocumentMoniker": "Backend-Donaruma\\Program.cs",
-              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Program.cs",
-              "RelativeToolTip": "Backend-Donaruma\\Program.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAUwCgAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T04:01:01.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "IPerfumeService.cs",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IPerfumeService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\IPerfumeService.cs",
               "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IPerfumeService.cs",
               "RelativeToolTip": "DonarumaAPI_Data\\Interfaces\\IPerfumeService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA2wBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T00:49:22.246Z",
               "EditorCaption": ""
@@ -124,49 +125,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PerfumesController.cs",
-              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PerfumesController.cs",
-              "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\PerfumesController.cs",
-              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PerfumesController.cs",
-              "RelativeToolTip": "Backend-Donaruma\\Controllers\\PerfumesController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAcwBQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T00:50:33.875Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\UsuarioService.cs",
-              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\UsuarioService.cs",
-              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\UsuarioService.cs",
-              "RelativeToolTip": "DonarumaAPI_Data\\Services\\UsuarioService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T04:12:39.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PerfumeDTO.cs",
-              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\PerfumesDTOs\\PerfumeDTO.cs",
-              "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\PerfumesDTOs\\PerfumeDTO.cs",
-              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\PerfumesDTOs\\PerfumeDTO.cs",
-              "RelativeToolTip": "DonarumaAPI_DTOs\\PerfumesDTOs\\PerfumeDTO.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowA0AAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T00:29:11.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
@@ -178,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -190,19 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Perfume.cs",
-              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
-              "RelativeDocumentMoniker": "DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
-              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
-              "RelativeToolTip": "DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T23:21:42.792Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "IUsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IUsuarioService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\IUsuarioService.cs",
@@ -214,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "UsuarioDTO.cs",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\UsuarioDTo\\UsuarioDTO.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\UsuarioDTo\\UsuarioDTO.cs",
@@ -226,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "CrearUsuarioDTO.cs",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\UsuarioDTo\\CrearUsuarioDTO.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\UsuarioDTo\\CrearUsuarioDTO.cs",
@@ -238,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Model\\UsuariosModel\\Usuario.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\UsuariosModel\\Usuario.cs",
@@ -250,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.json",
               "RelativeDocumentMoniker": "Backend-Donaruma\\appsettings.json",
@@ -262,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "PostgreSQLConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\PostgreSQLConfiguration.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\PostgreSQLConfiguration.cs",
@@ -274,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
               "Title": "DonarumaAPI_Data.csproj",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
@@ -286,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 14,
               "Title": "Backend-Donaruma.csproj",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Backend-Donaruma.csproj",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Backend-Donaruma.csproj",
@@ -298,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 12,
               "Title": "DonarumaAPI_Model.csproj",
               "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\DonarumaAPI_Model.csproj",

@@ -63,6 +63,55 @@ namespace Backend_Donaruma.Controllers
                 return StatusCode(500, "Error al crear el perfume: " + ex.Message);
             }
         }
+        // --- NUEVA RUTA: ACTUALIZAR (PUT) ---
+        // Ruta: PUT api/perfumes/actualizar/5
+        [HttpPut("actualizar/{id}")]
+        public async Task<IActionResult> ActualizarPerfume(int id, [FromBody] PerfumeDTO perfume)
+        {
+            try
+            {
+                // Validación de seguridad básica: Evita que manden un ID en la URL y otro diferente en el cuerpo
+                if (id != perfume.IdPerfume)
+                {
+                    return BadRequest(new { mensaje = "El ID de la URL no coincide con el del perfume." });
+                }
+
+                var fueEditado = await _perfumeService.ActualizarPerfume(perfume);
+
+                if (fueEditado)
+                {
+                    return Ok(new { mensaje = "¡Perfume actualizado con éxito!" });
+                }
+
+                return NotFound(new { mensaje = "No se encontró el perfume para actualizar." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error al actualizar el perfume: " + ex.Message);
+            }
+        }
+
+        // --- NUEVA RUTA: ELIMINAR (DELETE) ---
+        // Ruta: DELETE api/perfumes/eliminar/5
+        [HttpDelete("eliminar/{id}")]
+        public async Task<IActionResult> EliminarPerfume(int id)
+        {
+            try
+            {
+                var fueBorrado = await _perfumeService.EliminarPerfume(id);
+
+                if (fueBorrado)
+                {
+                    return Ok(new { mensaje = "¡Perfume eliminado permanentemente!" });
+                }
+
+                return NotFound(new { mensaje = "No se encontró el perfume para eliminar." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error al eliminar el perfume: " + ex.Message);
+            }
+        }
 
         [HttpGet("marca/{marca}")]
         public async Task<IActionResult> ObtenerPorMarca(string marca)
