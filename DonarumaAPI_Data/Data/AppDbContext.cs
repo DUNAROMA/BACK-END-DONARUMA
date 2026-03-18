@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DonarumaAPI_DTOs.Compras;
+using DonarumaAPI_DTOs.FamiliaOlfativa;
+using Microsoft.EntityFrameworkCore;
 using static DonarumaAPI_DTOs.Compras.MetodoPagoDto;
-using DonarumaAPI_DTOs.Compras;
 
 namespace DonarumaAPI_Data.Data
 {
@@ -14,6 +15,8 @@ namespace DonarumaAPI_Data.Data
         // Entidad sin llave para resultados de funciones
         public DbSet<UsuarioDatosDto> UsuarioDatosDtos { get; set; }
 
+        public DbSet<FamiliaOlfativaDTO> PerfumesCompletos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Forzamos el mapeo por si los atributos del modelo no bastan
@@ -22,6 +25,8 @@ namespace DonarumaAPI_Data.Data
             modelBuilder.Entity<MetodoPago>().ToTable("metodos_pago");
             // Configuración para el DTO que no tiene ID
             modelBuilder.Entity<UsuarioDatosDto>().HasNoKey();
+
+            modelBuilder.Entity<FamiliaOlfativaDTO>().HasNoKey();
 
             base.OnModelCreating(modelBuilder);
         }
