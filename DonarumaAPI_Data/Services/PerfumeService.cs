@@ -34,7 +34,16 @@ namespace DonarumaAPI_Data.Services
         {
             using var db = dbConnection();
             var result = await db.QueryAsync<PerfumeDTO>(SelectPerfume + "obtener_todos_perfumes()");
-            return result.ToList();
+            var lista = result.ToList();
+
+            // 🔥 LEER LA TABLA INTERMEDIA PARA MANDAR LOS IDs A ANGULAR 🔥
+            foreach (var p in lista)
+            {
+                var sqlFamilias = "SELECT idfamilia FROM perfume_familia WHERE idperfume = @Id";
+                p.FamiliasOlfativasIds = (await db.QueryAsync<int>(sqlFamilias, new { Id = p.IdPerfume })).ToList();
+            }
+
+            return lista;
         }
 
         // --- FUNCIÓN 2: OBTENER DE NOCHE ---
@@ -62,6 +71,7 @@ namespace DonarumaAPI_Data.Services
                 SelectPerfume + "obtener_perfumes_por_genero(@genero)", new { genero });
             return result.ToList();
         }
+
         // --- FUNCIÓN 5: CREAR PERFUME ---
         public async Task<int> CrearPerfume(PerfumeDTO perfume)
         {
@@ -70,8 +80,20 @@ namespace DonarumaAPI_Data.Services
                 VALUES (@Nombre, @Marca, @Genero, @Ocasion, @Precio, @Descripcion, @Imagen_Url, @Stock, @Intensidad, @Dulzor, @Duracion, @Aromatico) 
                 RETURNING idperfume";
 
-            // Esto devuelve el ID del perfume recién creado sin fallar
-            return await db.ExecuteScalarAsync<int>(sql, perfume);
+            // Guardamos el perfume y obtenemos su nuevo ID
+            var idNuevo = await db.ExecuteScalarAsync<int>(sql, perfume);
+
+            // 🔥 GUARDAR EN LA TABLA INTERMEDIA LAS FAMILIAS OLFATIVAS 🔥
+            if (perfume.FamiliasOlfativasIds != null && perfume.FamiliasOlfativasIds.Any())
+            {
+                foreach (var idFam in perfume.FamiliasOlfativasIds)
+                {
+                    await db.ExecuteAsync("INSERT INTO perfume_familia (idperfume, idfamilia) VALUES (@IdPerfume, @IdFamilia)",
+                        new { IdPerfume = idNuevo, IdFamilia = idFam });
+                }
+            }
+
+            return idNuevo;
         }
 
         // --- FUNCIÓN 6: ACTUALIZAR PERFUME ---
@@ -93,8 +115,23 @@ namespace DonarumaAPI_Data.Services
                     aromatico = @Aromatico
                 WHERE idperfume = @IdPerfume";
 
-            // Al usar UPDATE directo, Dapper SÍ cuenta la fila modificada
             var filasAfectadas = await db.ExecuteAsync(sql, perfume);
+
+            // 🔥 ACTUALIZAR TABLA INTERMEDIA (Borramos las viejas y metemos las nuevas) 🔥
+            if (filasAfectadas > 0)
+            {
+                await db.ExecuteAsync("DELETE FROM perfume_familia WHERE idperfume = @IdPerfume", new { IdPerfume = perfume.IdPerfume });
+
+                if (perfume.FamiliasOlfativasIds != null && perfume.FamiliasOlfativasIds.Any())
+                {
+                    foreach (var idFam in perfume.FamiliasOlfativasIds)
+                    {
+                        await db.ExecuteAsync("INSERT INTO perfume_familia (idperfume, idfamilia) VALUES (@IdPerfume, @IdFamilia)",
+                            new { IdPerfume = perfume.IdPerfume, IdFamilia = idFam });
+                    }
+                }
+            }
+
             return filasAfectadas > 0;
         }
 
@@ -102,9 +139,10 @@ namespace DonarumaAPI_Data.Services
         public async Task<bool> EliminarPerfume(int idPerfume)
         {
             using var db = dbConnection();
+            // Ojo: Si tienes llaves foráneas en Postgres, asegúrate de que tengan "ON DELETE CASCADE", 
+            // de lo contrario tendrías que hacer un DELETE FROM perfume_familia aquí primero.
             var sql = "DELETE FROM perfumes WHERE idperfume = @IdPerfume";
 
-            // Al usar DELETE directo, Dapper SÍ cuenta la fila borrada
             var filasAfectadas = await db.ExecuteAsync(sql, new { IdPerfume = idPerfume });
             return filasAfectadas > 0;
         }

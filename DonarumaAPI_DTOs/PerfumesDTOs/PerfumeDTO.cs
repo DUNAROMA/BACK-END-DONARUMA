@@ -21,5 +21,7 @@ namespace DonarumaAPI_DTOs.PerfumesDTOs
         public int Dulzor { get; set; }
         public int Duracion { get; set; }
         public int Aromatico { get; set; }
+
+        public List<int> FamiliasOlfativasIds { get; set; } = new List<int>();
     }
 }
