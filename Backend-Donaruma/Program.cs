@@ -15,7 +15,11 @@ var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
-
+builder.Services.AddScoped<IComprasService, ComprasService>();
+builder.Services.AddScoped<IFamiliaOlfativaService, FamiliaOlfativaService>();
+builder.Services.AddScoped<IMetodosPagoService, MetodosPagoService>();
+builder.Services.AddScoped<IPerfumesStockService, PerfumesStockService>();
+builder.Services.AddScoped<IUsuariosInfService, UsuariosInfService>();
 
 // ?? 1. AQUÍ AGREGAMOS LA CONFIGURACIÓN DE CORS ??
 

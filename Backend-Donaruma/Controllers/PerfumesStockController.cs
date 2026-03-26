@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Npgsql;
-using DonarumaAPI_Data;
+﻿using DonarumaAPI_Data.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PerfumeApi.Controllers
 {
@@ -8,36 +7,29 @@ namespace PerfumeApi.Controllers
     [ApiController]
     public class PerfumesStockController : ControllerBase
     {
-        private readonly PostgreSQLConfiguration _config;
+        private readonly IPerfumesStockService _stockService;
 
-        public PerfumesStockController(PostgreSQLConfiguration config)
+        public PerfumesStockController(IPerfumesStockService stockService)
         {
-            _config = config;
+            _stockService = stockService;
         }
 
         [HttpGet("disponibles")]
         public async Task<IActionResult> GetPerfumesDisponibles()
         {
-            var perfumes = new List<object>(); // O List<Perfume> si prefieres mapearlo completo
-
-            using var connection = new NpgsqlConnection(_config.ConnectionString);
-            await connection.OpenAsync();
-
-            using var command = new NpgsqlCommand("SELECT * FROM fn_listar_perfumes_disponibles()", connection);
-            using var reader = await command.ExecuteReaderAsync();
-
-            while (await reader.ReadAsync())
+            try
             {
-                perfumes.Add(new
-                {
-                    Id = reader["idperfume"],
-                    Nombre = reader["nombreperfume"],
-                    Precio = reader["precio"],
-                    Stock = reader["stock"]
-                });
-            }
+                var perfumes = await _stockService.GetPerfumesDisponiblesAsync();
 
-            return Ok(perfumes);
+                if (perfumes == null || !perfumes.Any())
+                    return NotFound(new { mensaje = "No hay perfumes con stock disponible." });
+
+                return Ok(perfumes);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = "Error al obtener stock", detalle = ex.Message });
+            }
         }
     }
 }

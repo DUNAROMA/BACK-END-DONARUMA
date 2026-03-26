@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DonarumaAPI_DTOs.Compras;
+using DonarumaAPI_Data.Interfaces;
 using Npgsql;
-using DonarumaAPI_Data; // Para acceder a PostgreSQLConfiguration
 
 namespace PerfumeApi.Controllers
 {
@@ -9,11 +9,11 @@ namespace PerfumeApi.Controllers
     [ApiController]
     public class ComprasController : ControllerBase
     {
-        private readonly PostgreSQLConfiguration _config;
+        private readonly IComprasService _comprasService;
 
-        public ComprasController(PostgreSQLConfiguration config)
+        public ComprasController(IComprasService comprasService)
         {
-            _config = config;
+            _comprasService = comprasService;
         }
 
         [HttpPost("procesar")]
@@ -21,20 +21,8 @@ namespace PerfumeApi.Controllers
         {
             try
             {
-                using var connection = new NpgsqlConnection(_config.ConnectionString);
-                await connection.OpenAsync();
-
-                using var command = new NpgsqlCommand("SELECT procesar_compra_con_stock(@p_idusuario, @p_direccion, @p_idtarjeta, @p_perfumes_ids, @p_cantidades)", connection);
-
-                command.Parameters.AddWithValue("p_idusuario", request.IdUsuario);
-                command.Parameters.AddWithValue("p_direccion", request.Direccion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("p_idtarjeta", request.IdTarjeta);
-                command.Parameters.AddWithValue("p_perfumes_ids", request.PerfumesIds);
-                command.Parameters.AddWithValue("p_cantidades", request.Cantidades);
-
-                var mensaje = await command.ExecuteScalarAsync();
-
-                return Ok(new { mensaje = mensaje?.ToString() });
+                var mensaje = await _comprasService.ProcesarCompraAsync(request);
+                return Ok(new { mensaje });
             }
             catch (PostgresException ex)
             {

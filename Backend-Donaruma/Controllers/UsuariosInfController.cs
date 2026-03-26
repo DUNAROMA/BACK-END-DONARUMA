@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Npgsql;
-using DonarumaAPI_Data;
-using DonarumaAPI_DTOs.Compras;
+﻿using DonarumaAPI_Data.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PerfumeApi.Controllers
 {
@@ -9,11 +7,11 @@ namespace PerfumeApi.Controllers
     [ApiController]
     public class UsuariosInfController : ControllerBase
     {
-        private readonly PostgreSQLConfiguration _config;
+        private readonly IUsuariosInfService _usuariosInfService;
 
-        public UsuariosInfController(PostgreSQLConfiguration config)
+        public UsuariosInfController(IUsuariosInfService usuariosInfService)
         {
-            _config = config;
+            _usuariosInfService = usuariosInfService;
         }
 
         // GET: api/UsuariosInf/datos/1
@@ -22,27 +20,7 @@ namespace PerfumeApi.Controllers
         {
             try
             {
-                UsuarioDatosDto? usuario = null;
-
-                using var connection = new NpgsqlConnection(_config.ConnectionString);
-                await connection.OpenAsync();
-
-                // Ejecutamos la función directamente en PostgreSQL
-                using var command = new NpgsqlCommand("SELECT * FROM obtener_datos_usuario(@id)", connection);
-                command.Parameters.AddWithValue("id", id);
-
-                using var reader = await command.ExecuteReaderAsync();
-
-                if (await reader.ReadAsync())
-                {
-                    usuario = new UsuarioDatosDto
-                    {
-                        // Asegúrate de que los nombres de las propiedades en UsuarioDatosDto 
-                        // coincidan con los nombres de las columnas que devuelve la función en SQL
-                        NombreCompleto = reader["nombre_completo"].ToString() ?? "",
-                        DireccionUsuario = reader["direccion_usuario"].ToString() ?? ""
-                    };
-                }
+                var usuario = await _usuariosInfService.GetDatosUsuarioAsync(id);
 
                 if (usuario == null)
                 {

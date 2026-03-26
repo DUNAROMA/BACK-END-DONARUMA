@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using DonarumaAPI_DTOs.Compras;
-using Npgsql;
-using DonarumaAPI_Data;
+﻿using DonarumaAPI_Data.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PerfumeApi.Controllers
 {
@@ -9,54 +7,41 @@ namespace PerfumeApi.Controllers
     [ApiController]
     public class MetodosPagoController : ControllerBase
     {
-        private readonly PostgreSQLConfiguration _config;
+        private readonly IMetodosPagoService _pagoService;
 
-        public MetodosPagoController(PostgreSQLConfiguration config)
+        public MetodosPagoController(IMetodosPagoService pagoService)
         {
-            _config = config;
+            _pagoService = pagoService;
         }
 
         [HttpGet("buscar/{idusuario}")]
-        public async Task<IActionResult> GetPagosFuncion(long idusuario)
+        public async Task<IActionResult> GetPagos(long idusuario)
         {
-            var lista = new List<MetodoPagoDto>();
-
-            using var connection = new NpgsqlConnection(_config.ConnectionString);
-            await connection.OpenAsync();
-
-            using var command = new NpgsqlCommand("SELECT * FROM buscar_metodos_pago_usuario(@id)", connection);
-            command.Parameters.AddWithValue("id", idusuario);
-
-            using var reader = await command.ExecuteReaderAsync();
-            while (await reader.ReadAsync())
+            try
             {
-                lista.Add(new MetodoPagoDto
-                {
-                    // CORRECCIÓN: Agregamos los guiones bajos para que coincidan con SQL
-                    NumeroTarjeta = reader["numero_tarjeta"].ToString(),
-                    NombreTitular = reader["nombre_titular"].ToString()
+                var lista = await _pagoService.GetMetodosPagoUsuarioAsync(idusuario);
+                if (!lista.Any()) return NotFound(new { mensaje = "Sin métodos de pago." });
 
-                    // OJO: Si tu MetodoPagoDto tiene el ID, descomenta esta línea:
-                    // IdTarjeta = Convert.ToInt64(reader["id_tarjeta"])
-                });
+                return Ok(lista);
             }
-
-            if (!lista.Any()) return NotFound("Sin métodos de pago.");
-            return Ok(lista);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
         }
 
         [HttpDelete("eliminar/{idusuario}/{idtarjeta}")]
-        public async Task<IActionResult> EliminarPagoFuncion(long idusuario, long idtarjeta)
+        public async Task<IActionResult> EliminarPago(long idusuario, long idtarjeta)
         {
-            using var connection = new NpgsqlConnection(_config.ConnectionString);
-            await connection.OpenAsync();
-
-            using var command = new NpgsqlCommand("SELECT eliminar_metodo_pago_usuario(@u, @t)", connection);
-            command.Parameters.AddWithValue("u", idusuario);
-            command.Parameters.AddWithValue("t", idtarjeta);
-
-            var mensaje = await command.ExecuteScalarAsync();
-            return Ok(new { Respuesta = mensaje?.ToString() });
+            try
+            {
+                var respuesta = await _pagoService.EliminarMetodoPagoAsync(idusuario, idtarjeta);
+                return Ok(new { Respuesta = respuesta });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
         }
     }
 }
