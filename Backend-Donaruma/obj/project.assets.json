@@ -758,23 +758,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cd17\\.nuget\\packages\\": {},
+    "C:\\Users\\UTS2026\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\Backend-Donaruma\\Backend-Donaruma.csproj",
+      "projectUniqueName": "C:\\Users\\UTS2026\\source\\repos\\backdonaruma\\Backend-Donaruma\\Backend-Donaruma.csproj",
       "projectName": "Backend-Donaruma",
-      "projectPath": "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\Backend-Donaruma\\Backend-Donaruma.csproj",
-      "packagesPath": "C:\\Users\\cd17\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\Backend-Donaruma\\obj\\",
+      "projectPath": "C:\\Users\\UTS2026\\source\\repos\\backdonaruma\\Backend-Donaruma\\Backend-Donaruma.csproj",
+      "packagesPath": "C:\\Users\\UTS2026\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\UTS2026\\source\\repos\\backdonaruma\\Backend-Donaruma\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\cd17\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\UTS2026\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -783,15 +783,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {
-              "projectPath": "C:\\Users\\cd17\\source\\repos\\DUNAROMA1\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj"
+            "C:\\Users\\UTS2026\\source\\repos\\backdonaruma\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {
+              "projectPath": "C:\\Users\\UTS2026\\source\\repos\\backdonaruma\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj"
             }
           }
         }
@@ -806,7 +805,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -844,7 +843,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
