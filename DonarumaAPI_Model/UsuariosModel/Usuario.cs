@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DonarumaAPI_Model.UsuariosModel
 {
-    public class Usuario
+    public class Usuarios
     {
         public long IdUsuario { get; set; }
         public string Nombre { get; set; }
@@ -15,5 +15,7 @@ namespace DonarumaAPI_Model.UsuariosModel
         public string Correo { get; set; }
         public string Contrasena { get; set; }
         public string Rol { get; set; }
+        public DateTime? RefreshTokenExpiry { get; init; }
+
     }
 }
