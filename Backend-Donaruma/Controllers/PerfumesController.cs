@@ -12,13 +12,12 @@ namespace Backend_Donaruma.Controllers
     {
         private readonly IPerfumeService _perfumeService;
 
-        // Conectamos el controlador con el servicio 
         public PerfumesController(IPerfumeService perfumeService)
         {
             _perfumeService = perfumeService;
         }
 
-        // Ruta: GET api/perfumes/todos
+        // GET api/perfumes/todos
         [HttpGet("todos")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerTodos()
         {
@@ -26,7 +25,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // Ruta: GET api/perfumes/noche
+        // GET api/perfumes/noche
         [HttpGet("noche")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerDeNoche()
         {
@@ -34,7 +33,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // Ruta: GET api/perfumes/ocasion/casual
+        // GET api/perfumes/ocasion/casual
         [HttpGet("ocasion/{ocasion}")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerPorOcasion(string ocasion)
         {
@@ -42,7 +41,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // Ruta: GET api/perfumes/genero/hombre
+        // GET api/perfumes/genero/hombre
         [HttpGet("genero/{genero}")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerPorGenero(string genero)
         {
@@ -50,6 +49,39 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
+        // GET api/perfumes/marca/chanel
+        [HttpGet("marca/{marca}")]
+        public async Task<IActionResult> ObtenerPorMarca(string marca)
+        {
+            var perfumes = await _perfumeService.ObtenerPorMarcaAsync(marca);
+            return Ok(perfumes);
+        }
+
+        // GET api/perfumes/buscar/noir
+        [HttpGet("buscar/{nombre}")]
+        public async Task<IActionResult> BuscarPorNombre(string nombre)
+        {
+            var perfumes = await _perfumeService.BuscarPorNombreAsync(nombre);
+            return Ok(perfumes);
+        }
+
+        // GET api/perfumes/precio-mayor
+        [HttpGet("precio-mayor")]
+        public async Task<IActionResult> ObtenerPorPrecioMayor()
+        {
+            var perfumes = await _perfumeService.ObtenerPorPrecioMayorAsync();
+            return Ok(perfumes);
+        }
+
+        // GET api/perfumes/precio-menor
+        [HttpGet("precio-menor")]
+        public async Task<IActionResult> ObtenerPorPrecioMenor()
+        {
+            var perfumes = await _perfumeService.ObtenerPorPrecioMenorAsync();
+            return Ok(perfumes);
+        }
+
+        // POST api/perfumes/crear
         [HttpPost("crear")]
         public async Task<IActionResult> CrearPerfume([FromBody] PerfumeDTO perfume)
         {
@@ -63,25 +95,20 @@ namespace Backend_Donaruma.Controllers
                 return StatusCode(500, "Error al crear el perfume: " + ex.Message);
             }
         }
-        // --- NUEVA RUTA: ACTUALIZAR (PUT) ---
-        // Ruta: PUT api/perfumes/actualizar/5
+
+        // PUT api/perfumes/actualizar/5
         [HttpPut("actualizar/{id}")]
         public async Task<IActionResult> ActualizarPerfume(int id, [FromBody] PerfumeDTO perfume)
         {
             try
             {
-                // Validación de seguridad básica: Evita que manden un ID en la URL y otro diferente en el cuerpo
                 if (id != perfume.IdPerfume)
-                {
                     return BadRequest(new { mensaje = "El ID de la URL no coincide con el del perfume." });
-                }
 
                 var fueEditado = await _perfumeService.ActualizarPerfume(perfume);
 
                 if (fueEditado)
-                {
                     return Ok(new { mensaje = "¡Perfume actualizado con éxito!" });
-                }
 
                 return NotFound(new { mensaje = "No se encontró el perfume para actualizar." });
             }
@@ -91,8 +118,7 @@ namespace Backend_Donaruma.Controllers
             }
         }
 
-        // --- NUEVA RUTA: ELIMINAR (DELETE) ---
-        // Ruta: DELETE api/perfumes/eliminar/5
+        // DELETE api/perfumes/eliminar/5
         [HttpDelete("eliminar/{id}")]
         public async Task<IActionResult> EliminarPerfume(int id)
         {
@@ -101,9 +127,7 @@ namespace Backend_Donaruma.Controllers
                 var fueBorrado = await _perfumeService.EliminarPerfume(id);
 
                 if (fueBorrado)
-                {
                     return Ok(new { mensaje = "¡Perfume eliminado permanentemente!" });
-                }
 
                 return NotFound(new { mensaje = "No se encontró el perfume para eliminar." });
             }
@@ -112,34 +136,5 @@ namespace Backend_Donaruma.Controllers
                 return StatusCode(500, "Error al eliminar el perfume: " + ex.Message);
             }
         }
-
-        [HttpGet("marca/{marca}")]
-        public async Task<IActionResult> ObtenerPorMarca(string marca)
-        {
-            var perfumes = await _perfumeService.ObtenerPorMarcaAsync(marca);
-            return Ok(perfumes);
-        }
-
-        [HttpGet("buscar/{nombre}")]
-        public async Task<IActionResult> BuscarPorNombre(string nombre)
-        {
-            var perfumes = await _perfumeService.BuscarPorNombreAsync(nombre);
-            return Ok(perfumes);
-        }
-
-        [HttpGet("precio-mayor")]
-        public async Task<IActionResult> ObtenerPorPrecioMayor()
-        {
-            var perfumes = await _perfumeService.ObtenerPorPrecioMayorAsync();
-            return Ok(perfumes);
-        }
-
-        [HttpGet("precio-menor")]
-        public async Task<IActionResult> ObtenerPorPrecioMenor()
-        {
-            var perfumes = await _perfumeService.ObtenerPorPrecioMenorAsync();
-            return Ok(perfumes);
-        }
-
     }
 }

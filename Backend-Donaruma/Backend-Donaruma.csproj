@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.9" />
@@ -20,4 +21,15 @@
 	<ItemGroup>
 		<ProjectReference Include="..\DonarumaAPI_Data\DonarumaAPI_Data.csproj" />
 	</ItemGroup>
+=======
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Npgsql" Version="10.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DonarumaAPI_Data\DonarumaAPI_Data.csproj" />
+  </ItemGroup>
+
+>>>>>>> origin/Eclud123
 </Project>

@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+<<<<<<< HEAD
     <UserSecretsId>ce580324-e1e6-4d7f-a74e-7211ca3b290c</UserSecretsId>
   </PropertyGroup>
 
@@ -16,6 +17,12 @@
     <PackageReference Include="Npgsql" Version="8.0.9" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.16.0" />
+=======
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="10.0.1" />
+>>>>>>> origin/Eclud123
   </ItemGroup>
 
 </Project>

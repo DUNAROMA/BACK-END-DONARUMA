@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DonarumaAPI_DTOs.PerfumesDTOs;
+﻿using DonarumaAPI_Model.PerfumesModel;
 
 namespace DonarumaAPI_Data.Interfaces
 {
@@ -24,3 +25,4 @@ namespace DonarumaAPI_Data.Interfaces
 
     }
 }
+       

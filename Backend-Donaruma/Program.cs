@@ -1,7 +1,10 @@
 using DonarumaAPI_Data;
 using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_Data.Services;
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
+=======
+>>>>>>> origin/Eclud123
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
+<<<<<<< HEAD
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
@@ -32,6 +36,12 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+=======
+
+builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString));
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IPerfumeService, PerfumeService>();
+>>>>>>> origin/Eclud123
 
 var app = builder.Build();
 
@@ -42,6 +52,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+<<<<<<< HEAD
 // 2. ACTIVAMOS EL CORS EN EL ORDEN CORRECTO
 app.UseRouting(); // <-- Es muy buena práctica poner UseRouting antes de UseCors
 
@@ -52,3 +63,12 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+=======
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+>>>>>>> origin/Eclud123
