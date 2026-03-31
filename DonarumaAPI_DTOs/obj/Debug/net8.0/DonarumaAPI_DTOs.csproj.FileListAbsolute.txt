@@ -23,3 +23,16 @@ C:\Users\cd17\source\repos\DUNAROMA1\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaA
 C:\Users\cd17\source\repos\DUNAROMA1\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
 C:\Users\cd17\source\repos\DUNAROMA1\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
 C:\Users\cd17\source\repos\DUNAROMA1\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.AssemblyReference.cache
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfoInputs.cache
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfo.cs
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.CoreCompileInputs.cache
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.sourcelink.json
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.deps.json
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll

@@ -1,33 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\DonarumaAPI_DTOs\DonarumaAPI_DTOs.csproj" />
     <ProjectReference Include="..\DonarumaAPI_Model\DonarumaAPI_Model.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="AuthorizationPolices\" />
   </ItemGroup>
-
   <ItemGroup>
-<<<<<<< HEAD
     <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.25" />
-    <PackageReference Include="Npgsql" Version="8.0.9" />
+    <PackageReference Include="Npgsql" Version="10.0.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.16.0" />
-=======
-    <PackageReference Include="Dapper" Version="2.1.66" />
-    <PackageReference Include="Npgsql" Version="10.0.1" />
->>>>>>> origin/Eclud123
   </ItemGroup>
-
 </Project>
