@@ -20,6 +20,7 @@ builder.Services.AddScoped<IFamiliaOlfativaService, FamiliaOlfativaService>();
 builder.Services.AddScoped<IMetodosPagoService, MetodosPagoService>();
 builder.Services.AddScoped<IPerfumesStockService, PerfumesStockService>();
 builder.Services.AddScoped<IUsuariosInfService, UsuariosInfService>();
+builder.Services.AddScoped<IOfertasService, OfertasService>();
 
 // ?? 1. AQUÍ AGREGAMOS LA CONFIGURACIÓN DE CORS ??
 
