@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {}
+    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
+    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
+        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
         "projectName": "DonarumaAPI_Model",
-        "projectPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\obj\\",
+        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
+        "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eclud\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -31,7 +31,6 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -50,7 +49,6 @@
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "BCrypt.Net-Next": {
@@ -76,6 +74,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.11, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[51.0.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

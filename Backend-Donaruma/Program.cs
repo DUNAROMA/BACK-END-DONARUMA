@@ -2,6 +2,7 @@ using DonarumaAPI_Data;
 using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_Data.Services;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
+
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -24,6 +26,9 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+
+
+StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe")["SecretKey"];
 
 var app = builder.Build();
 
@@ -39,4 +44,4 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-app.Run();
+app.Run(); 

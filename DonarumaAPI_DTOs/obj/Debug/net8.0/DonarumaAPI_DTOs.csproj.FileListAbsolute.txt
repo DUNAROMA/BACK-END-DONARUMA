@@ -36,3 +36,16 @@ C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\bin\Debug\net8.0\
 C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.dll
 C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.pdb
 C:\Users\carlo\OneDrive\Desktop\BACK-DUNAROMA\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.deps.json
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.AssemblyReference.cache
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfoInputs.cache
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfo.cs
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.CoreCompileInputs.cache
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.sourcelink.json
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\Users\eclud\OneDrive\Documentos\BACKENDONARUMA\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
