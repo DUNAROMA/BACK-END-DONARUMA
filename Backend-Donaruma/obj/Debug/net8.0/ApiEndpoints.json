@@ -121,6 +121,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend_Donaruma.Controllers.PagosController",
+    "Method": "CrearSesion",
+    "RelativePath": "api/Pagos/crear-sesion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carrito",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
     "Method": "ActualizarPerfume",
     "RelativePath": "api/Perfumes/actualizar/{id}",
