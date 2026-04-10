@@ -129,8 +129,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "carrito",
-        "Type": "System.Object",
+        "Name": "request",
+        "Type": "Backend_Donaruma.Controllers.CheckoutRequest",
         "IsRequired": true
       }
     ],
