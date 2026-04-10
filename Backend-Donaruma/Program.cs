@@ -16,6 +16,7 @@ builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddHostedService<LogCleanupService>();
 
 builder.Services.AddCors(options =>
 {

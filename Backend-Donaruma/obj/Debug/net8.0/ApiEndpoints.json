@@ -137,6 +137,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend_Donaruma.Controllers.PagosController",
+    "Method": "StripeWebhook",
+    "RelativePath": "api/Pagos/webhook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
     "Method": "ActualizarPerfume",
     "RelativePath": "api/Perfumes/actualizar/{id}",
