@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
+    "Method": "AgregarDireccion",
+    "RelativePath": "agregar-direccion",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DonarumaAPI_DTOs.UsuarioDTo.DireccionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -58,7 +74,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PerfumeApi.Controllers.ComprasController",
+    "ContainingType": "Backend_Donaruma.Controllers.ComprasController",
     "Method": "ProcesarCompra",
     "RelativePath": "api/Compras/procesar",
     "HttpMethod": "POST",
@@ -67,7 +83,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "DonarumaAPI_DTOs.Compras.ProcesarCompraDto",
+        "Type": "DonarumaAPI_DTOs.Compras.DonarumaAPI_DTOs.Compras.ProcesarCompraDto",
         "IsRequired": true
       }
     ],
@@ -122,6 +138,22 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PagosController",
+    "Method": "ConfirmarPago",
+    "RelativePath": "api/Pagos/confirmar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "session_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.PagosController",
     "Method": "CrearSesion",
     "RelativePath": "api/Pagos/crear-sesion",
     "HttpMethod": "POST",
@@ -129,8 +161,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "carrito",
-        "Type": "System.Object",
+        "Name": "dto",
+        "Type": "DonarumaAPI_DTOs.Compras.CrearSesionDto",
         "IsRequired": true
       }
     ],
@@ -338,6 +370,16 @@
     "Method": "GetPerfumesDisponibles",
     "RelativePath": "api/PerfumesStock/disponibles",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.StripeWebhookController",
+    "Method": "Handle",
+    "RelativePath": "api/stripe/webhook",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

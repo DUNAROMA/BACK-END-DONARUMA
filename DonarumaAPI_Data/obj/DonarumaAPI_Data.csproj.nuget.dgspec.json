@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {}
+    "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {
+    "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
         "projectName": "DonarumaAPI_Data",
-        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
-        "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\eclud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -31,13 +31,14 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
-                "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj"
+              "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
+                "projectPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj"
               },
-              "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
-                "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj"
+              "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
+                "projectPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj"
               }
             }
           }
@@ -56,6 +57,7 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "BCrypt.Net-Next": {
@@ -111,20 +113,20 @@
         }
       }
     },
-    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
+    "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
         "projectName": "DonarumaAPI_DTOs",
-        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
-        "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\eclud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -138,6 +140,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -156,6 +159,7 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "BCrypt.Net-Next": {
@@ -215,20 +219,20 @@
         }
       }
     },
-    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
+    "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
         "projectName": "DonarumaAPI_Model",
-        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
-        "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\eclud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -242,6 +246,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -260,6 +265,7 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "BCrypt.Net-Next": {

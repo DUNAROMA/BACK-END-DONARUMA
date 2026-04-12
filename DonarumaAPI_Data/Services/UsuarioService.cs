@@ -45,6 +45,19 @@ namespace DonarumaAPI_Data.Services
 
             return usuario;
         }
+        public async Task AgregarDireccion(long idUsuario, DireccionDTO dto)
+        {
+            using var db = Connection;
+
+            await db.ExecuteAsync(
+                "SELECT public.agregar_direccion(@idusuario, @direccion)",
+                new
+                {
+                    idusuario = idUsuario,
+                    direccion = dto.Direccion
+                }
+            );
+        }
 
     }
 }

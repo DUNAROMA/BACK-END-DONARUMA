@@ -185,16 +185,43 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": { }
+              "schema": {
+                "$ref": "#/components/schemas/CrearSesionDto"
+              }
             },
             "text/json": {
-              "schema": { }
+              "schema": {
+                "$ref": "#/components/schemas/CrearSesionDto"
+              }
             },
             "application/*+json": {
-              "schema": { }
+              "schema": {
+                "$ref": "#/components/schemas/CrearSesionDto"
+              }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Pagos/confirmar": {
+      "get": {
+        "tags": [
+          "Pagos"
+        ],
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -550,6 +577,18 @@
         }
       }
     },
+    "/api/stripe/webhook": {
+      "post": {
+        "tags": [
+          "StripeWebhook"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/crear": {
       "post": {
         "tags": [
@@ -597,6 +636,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/agregar-direccion": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DireccionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DireccionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DireccionDTO"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -669,6 +739,32 @@
   },
   "components": {
     "schemas": {
+      "CrearSesionDto": {
+        "type": "object",
+        "properties": {
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "perfumesIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          },
+          "cantidades": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CrearUsuarioDTO": {
         "type": "object",
         "properties": {
@@ -693,6 +789,16 @@
             "nullable": true
           },
           "rol": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DireccionDTO": {
+        "type": "object",
+        "properties": {
+          "direccion": {
             "type": "string",
             "nullable": true
           }
@@ -790,15 +896,15 @@
             "type": "string",
             "nullable": true
           },
-          "idTarjeta": {
+          "idMetodo": {
             "type": "integer",
-            "format": "int64"
+            "format": "int32"
           },
           "perfumesIds": {
             "type": "array",
             "items": {
               "type": "integer",
-              "format": "int32"
+              "format": "int64"
             },
             "nullable": true
           },

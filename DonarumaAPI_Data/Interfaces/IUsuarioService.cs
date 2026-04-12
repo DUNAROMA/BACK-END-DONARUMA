@@ -11,5 +11,6 @@ namespace DonarumaAPI_Data.Interfaces
     {
         Task<long> CrearUsuario(CrearUsuarioDTO usuario);
         Task<UsuarioDTO> ObtenerUsuarioPorId(long idUsuario);
+        Task AgregarDireccion(long idUsuario, DireccionDTO dto); // NUEVO
     }
 }

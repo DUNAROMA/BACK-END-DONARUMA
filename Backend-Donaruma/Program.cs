@@ -1,8 +1,11 @@
+using Backend_Donaruma.Services;
 using DonarumaAPI_Data;
 using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_Data.Services;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Stripe;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +16,31 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 
+builder.Services.AddScoped<IPagosService, PagosService>();
+builder.Services.AddScoped<IEncriptacionService, EncriptacionService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICompraService, CompraService>();
+
+// ── NUEVO: Configuración JWT ──────────────────────────────
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
+            ValidAudience = builder.Configuration["JwtSettings:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+    Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]!)
+)
+        };
+    });
+// ─────────────────────────────────────────────────────────
 
 builder.Services.AddCors(options =>
 {
@@ -26,7 +51,6 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
-
 
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe")["SecretKey"];
 
@@ -41,7 +65,8 @@ if (app.Environment.IsDevelopment())
 app.UseRouting();
 app.UseCors("PermitirWeb");
 app.UseHttpsRedirection();
+app.UseAuthentication(); // ← NUEVO: debe ir ANTES de UseAuthorization
 app.UseAuthorization();
 app.MapControllers();
 
-app.Run(); 
+app.Run();

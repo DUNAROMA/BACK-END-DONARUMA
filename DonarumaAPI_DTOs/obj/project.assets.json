@@ -4692,23 +4692,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eclud\\.nuget\\packages\\": {},
+    "C:\\Users\\carlo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+      "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
       "projectName": "DonarumaAPI_DTOs",
-      "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
-      "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\obj\\",
+      "projectPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\eclud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4722,6 +4722,7 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -4740,6 +4741,7 @@
     },
     "frameworks": {
       "net8.0": {
+        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "BCrypt.Net-Next": {

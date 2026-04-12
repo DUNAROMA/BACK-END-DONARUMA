@@ -1,48 +1,56 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Stripe.Checkout;
-using System.Collections.Generic;
+﻿// Controllers/PagosController.cs
+using DonarumaAPI_Data.Interfaces;
+using DonarumaAPI_DTOs.Compras;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Backend_Donaruma.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PagosController : ControllerBase
     {
-        [HttpPost("crear-sesion")]
-        public IActionResult CrearSesion([FromBody] object carrito)
+        private readonly IPagosService _pagosService;
+
+        public PagosController(IPagosService pagosService)
         {
-            // Esta es la URL de tu Angular
-            var domain = "http://localhost:4200";
+            _pagosService = pagosService;
+        }
 
-            var options = new SessionCreateOptions
+        [HttpPost("crear-sesion")]
+        public async Task<IActionResult> CrearSesion([FromBody] CrearSesionDto dto)
+        {
+            try
             {
-                PaymentMethodTypes = new List<string> { "card" },
-                LineItems = new List<SessionLineItemOptions>
-                {
-                    new SessionLineItemOptions
-                    {
-                        PriceData = new SessionLineItemPriceDataOptions
-                        {
-                            UnitAmount = 92000, // Representa $920.00 (Stripe usa centavos)
-                            Currency = "mxn",
-                            ProductData = new SessionLineItemPriceDataProductDataOptions
-                            {
-                                Name = "Total Carrito DUNAROMA",
-                            },
-                        },
-                        Quantity = 1,
-                    },
-                },
-                Mode = "payment",
-                SuccessUrl = domain + "/pago-exitoso",
-                CancelUrl = domain + "/carrito",
-            };
+                var idUsuarioClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (idUsuarioClaim == null)
+                    return Unauthorized("No se pudo identificar al usuario.");
 
-            var service = new SessionService();
-            Session session = service.Create(options);
+                var (sessionId, url) = await _pagosService.CrearSesionAsync(long.Parse(idUsuarioClaim), dto);
 
-            // Devolvemos el ID y la URL para que Angular nos redirija
-            return Ok(new { id = session.Id, url = session.Url });
+                return Ok(new { id = sessionId, url });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet("confirmar")]
+        [AllowAnonymous] // No requiere JWT porque viene de la redirección de Stripe
+        public async Task<IActionResult> ConfirmarPago([FromQuery] string session_id)
+        {
+            try
+            {
+                var resultado = await _pagosService.ConfirmarPagoAsync(session_id);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
         }
     }
 }

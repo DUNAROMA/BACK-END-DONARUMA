@@ -16,6 +16,7 @@ namespace DonarumaAPI_Model.UsuariosModel
         public string Contrasena { get; set; }
         public string Rol { get; set; }
         public DateTime? RefreshTokenExpiry { get; init; }
+        public string? StripeCustomerId { get; set; }
 
     }
 }
