@@ -82,7 +82,11 @@ namespace DonarumaAPI_Data.Services
                 FROM novedades 
                 WHERE idnovedad = @Id";
 
+<<<<<<< HEAD
             return await db.QueryFirstOrDefaultAsync<NovedadesDTO>(sql, new { Id = id }); 
+=======
+            return await db.QueryFirstOrDefaultAsync<NovedadesDTO>(sql, new { Id = id });
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
         }
         // Eliminar una publicación
         public async Task<bool> Eliminar(int id)

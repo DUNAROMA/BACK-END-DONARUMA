@@ -12,12 +12,20 @@ namespace Backend_Donaruma.Controllers
     {
         private readonly IPerfumeService _perfumeService;
 
+<<<<<<< HEAD
+=======
+        // Conectamos el controlador con el servicio de Alan
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
         public PerfumesController(IPerfumeService perfumeService)
         {
             _perfumeService = perfumeService;
         }
 
+<<<<<<< HEAD
         // GET api/perfumes/todos
+=======
+        // Ruta: GET api/perfumes/todos
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
         [HttpGet("todos")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerTodos()
         {
@@ -25,7 +33,11 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
+<<<<<<< HEAD
         // GET api/perfumes/noche
+=======
+        // Ruta: GET api/perfumes/noche
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
         [HttpGet("noche")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerDeNoche()
         {
@@ -33,7 +45,11 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
+<<<<<<< HEAD
         // GET api/perfumes/ocasion/casual
+=======
+        // Ruta: GET api/perfumes/ocasion/casual
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
         [HttpGet("ocasion/{ocasion}")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerPorOcasion(string ocasion)
         {
@@ -41,7 +57,11 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
+<<<<<<< HEAD
         // GET api/perfumes/genero/hombre
+=======
+        // Ruta: GET api/perfumes/genero/hombre
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
         [HttpGet("genero/{genero}")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerPorGenero(string genero)
         {
@@ -49,6 +69,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
+<<<<<<< HEAD
         // GET api/perfumes/marca/chanel
         [HttpGet("marca/{marca}")]
         public async Task<IActionResult> ObtenerPorMarca(string marca)
@@ -82,6 +103,8 @@ namespace Backend_Donaruma.Controllers
         }
 
         // POST api/perfumes/crear
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
         [HttpPost("crear")]
         public async Task<IActionResult> CrearPerfume([FromBody] PerfumeDTO perfume)
         {
@@ -95,6 +118,7 @@ namespace Backend_Donaruma.Controllers
                 return StatusCode(500, "Error al crear el perfume: " + ex.Message);
             }
         }
+<<<<<<< HEAD
 
         // PUT api/perfumes/actualizar/5
         [HttpPut("actualizar/{id}")]
@@ -136,5 +160,7 @@ namespace Backend_Donaruma.Controllers
                 return StatusCode(500, "Error al eliminar el perfume: " + ex.Message);
             }
         }
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     }
 }

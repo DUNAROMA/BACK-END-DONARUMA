@@ -225,7 +225,7 @@
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\CarritoService.cs",
               "ToolTip": "C:\\BACK-END\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\CarritoService.cs",
               "RelativeToolTip": "DonarumaAPI_Data\\Services\\CarritoService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAYwCAAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAYwD4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-12T02:41:54.462Z",
               "EditorCaption": ""
@@ -300,7 +300,8 @@
               "RelativeToolTip": "Backend-Donaruma\\Program.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAqwC0AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T04:01:01.019Z"
+              "WhenOpened": "2026-03-05T04:01:01.019Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -346,9 +347,10 @@
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
               "ToolTip": "C:\\BACK-END\\BACK-END-DONARUMA\\DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
               "RelativeToolTip": "DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T20:05:14.953Z"
+              "WhenOpened": "2026-03-31T20:05:14.953Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -430,9 +432,10 @@
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\NovedadService.cs",
               "ToolTip": "C:\\BACK-END\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\NovedadService.cs",
               "RelativeToolTip": "DonarumaAPI_Data\\Services\\NovedadService.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAmwFQAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAA4wFQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T20:13:56.793Z"
+              "WhenOpened": "2026-04-11T20:13:56.793Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -540,7 +543,8 @@
               "RelativeToolTip": "Backend-Donaruma\\Controllers\\NovedadesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T03:54:01.887Z"
+              "WhenOpened": "2026-04-11T03:54:01.887Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -552,7 +556,8 @@
               "RelativeToolTip": "DonarumaAPI_Data\\Interfaces\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T03:43:30.185Z"
+              "WhenOpened": "2026-04-10T03:43:30.185Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

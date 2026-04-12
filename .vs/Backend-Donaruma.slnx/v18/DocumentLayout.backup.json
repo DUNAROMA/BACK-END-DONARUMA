@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\BACK-END\\BACK-END-DONARUMA\\",
   "Documents": [
     {
@@ -169,6 +170,41 @@
     {
       "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\back-end\\back-end-donaruma\\donarumaapi_data\\postgresqlconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\postgresqlconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C5B7B619-272B-4C15-94D9-A727579EFB7C}|DonarumaAPI_Model\\DonarumaAPI_Model.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_model\\novedadesmodel\\novedades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5B7B619-272B-4C15-94D9-A727579EFB7C}|DonarumaAPI_Model\\DonarumaAPI_Model.csproj|solutionrelative:donarumaapi_model\\novedadesmodel\\novedades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\backend-donaruma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\backend-donaruma\\controllers\\novedadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\controllers\\novedadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_data\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_data\\services\\perfumeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\perfumeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_data\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\donarumaapi_data\\donarumaapi_data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\donarumaapi_data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\amave\\source\\repos\\back-end-donaruma\\backend-donaruma\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     }
   ],
   "DocumentGroupContainers": [
@@ -178,6 +214,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 3,
           "Children": [
             {
@@ -204,10 +241,27 @@
               "ViewState": "AgIAAEkAAAAAAAAAAAAYwF4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-12T04:02:50.332Z"
+=======
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Novedades.cs",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Model\\NovedadesModel\\Novedades.cs",
+              "RelativeDocumentMoniker": "DonarumaAPI_Model\\NovedadesModel\\Novedades.cs",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Model\\NovedadesModel\\Novedades.cs",
+              "RelativeToolTip": "DonarumaAPI_Model\\NovedadesModel\\Novedades.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T01:16:06.17Z",
+              "EditorCaption": ""
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+<<<<<<< HEAD
               "Title": "CarritoController.cs",
               "DocumentMoniker": "C:\\BACK-END\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\CarritoController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\CarritoController.cs",
@@ -225,7 +279,7 @@
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\CarritoService.cs",
               "ToolTip": "C:\\BACK-END\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\CarritoService.cs",
               "RelativeToolTip": "DonarumaAPI_Data\\Services\\CarritoService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAYwCgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAYwCAAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-12T02:41:54.462Z",
               "EditorCaption": ""
@@ -253,10 +307,59 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-12T02:39:19.001Z"
+=======
+              "Title": "PerfumeService.cs",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\PerfumeService.cs",
+              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\PerfumeService.cs",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\PerfumeService.cs",
+              "RelativeToolTip": "DonarumaAPI_Data\\Services\\PerfumeService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T07:45:30.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NovedadesController.cs",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\NovedadesController.cs",
+              "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\NovedadesController.cs",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\NovedadesController.cs",
+              "RelativeToolTip": "Backend-Donaruma\\Controllers\\NovedadesController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAmwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T07:45:24.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\AuthService.cs",
+              "RelativeToolTip": "DonarumaAPI_Data\\Services\\AuthService.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAADgv58AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T07:25:41.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "DonarumaAPI_Data\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T07:25:23.927Z"
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+<<<<<<< HEAD
               "Title": "CarritoItem.cs",
               "DocumentMoniker": "C:\\BACK-END\\BACK-END-DONARUMA\\DonarumaAPI_Model\\CarritoModel\\CarritoItem.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\CarritoModel\\CarritoItem.cs",
@@ -277,10 +380,34 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T04:04:05.566Z"
+=======
+              "Title": "DonarumaAPI_Data.csproj",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
+              "RelativeDocumentMoniker": "DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
+              "RelativeToolTip": "DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-10T07:15:52.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Program.cs",
+              "RelativeDocumentMoniker": "Backend-Donaruma\\Program.cs",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\Program.cs",
+              "RelativeToolTip": "Backend-Donaruma\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T07:11:23.873Z",
+              "EditorCaption": ""
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+<<<<<<< HEAD
               "Title": "PagosController.cs",
               "DocumentMoniker": "C:\\BACK-END\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PagosController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\PagosController.cs",
@@ -685,6 +812,16 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-03-05T02:40:01.031Z"
+=======
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.json",
+              "RelativeDocumentMoniker": "Backend-Donaruma\\appsettings.json",
+              "ToolTip": "C:\\Users\\amave\\source\\repos\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.json",
+              "RelativeToolTip": "Backend-Donaruma\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-10T03:46:01.666Z"
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
             }
           ]
         }

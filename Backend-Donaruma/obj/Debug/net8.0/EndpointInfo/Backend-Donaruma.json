@@ -5,6 +5,7 @@
     "version": "1.0"
   },
   "paths": {
+<<<<<<< HEAD
     "/api/Auth/login": {
       "post": {
         "tags": [
@@ -597,6 +598,8 @@
         }
       }
     },
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     "/api/Perfumes/todos": {
       "get": {
         "tags": [
@@ -769,6 +772,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/api/Perfumes/marca/{marca}": {
       "get": {
         "tags": [
@@ -837,6 +841,8 @@
         }
       }
     },
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     "/api/Perfumes/crear": {
       "post": {
         "tags": [
@@ -868,6 +874,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/api/Perfumes/actualizar/{id}": {
       "put": {
         "tags": [
@@ -945,6 +952,8 @@
         }
       }
     },
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     "/crear": {
       "post": {
         "tags": [
@@ -1143,6 +1152,7 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "ItemCarrito": {
         "type": "object",
         "properties": {
@@ -1201,6 +1211,8 @@
         },
         "additionalProperties": false
       },
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
       "PerfumeDTO": {
         "type": "object",
         "properties": {
@@ -1216,6 +1228,20 @@
             "type": "string",
             "nullable": true
           },
+<<<<<<< HEAD
+=======
+          "genero": {
+            "type": "string",
+            "nullable": true
+          },
+          "ocasion": {
+            "type": "string",
+            "nullable": true
+          },
+          "esDeNoche": {
+            "type": "boolean"
+          },
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
           "precio": {
             "type": "number",
             "format": "double"
@@ -1228,6 +1254,7 @@
             "type": "string",
             "nullable": true
           },
+<<<<<<< HEAD
           "ocasion": {
             "type": "string",
             "nullable": true
@@ -1317,6 +1344,11 @@
           "fechaFinOferta": {
             "type": "string",
             "format": "date-time"
+=======
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
           }
         },
         "additionalProperties": false

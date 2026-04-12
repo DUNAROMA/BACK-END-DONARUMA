@@ -71,6 +71,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(novedad);
         }
         // PUT: api/Novedades/actualizar/5
+<<<<<<< HEAD
         [HttpPut("actualizar/{id}")]
         public async Task<IActionResult> Actualizar(int id, [FromBody] NovedadesDTO novedad)
         {
@@ -84,5 +85,20 @@ namespace Backend_Donaruma.Controllers
             return Ok(new { exito = true, mensaje = "Publicación actualizada correctamente." });
         }
 
+=======
+[HttpPut("actualizar/{id}")]
+public async Task<IActionResult> Actualizar(int id, [FromBody] NovedadesDTO novedad)
+{
+    var exito = await _novedadService.Actualizar(id, novedad);
+    
+    if (!exito)
+    {
+        return NotFound(new { exito = false, mensaje = "No se encontró la publicación a actualizar." });
+    }
+
+    return Ok(new { exito = true, mensaje = "Publicación actualizada correctamente." });
+}
+       
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     }
 }

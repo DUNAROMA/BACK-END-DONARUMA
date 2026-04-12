@@ -10,6 +10,7 @@ C:\Users\carlo\source\repos\Backend-Donaruma\DonarumaAPI_DTOs\obj\Debug\net8.0\D
 C:\Users\carlo\source\repos\Backend-Donaruma\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
 C:\Users\carlo\source\repos\Backend-Donaruma\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
 C:\Users\carlo\source\repos\Backend-Donaruma\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
+<<<<<<< HEAD
 C:\Users\cd17\source\repos\DUNAROMA1\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.deps.json
 C:\Users\cd17\source\repos\DUNAROMA1\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.dll
 C:\Users\cd17\source\repos\DUNAROMA1\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.pdb
@@ -88,3 +89,31 @@ C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs
 C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
 C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
 C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
+=======
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.deps.json
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.AssemblyReference.cache
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfoInputs.cache
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfo.cs
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.CoreCompileInputs.cache
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.sourcelink.json
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\Users\usuario11\Source\Repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.deps.json
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.AssemblyReference.cache
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfoInputs.cache
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfo.cs
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.CoreCompileInputs.cache
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.sourcelink.json
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\Users\amave\source\repos\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619

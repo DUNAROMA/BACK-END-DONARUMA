@@ -16,6 +16,7 @@
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -410,6 +411,8 @@
     "ReturnTypes": []
   },
   {
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
     "Method": "CrearPerfume",
     "RelativePath": "api/Perfumes/crear",
@@ -427,6 +430,7 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+<<<<<<< HEAD
     "Method": "EliminarPerfume",
     "RelativePath": "api/Perfumes/eliminar/{id}",
     "HttpMethod": "DELETE",
@@ -443,6 +447,8 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     "Method": "ObtenerPorGenero",
     "RelativePath": "api/Perfumes/genero/{genero}",
     "HttpMethod": "GET",
@@ -469,6 +475,7 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+<<<<<<< HEAD
     "Method": "ObtenerPorMarca",
     "RelativePath": "api/Perfumes/marca/{marca}",
     "HttpMethod": "GET",
@@ -485,6 +492,8 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     "Method": "ObtenerDeNoche",
     "RelativePath": "api/Perfumes/noche",
     "HttpMethod": "GET",
@@ -531,6 +540,7 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+<<<<<<< HEAD
     "Method": "ObtenerPorPrecioMayor",
     "RelativePath": "api/Perfumes/precio-mayor",
     "HttpMethod": "GET",
@@ -551,6 +561,8 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.PerfumesController",
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     "Method": "ObtenerTodos",
     "RelativePath": "api/Perfumes/todos",
     "HttpMethod": "GET",
@@ -570,6 +582,7 @@
     ]
   },
   {
+<<<<<<< HEAD
     "ContainingType": "PerfumeApi.Controllers.PerfumesStockController",
     "Method": "GetPerfumesDisponibles",
     "RelativePath": "api/PerfumesStock/disponibles",
@@ -596,6 +609,8 @@
     "ReturnTypes": []
   },
   {
+=======
+>>>>>>> 2fa79a9c8a6d4349ca87bfe5778a812a9f19a619
     "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
     "Method": "CrearUsuario",
     "RelativePath": "crear",
