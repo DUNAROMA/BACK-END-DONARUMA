@@ -40,7 +40,14 @@ public sealed class AuthService : IAuthService
 
         // Mismo mensaje para correo y contraseña incorrectos (no revelar cuál falló)
         if (usuario is null || !BCrypt.Net.BCrypt.Verify(login.Contrasena, usuario.Contrasena))
+        {
+            // --- REGISTRO DE SEGURIDAD: INTENTO FALLIDO ---
+            await GuardarLog(db, login.Correo, "Login Fallido", "IP Desconocida", ct);
             return Fallo("Correo o contraseña incorrectos");
+        }
+
+        // --- REGISTRO DE SEGURIDAD: ACCESO EXITOSO ---
+        await GuardarLog(db, login.Correo, "Login Exitoso", "IP Aprobada", ct);
 
         return await GenerarRespuestaCompletaAsync(db, usuario, ct);
     }
@@ -159,4 +166,26 @@ public sealed class AuthService : IAuthService
 
     private static LoginResponse Fallo(string mensaje) =>
         new() { Exito = false, Mensaje = mensaje };
+
+    // ─── REGISTRO DE AUDITORÍA (OWASP A09) ────────────────────────────────────
+    private async Task GuardarLog(IDbConnection db, string email, string tipo, string ip, CancellationToken ct)
+    {
+        var sql = @"
+            INSERT INTO ""SecurityLogs"" (""UserEmail"", ""EventDate"", ""EventType"", ""IpAddress"") 
+            VALUES (@UserEmail, @EventDate, @EventType, @IpAddress)";
+
+        await db.ExecuteAsync(
+            new CommandDefinition(
+                sql,
+                new
+                {
+                    UserEmail = email,
+                    EventDate = DateTime.UtcNow,
+                    EventType = tipo,
+                    IpAddress = ip
+                },
+                cancellationToken: ct
+            )
+        );
+    }
 }

@@ -18,6 +18,10 @@ namespace Backend_Donaruma.Controllers
         [HttpPost("crear")]
         public async Task<IActionResult> CrearUsuario([FromBody] CrearUsuarioDTO usuario)
         {
+            
+            usuario.Contrasena = BCrypt.Net.BCrypt.HashPassword(usuario.Contrasena);
+
+           
             var id = await _usuarioService.CrearUsuario(usuario);
 
             return Ok(new

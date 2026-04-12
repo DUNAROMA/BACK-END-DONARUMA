@@ -22,6 +22,7 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ICompraService, CompraService>();
+builder.Services.AddHostedService<LogCleanupService>();
 
 // ── NUEVO: Configuración JWT ──────────────────────────────
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
