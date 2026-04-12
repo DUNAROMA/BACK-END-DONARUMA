@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[2.1.66, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.25, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.3.9, )"
@@ -169,6 +173,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.25, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
@@ -275,6 +283,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.25, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",

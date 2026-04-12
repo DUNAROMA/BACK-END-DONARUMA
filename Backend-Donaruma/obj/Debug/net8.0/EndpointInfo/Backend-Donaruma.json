@@ -79,6 +79,83 @@
         }
       }
     },
+    "/api/Carrito/agregar": {
+      "post": {
+        "tags": [
+          "Carrito"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarAlCarritoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarAlCarritoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarAlCarritoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Carrito/usuario/{idUsuario}": {
+      "get": {
+        "tags": [
+          "Carrito"
+        ],
+        "parameters": [
+          {
+            "name": "idUsuario",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Carrito/eliminar/{id}": {
+      "delete": {
+        "tags": [
+          "Carrito"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Compras/procesar": {
       "post": {
         "tags": [
@@ -170,6 +247,306 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Novedades/obtener-todas": {
+      "get": {
+        "tags": [
+          "Novedades"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Novedades/crear": {
+      "post": {
+        "tags": [
+          "Novedades"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Novedades/actualizar": {
+      "put": {
+        "tags": [
+          "Novedades"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Novedades/eliminar/{id}": {
+      "delete": {
+        "tags": [
+          "Novedades"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Novedades/obtener/{id}": {
+      "get": {
+        "tags": [
+          "Novedades"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Novedades/actualizar/{id}": {
+      "put": {
+        "tags": [
+          "Novedades"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovedadesDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ofertas/listar": {
+      "get": {
+        "tags": [
+          "Ofertas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ofertas/reloj": {
+      "get": {
+        "tags": [
+          "Ofertas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Ofertas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RelojDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RelojDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RelojDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ofertas/activas": {
+      "get": {
+        "tags": [
+          "Ofertas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ofertas/guardar": {
+      "post": {
+        "tags": [
+          "Ofertas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarOfertaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarOfertaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgregarOfertaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ofertas/estado/{id}": {
+      "put": {
+        "tags": [
+          "Ofertas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -568,7 +945,7 @@
         }
       }
     },
-    "/crear": {
+    "/api/Usuarios/crear": {
       "post": {
         "tags": [
           "Usuarios"
@@ -599,7 +976,7 @@
         }
       }
     },
-    "/{id}": {
+    "/api/Usuarios/{id}": {
       "get": {
         "tags": [
           "Usuarios"
@@ -687,6 +1064,42 @@
   },
   "components": {
     "schemas": {
+      "AgregarAlCarritoDTO": {
+        "type": "object",
+        "properties": {
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idPerfume": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgregarOfertaDTO": {
+        "type": "object",
+        "properties": {
+          "idPerfume": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descuento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioOferta": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "CheckoutRequest": {
         "type": "object",
         "properties": {
@@ -738,8 +1151,8 @@
             "nullable": true
           },
           "precio": {
-            "type": "integer",
-            "format": "int64"
+            "type": "number",
+            "format": "double"
           },
           "cantidad": {
             "type": "integer",
@@ -758,6 +1171,32 @@
           "contrasena": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NovedadesDTO": {
+        "type": "object",
+        "properties": {
+          "idNovedad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "titulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaPublicacion": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -868,6 +1307,16 @@
           "refreshToken": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RelojDTO": {
+        "type": "object",
+        "properties": {
+          "fechaFinOferta": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

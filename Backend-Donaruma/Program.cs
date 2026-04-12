@@ -7,6 +7,11 @@ using Microsoft.IdentityModel.Tokens;
 using Stripe;
 using System.Text;
 
+// 👇 1. NUEVOS IMPORTS PARA LA SEGURIDAD (El diccionario del cadenero) 👇
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -19,10 +24,13 @@ builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 builder.Services.AddScoped<IPagosService, PagosService>();
 builder.Services.AddScoped<IEncriptacionService, EncriptacionService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<INovedadService, NovedadService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ICompraService, CompraService>();
 builder.Services.AddHostedService<LogCleanupService>();
+builder.Services.AddScoped<IOfertasService, OfertasService>();
+builder.Services.AddScoped<ICarritoService, CarritoService>();
 
 // ── NUEVO: Configuración JWT ──────────────────────────────
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -52,6 +60,7 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+
 
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe")["SecretKey"];
 

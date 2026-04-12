@@ -6,6 +6,9 @@ using System.Security.Claims;
 
 namespace Backend_Donaruma.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
+
     public class UsuariosController : Controller
     {
         private readonly IUsuarioService _usuarioService;

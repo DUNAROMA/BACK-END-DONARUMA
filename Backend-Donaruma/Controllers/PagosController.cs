@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace Backend_Donaruma.Controllers
 {
-    // ─── 1. LOS MOLDES PARA ENTENDER A ANGULAR ───
     public class ItemCarrito
     {
         public string nombre { get; set; }
-        public long precio { get; set; } // Precio en pesos normales (ej. 500)
+        // 🔥 CAMBIO 1: Ahora aceptamos decimales (ej. 732.89)
+        public decimal precio { get; set; }
         public int cantidad { get; set; }
     }
 
@@ -71,7 +71,6 @@ namespace Backend_Donaruma.Controllers
             }
         }
 
-        // ─── 3. EL WEBHOOK SE QUEDA EXACTAMENTE IGUAL ───
         [HttpPost("webhook")]
         public async Task<IActionResult> StripeWebhook()
         {

@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DonarumaAPI_Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+436a52ae02d7bbef3edcff3897c204356f561a54")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+530aa80f0988f3a3cbc035f3c392d50b55bbead1")]
->>>>>>> 244a6a87f8aaa30d9a38ffcb0d1d4c7ecf9e7735
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb95511bf9813817ffa76082fd8c830118e15259")]
 [assembly: System.Reflection.AssemblyProductAttribute("DonarumaAPI_Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DonarumaAPI_Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
