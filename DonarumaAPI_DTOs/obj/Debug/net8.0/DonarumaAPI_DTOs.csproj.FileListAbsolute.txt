@@ -75,3 +75,16 @@ C:\Users\amave\OneDrive\Documents\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\ob
 C:\Users\amave\OneDrive\Documents\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
 C:\Users\amave\OneDrive\Documents\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
 C:\Users\amave\OneDrive\Documents\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.deps.json
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\bin\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.AssemblyReference.cache
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfoInputs.cache
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.AssemblyInfo.cs
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.csproj.CoreCompileInputs.cache
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.sourcelink.json
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.dll
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\refint\DonarumaAPI_DTOs.dll
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\DonarumaAPI_DTOs.pdb
+C:\BACK-END\BACK-END-DONARUMA\DonarumaAPI_DTOs\obj\Debug\net8.0\ref\DonarumaAPI_DTOs.dll
