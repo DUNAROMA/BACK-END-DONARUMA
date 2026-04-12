@@ -121,6 +121,184 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend_Donaruma.Controllers.NovedadesController",
+    "Method": "ActualizarNovedad",
+    "RelativePath": "api/Novedades/actualizar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novedad",
+        "Type": "DonarumaAPI_DTOs.NovedadesDTOs.NovedadesDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.NovedadesController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Novedades/actualizar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "novedad",
+        "Type": "DonarumaAPI_DTOs.NovedadesDTOs.NovedadesDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.NovedadesController",
+    "Method": "CrearNovedad",
+    "RelativePath": "api/Novedades/crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novedad",
+        "Type": "DonarumaAPI_DTOs.NovedadesDTOs.NovedadesDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.NovedadesController",
+    "Method": "EliminarNovedad",
+    "RelativePath": "api/Novedades/eliminar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.NovedadesController",
+    "Method": "ObtenerTodas",
+    "RelativePath": "api/Novedades/obtener-todas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.NovedadesController",
+    "Method": "ObtenerPorId",
+    "RelativePath": "api/Novedades/obtener/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.OfertasController",
+    "Method": "ObtenerOfertas",
+    "RelativePath": "api/Ofertas/activas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.OfertasController",
+    "Method": "CambiarEstado",
+    "RelativePath": "api/Ofertas/estado/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "activo",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.OfertasController",
+    "Method": "GuardarOferta",
+    "RelativePath": "api/Ofertas/guardar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ofertaDto",
+        "Type": "DonarumaAPI_DTOs.OfertasDTOs.AgregarOfertaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.OfertasController",
+    "Method": "ListarOfertas",
+    "RelativePath": "api/Ofertas/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.OfertasController",
+    "Method": "ObtenerReloj",
+    "RelativePath": "api/Ofertas/reloj",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.OfertasController",
+    "Method": "ActualizarReloj",
+    "RelativePath": "api/Ofertas/reloj",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "relojDto",
+        "Type": "DonarumaAPI_DTOs.OfertasDTOs.RelojDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend_Donaruma.Controllers.PagosController",
     "Method": "CrearSesion",
     "RelativePath": "api/Pagos/crear-sesion",

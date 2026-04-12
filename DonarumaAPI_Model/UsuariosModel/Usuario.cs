@@ -9,12 +9,12 @@ namespace DonarumaAPI_Model.UsuariosModel
     public class Usuarios
     {
         public long IdUsuario { get; set; }
-        public string Nombre { get; set; }
-        public string Apellidos { get; set; }
-        public string Direccion { get; set; }
-        public string Correo { get; set; }
-        public string Contrasena { get; set; }
-        public string Rol { get; set; }
+        public string Nombre { get; set; } = string.Empty;
+        public string Apellidos { get; set; } = string.Empty;
+        public string Direccion { get; set; } = string.Empty;
+        public string Correo { get; set; } = string.Empty;
+        public string Contrasena { get; set; } = string.Empty;
+        public string Rol { get; set; } = string.Empty;
         public DateTime? RefreshTokenExpiry { get; init; }
 
     }

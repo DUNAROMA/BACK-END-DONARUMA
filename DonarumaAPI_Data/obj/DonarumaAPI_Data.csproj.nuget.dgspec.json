@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {}
+    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {
+    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
+        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
         "projectName": "DonarumaAPI_Data",
-        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
+        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
         "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Data\\obj\\",
+        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
-                "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj"
+              "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
+                "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj"
               },
-              "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
-                "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj"
+              "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
+                "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj"
               }
             }
           }
@@ -65,6 +65,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.25, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
@@ -111,14 +115,14 @@
         }
       }
     },
-    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
+    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
         "projectName": "DonarumaAPI_DTOs",
-        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
         "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\obj\\",
+        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -165,6 +169,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.25, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
@@ -215,14 +223,14 @@
         }
       }
     },
-    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
+    "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
+        "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
         "projectName": "DonarumaAPI_Model",
-        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
+        "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
         "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDONARUMA\\BACK-END-DONARUMA\\DonarumaAPI_Model\\obj\\",
+        "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -269,6 +277,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.25, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Backend_Donaruma.Controllers
 {
-    // ─── 1. LOS MOLDES PARA ENTENDER A ANGULAR ───
     public class ItemCarrito
     {
         public string nombre { get; set; }
-        public long precio { get; set; } // Precio en pesos normales (ej. 500)
+        // 🔥 CAMBIO 1: Ahora aceptamos decimales (ej. 732.89)
+        public decimal precio { get; set; }
         public int cantidad { get; set; }
     }
 
@@ -24,27 +24,24 @@ namespace Backend_Donaruma.Controllers
     [ApiController]
     public class PagosController : ControllerBase
     {
-        // ─── 2. EL ENDPOINT ACTUALIZADO (PRECIOS DINÁMICOS) ───
         [HttpPost("crear-sesion")]
         public IActionResult CrearSesion([FromBody] CheckoutRequest request)
         {
             var domain = "http://localhost:4200";
-
-            // Armamos la lista de productos dinámicamente
             var lineItems = new List<SessionLineItemOptions>();
 
-            // Recorremos cada perfume que Angular nos mandó en el carrito
             foreach (var item in request.items)
             {
                 lineItems.Add(new SessionLineItemOptions
                 {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
-                        UnitAmount = item.precio * 100, // Stripe siempre cobra en centavos, multiplicamos x 100
+                        // 🔥 CAMBIO 2: Convertimos los decimales a los centavos enteros que exige Stripe
+                        UnitAmount = (long)(item.precio * 100),
                         Currency = "mxn",
                         ProductData = new SessionLineItemPriceDataProductDataOptions
                         {
-                            Name = item.nombre, // ¡Aparecerá el nombre real del perfume en Stripe!
+                            Name = item.nombre,
                         },
                     },
                     Quantity = item.cantidad,
@@ -54,7 +51,7 @@ namespace Backend_Donaruma.Controllers
             var options = new SessionCreateOptions
             {
                 PaymentMethodTypes = new List<string> { "card" },
-                LineItems = lineItems, // Pasamos la lista dinámica aquí
+                LineItems = lineItems,
                 Mode = "payment",
                 SuccessUrl = domain + "/pago-exitoso",
                 CancelUrl = domain + "/carrito",
@@ -66,7 +63,6 @@ namespace Backend_Donaruma.Controllers
             return Ok(new { id = session.Id, url = session.Url });
         }
 
-        // ─── 3. EL WEBHOOK SE QUEDA EXACTAMENTE IGUAL ───
         [HttpPost("webhook")]
         public async Task<IActionResult> StripeWebhook()
         {
