@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3aZPo7nv5ek=",
+  "dgSpecHash": "YpJI0U6X1mA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA4\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+  "projectFilePath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA90\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eclud\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\eclud\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",

@@ -24,6 +24,7 @@ builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddHostedService<LogCleanupService>();
 builder.Services.AddScoped<IOfertasService, OfertasService>();
+builder.Services.AddScoped<ICarritoService, CarritoService>();
 
 builder.Services.AddCors(options =>
 {
