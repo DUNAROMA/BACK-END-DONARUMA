@@ -868,7 +868,7 @@
         }
       }
     },
-    "/crear": {
+    "/api/Usuarios/crear": {
       "post": {
         "tags": [
           "Usuarios"
@@ -899,7 +899,7 @@
         }
       }
     },
-    "/{id}": {
+    "/api/Usuarios/{id}": {
       "get": {
         "tags": [
           "Usuarios"
