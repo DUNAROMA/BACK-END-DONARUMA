@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using DonarumaAPI_Data.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using DonarumaAPI_DTOs.PerfumesDTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace Backend_Donaruma.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "Ambos")]
     public class PerfumesController : ControllerBase
     {
         private readonly IPerfumeService _perfumeService;
@@ -83,6 +85,7 @@ namespace Backend_Donaruma.Controllers
 
         // POST api/perfumes/crear
         [HttpPost("crear")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> CrearPerfume([FromBody] PerfumeDTO perfume)
         {
             try
@@ -98,6 +101,7 @@ namespace Backend_Donaruma.Controllers
 
         // PUT api/perfumes/actualizar/5
         [HttpPut("actualizar/{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> ActualizarPerfume(int id, [FromBody] PerfumeDTO perfume)
         {
             try
@@ -120,6 +124,7 @@ namespace Backend_Donaruma.Controllers
 
         // DELETE api/perfumes/eliminar/5
         [HttpDelete("eliminar/{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> EliminarPerfume(int id)
         {
             try

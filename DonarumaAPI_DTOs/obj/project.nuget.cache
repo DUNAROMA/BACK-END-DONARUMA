@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "03BsFK2HlD4=",
+  "dgSpecHash": "44xOmgx9DGA=",
   "success": true,
   "projectFilePath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
   "expectedPackageFiles": [
@@ -100,15 +100,5 @@
     "C:\\Users\\carlo\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
     "C:\\Users\\carlo\\.nuget\\packages\\system.threading.tasks.extensions\\4.6.0\\system.threading.tasks.extensions.4.6.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "message": "Problem reading the cache file C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
-      "projectPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\carlo\\OneDrive\\Desktop\\BACK-DUNAROMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

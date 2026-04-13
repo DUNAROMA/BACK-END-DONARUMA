@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using DonarumaAPI_DTOs.Compras;
 using Npgsql;
 using DonarumaAPI_Data;
@@ -7,6 +8,7 @@ namespace PerfumeApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "ClienteOnly")]
     public class MetodosPagoController : ControllerBase
     {
         private readonly PostgreSQLConfiguration _config;

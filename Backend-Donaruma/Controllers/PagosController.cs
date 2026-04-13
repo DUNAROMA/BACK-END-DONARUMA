@@ -27,7 +27,7 @@ namespace Backend_Donaruma.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Policy = "ClienteOnly")]
     public class PagosController : ControllerBase
     {
         private readonly IPagosService _pagosService;
@@ -72,6 +72,7 @@ namespace Backend_Donaruma.Controllers
         }
 
         [HttpPost("webhook")]
+        [AllowAnonymous]
         public async Task<IActionResult> StripeWebhook()
         {
             var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();

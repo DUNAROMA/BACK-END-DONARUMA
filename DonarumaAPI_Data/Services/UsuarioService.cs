@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_DTOs.UsuarioDTo;
 using Npgsql;
@@ -59,5 +59,27 @@ namespace DonarumaAPI_Data.Services
             );
         }
 
+        public async Task<PerfilUsuarioDto> ObtenerPerfilUsuarioAsync(long idUsuario)
+        {
+            using var db = Connection;
+            return await db.QueryFirstOrDefaultAsync<PerfilUsuarioDto>(
+                "SELECT * FROM obtener_perfil_usuario(@p_id)", new { p_id = idUsuario });
+        }
+
+        public async Task EditarPerfilUsuarioAsync(long idUsuario, EditarPerfilUsuarioDto dto)
+        {
+            using var db = Connection;
+            await db.ExecuteAsync(
+                "SELECT editar_perfil_usuario(@p_id, @p_nom, @p_ape, @p_cor, @p_dir)",
+                new { p_id = idUsuario, p_nom = dto.Nombre, p_ape = dto.Apellidos, p_cor = dto.Correo, p_dir = dto.Direccion });
+        }
+
+        public async Task<bool> CambiarContrasenaUsuarioAsync(long idUsuario, string contrasenaActual, string nuevaContrasenaHash)
+        {
+            using var db = Connection;
+            return await db.ExecuteScalarAsync<bool>(
+                "SELECT cambiar_contrasena_usuario(@p_id, @p_actual, @p_nueva)",
+                new { p_id = idUsuario, p_actual = contrasenaActual, p_nueva = nuevaContrasenaHash });
+        }
     }
 }

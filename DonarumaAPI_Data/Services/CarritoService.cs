@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_DTOs.CarritoDTOs;
 using Npgsql;
@@ -35,6 +35,7 @@ namespace DonarumaAPI_Data.Services
             var sql = @"
         SELECT 
             c.""IdCarritoItem"", 
+            c.""IdPerfume"" as idPerfume,
             c.""Cantidad"", 
             p.nombreperfume as nombre, 
             p.precio as precio, 

@@ -1,4 +1,4 @@
-﻿using DonarumaAPI_DTOs.Compras;
+using DonarumaAPI_DTOs.Compras;
 using DonarumaAPI_DTOs.Compras.DonarumaAPI_DTOs.Compras;
 using System;
 using System.Collections.Generic;
@@ -11,5 +11,6 @@ namespace DonarumaAPI_Data.Interfaces
     public interface ICompraService
     {
         Task<CompraResultadoDto> ProcesarCompraAsync(ProcesarCompraDto request);
+        Task<IEnumerable<DetalleCompraUsuarioDto>> ObtenerDetallesComprasPorUsuarioAsync(long idUsuario);
     }
 }

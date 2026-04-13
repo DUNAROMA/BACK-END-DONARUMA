@@ -1,4 +1,5 @@
-﻿using DonarumaAPI_Data.Services;
+using Microsoft.AspNetCore.Authorization;
+using DonarumaAPI_Data.Services;
 using Microsoft.AspNetCore.Mvc;
 
 using DonarumaAPI_Data.Interfaces;
@@ -9,6 +10,7 @@ namespace Backend_Donaruma.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "ClienteOnly")]
     public class CarritoController : ControllerBase
     {
         private readonly ICarritoService _carritoService;

@@ -187,6 +187,18 @@
         }
       }
     },
+    "/api/Compras/historial": {
+      "get": {
+        "tags": [
+          "Compras"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/FamiliaOlfativa/todos": {
       "get": {
         "tags": [
@@ -563,21 +575,42 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CheckoutRequest"
+                "$ref": "#/components/schemas/CrearSesionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CheckoutRequest"
+                "$ref": "#/components/schemas/CrearSesionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CheckoutRequest"
+                "$ref": "#/components/schemas/CrearSesionDto"
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Pagos/confirmar": {
+      "get": {
+        "tags": [
+          "Pagos"
+        ],
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -945,6 +978,18 @@
         }
       }
     },
+    "/api/stripe/webhook": {
+      "post": {
+        "tags": [
+          "StripeWebhook"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuarios/crear": {
       "post": {
         "tags": [
@@ -992,6 +1037,109 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/agregar-direccion": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DireccionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DireccionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DireccionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/perfil": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditarPerfilUsuarioDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditarPerfilUsuarioDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditarPerfilUsuarioDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/cambiar-contrasena": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarContrasenaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarContrasenaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarContrasenaDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1100,13 +1248,40 @@
         },
         "additionalProperties": false
       },
-      "CheckoutRequest": {
+      "CambiarContrasenaDto": {
         "type": "object",
         "properties": {
-          "items": {
+          "contrasenaActual": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuevaContrasena": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CrearSesionDto": {
+        "type": "object",
+        "properties": {
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "perfumesIds": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ItemCarrito"
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          },
+          "cantidades": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
             },
             "nullable": true
           }
@@ -1143,20 +1318,34 @@
         },
         "additionalProperties": false
       },
-      "ItemCarrito": {
+      "DireccionDTO": {
+        "type": "object",
+        "properties": {
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditarPerfilUsuarioDto": {
         "type": "object",
         "properties": {
           "nombre": {
             "type": "string",
             "nullable": true
           },
-          "precio": {
-            "type": "number",
-            "format": "double"
+          "apellidos": {
+            "type": "string",
+            "nullable": true
           },
-          "cantidad": {
-            "type": "integer",
-            "format": "int32"
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1278,15 +1467,15 @@
             "type": "string",
             "nullable": true
           },
-          "idTarjeta": {
+          "idMetodo": {
             "type": "integer",
-            "format": "int64"
+            "format": "int32"
           },
           "perfumesIds": {
             "type": "array",
             "items": {
               "type": "integer",
-              "format": "int32"
+              "format": "int64"
             },
             "nullable": true
           },

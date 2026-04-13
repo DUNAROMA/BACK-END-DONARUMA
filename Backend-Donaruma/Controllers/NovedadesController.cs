@@ -1,12 +1,14 @@
-﻿using DonarumaAPI_Data.Interfaces;
+using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_DTOs.NovedadesDTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Backend_Donaruma.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "Ambos")]
     public class NovedadesController : ControllerBase
     {
         private readonly INovedadService _novedadService;
@@ -26,6 +28,7 @@ namespace Backend_Donaruma.Controllers
 
         // 2. POST: Para cuando tú como Admin subas un nuevo chisme/noticia
         [HttpPost("crear")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> CrearNovedad([FromBody] NovedadesDTO novedad)
         {
             var idGenerado = await _novedadService.CrearNovedad(novedad);
@@ -38,6 +41,7 @@ namespace Backend_Donaruma.Controllers
 
         // 3. PUT: Por si te equivocas en algo y quieres editar la publicación
         [HttpPut("actualizar")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> ActualizarNovedad([FromBody] NovedadesDTO novedad)
         {
             var exito = await _novedadService.ActualizarNovedad(novedad);
@@ -50,6 +54,7 @@ namespace Backend_Donaruma.Controllers
 
         // 4. DELETE: Para borrar una novedad
         [HttpDelete("eliminar/{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> EliminarNovedad(int id)
         {
             var exito = await _novedadService.EliminarNovedad(id);
@@ -72,6 +77,7 @@ namespace Backend_Donaruma.Controllers
         }
         // PUT: api/Novedades/actualizar/5
         [HttpPut("actualizar/{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> Actualizar(int id, [FromBody] NovedadesDTO novedad)
         {
             var exito = await _novedadService.Actualizar(id, novedad);

@@ -1,4 +1,4 @@
-﻿// DonarumaAPI_Data/Services/CompraService.cs
+// DonarumaAPI_Data/Services/CompraService.cs
 using Dapper;
 using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_DTOs.Compras;
@@ -47,6 +47,14 @@ namespace DonarumaAPI_Data.Services
             );
 
             return new CompraResultadoDto { Mensaje = resultado ?? "Compra procesada." };
+        }
+
+        public async Task<IEnumerable<DetalleCompraUsuarioDto>> ObtenerDetallesComprasPorUsuarioAsync(long idUsuario)
+        {
+            using var db = Connection;
+            var query = "SELECT nombreperfume, direccion, cantidad, fecha_compra FROM obtener_detalles_compras_usuario(@p_idusuario)";
+            var resultados = await db.QueryAsync<DetalleCompraUsuarioDto>(query, new { p_idusuario = idUsuario });
+            return resultados;
         }
     }
 }

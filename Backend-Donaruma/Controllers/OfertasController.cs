@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_DTOs.OfertasDTOs;
 
@@ -6,6 +7,7 @@ namespace Backend_Donaruma.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "Ambos")]
     public class OfertasController : ControllerBase
     {
         private readonly IOfertasService _ofertasService;
@@ -40,6 +42,7 @@ namespace Backend_Donaruma.Controllers
         }
 
         [HttpPost("reloj")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> ActualizarReloj([FromBody] RelojDTO relojDto)
         {
             try
@@ -70,6 +73,7 @@ namespace Backend_Donaruma.Controllers
         }
 
         [HttpPost("guardar")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> GuardarOferta([FromBody] AgregarOfertaDTO ofertaDto)
         {
             try
@@ -84,6 +88,7 @@ namespace Backend_Donaruma.Controllers
         }
 
         [HttpPut("estado/{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> CambiarEstado(int id, [FromBody] bool activo)
         {
             try

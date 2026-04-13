@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Npgsql;
 using DonarumaAPI_Data;
 
@@ -6,6 +7,7 @@ namespace PerfumeApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "Ambos")]
     public class PerfumesStockController : ControllerBase
     {
         private readonly PostgreSQLConfiguration _config;
