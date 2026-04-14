@@ -7,10 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Stripe;
 using System.Text;
 
-// 👇 1. NUEVOS IMPORTS PARA LA SEGURIDAD (El diccionario del cadenero) 👇
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -62,12 +59,15 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirWeb", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy.WithOrigins(
+            "http://localhost:4200",
+            "https://front-end-donaruma-b5scjhoz1-carlosmelendrez31s-projects.vercel.app/",  // URL de Vercel
+            "https://tudominio.com"                    // dominio personalizado
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod();
     });
 });
-
 
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe")["SecretKey"];
 
