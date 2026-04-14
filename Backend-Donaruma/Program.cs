@@ -61,8 +61,8 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
             "http://localhost:4200",
-            "https://front-end-donaruma-b5scjhoz1-carlosmelendrez31s-projects.vercel.app/",  // URL de Vercel
-            "https://tudominio.com"                    // dominio personalizado
+            "https://front-end-donaruma-git-main-carlosmelendrez31s-projects.vercel.app",
+            "https://tudominio.com" // cuando tengas el dominio personalizado
         )
         .AllowAnyHeader()
         .AllowAnyMethod();
