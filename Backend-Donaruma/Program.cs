@@ -4,10 +4,12 @@ using DonarumaAPI_Data.Services;
 using Microsoft.EntityFrameworkCore;
 using Stripe;
 
-// 👇 1. NUEVOS IMPORTS PARA LA SEGURIDAD (El diccionario del cadenero) 👇
+// 👇 IMPORTS DE SEGURIDAD Y RATE LIMITING 👇
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.RateLimiting;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,13 +32,36 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirWeb", policy =>
     {
+        // ⚠️ Nota: Asegúrate de agregar aquí también tus dominios de Vercel y DunaromaStore
+        // como lo hicimos en el paso anterior.
         policy.WithOrigins("http://localhost:4200")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
 
-// 👇 2. ENTRENANDO AL CADENERO (Configuración de Tokens JWT) 👇
+// 👇 1. CONFIGURACIÓN DEL CADENERO ANTI-SPAM (RATE LIMITING) 👇
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddPolicy("PoliticaRegistro", context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: context.Connection.RemoteIpAddress?.ToString() ?? context.Request.Headers.Host.ToString(),
+            factory: partition => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 3, // Solo 3 intentos permitidos...
+                Window = TimeSpan.FromMinutes(25), // ...cada 25 minutos
+                QueueLimit = 0,
+                AutoReplenishment = true
+            }));
+
+    options.OnRejected = async (context, token) =>
+    {
+        context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+        await context.HttpContext.Response.WriteAsync("Se han detectado demasiados intentos de registro. Por motivos de seguridad, por favor espera 25 minutos.", token);
+    };
+});
+
+// 👇 2. CONFIGURACIÓN DE TOKENS JWT 👇
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -48,7 +73,6 @@ builder.Services.AddAuthentication(options =>
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
-        // Ojo aquí: va a buscar una llave secreta en tu appsettings.json
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]!)),
         ValidateIssuer = false,
         ValidateAudience = false
@@ -67,11 +91,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 app.UseCors("PermitirWeb");
+
+// 👇 3. ACTIVAMOS EL ESCUDO ANTI-SPAM (Debe ir aquí, después de CORS) 👇
+app.UseRateLimiter();
+
 app.UseHttpsRedirection();
 
-// 👇 3. EL ORDEN SAGRADO (ESTO CURA EL ERROR QUE TENÍAS) 👇
-app.UseAuthentication(); // PRIMERO verifica la identidad (el Token)
-app.UseAuthorization();  // LUEGO verifica los permisos (Roles)
+// 👇 4. EL ORDEN SAGRADO (ESTO CURA LOS ERRORES DE AUTORIZACIÓN) 👇
+app.UseAuthentication(); // PRIMERO verifica la identidad
+app.UseAuthorization();  // LUEGO verifica los permisos
 
 app.MapControllers();
+
 app.Run();

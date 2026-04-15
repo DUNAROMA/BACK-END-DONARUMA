@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GoK74zt/hBA=",
+  "dgSpecHash": "09S89xST99c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\eclud\\OneDrive\\Documentos\\BACKENDDONARUMA90\\BACK-END-DONARUMA\\Backend-Donaruma\\Backend-Donaruma.csproj",
+  "projectFilePath": "C:\\Users\\eclud\\OneDrive\\Documentos\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Backend-Donaruma.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eclud\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\eclud\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
