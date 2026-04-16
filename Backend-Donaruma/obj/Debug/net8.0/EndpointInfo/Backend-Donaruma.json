@@ -41,25 +41,6 @@
         "tags": [
           "Auth"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefreshRequestDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefreshRequestDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefreshRequestDTO"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -976,6 +957,27 @@
         }
       }
     },
+    "/api/Usuarios/confirmar": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuarios/{id}": {
       "get": {
         "tags": [
@@ -1296,16 +1298,6 @@
               "type": "integer",
               "format": "int32"
             },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "RefreshRequestDTO": {
-        "type": "object",
-        "properties": {
-          "refreshToken": {
-            "type": "string",
             "nullable": true
           }
         },

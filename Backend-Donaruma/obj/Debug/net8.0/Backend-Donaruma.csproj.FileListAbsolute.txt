@@ -446,3 +446,8 @@ C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend
 C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend-Donaruma\obj\Debug\net8.0\Backend-Donaruma.pdb
 C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend-Donaruma\obj\Debug\net8.0\Backend-Donaruma.genruntimeconfig.cache
 C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend-Donaruma\obj\Debug\net8.0\ref\Backend-Donaruma.dll
+C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend-Donaruma\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend-Donaruma\bin\Debug\net8.0\MailKit.dll
+C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend-Donaruma\bin\Debug\net8.0\MimeKit.dll
+C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend-Donaruma\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\eclud\OneDrive\Documentos\backenddunaroma1232\BACK-END-DONARUMA\Backend-Donaruma\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

@@ -1,4 +1,5 @@
 ﻿using DonarumaAPI_Data.Interfaces;
+using DonarumaAPI_Data.Services;
 using DonarumaAPI_DTOs.UsuarioDTo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
@@ -11,15 +12,17 @@ namespace Backend_Donaruma.Controllers
     public class UsuariosController : Controller
     {
         private readonly IUsuarioService _usuarioService;
+        private readonly IEmailService _emailService;
 
-        // 👇 Definimos las Regex de forma estática y compilada (Universal para todo .NET)
+        // 👇 Definimos las Regex de forma estática y compilada
         private static readonly Regex EmailRegex = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", RegexOptions.Compiled);
         private static readonly Regex PasswordRegex = new Regex(@"^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$", RegexOptions.Compiled);
         private static readonly Regex NameRegex = new Regex(@"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$", RegexOptions.Compiled);
 
-        public UsuariosController(IUsuarioService usuarioService)
+        public UsuariosController(IUsuarioService usuarioService, IEmailService emailService)
         {
             _usuarioService = usuarioService;
+            _emailService = emailService;
         }
 
         [HttpPost("crear")]
@@ -42,14 +45,34 @@ namespace Backend_Donaruma.Controllers
             // Encriptamos la contraseña con BCrypt
             usuario.Contrasena = BCrypt.Net.BCrypt.HashPassword(usuario.Contrasena);
 
-            // Guardamos en la base de datos
-            var id = await _usuarioService.CrearUsuario(usuario);
+            // 1. 🎟️ GENERAMOS EL TOKEN ÚNICO DE SEGURIDAD PRIMERO
+            string tokenConfirmacion = Guid.NewGuid().ToString();
 
+            // 2. Guardamos en la base de datos INYECTANDO el token
+            var id = await _usuarioService.CrearUsuario(usuario, tokenConfirmacion);
+
+            // 3. 📧 ENVIAMOS EL CORREO REAL
+            await _emailService.EnviarCorreoConfirmacion(usuario.Correo, tokenConfirmacion);
+
+            // 4. Cambiamos el mensaje para que el Front-End sepa qué pasó
             return Ok(new
             {
-                mensaje = "Usuario creado con éxito",
+                mensaje = "Usuario creado con éxito. Por favor revisa tu correo para confirmar tu cuenta.",
                 idUsuario = id
             });
+        }
+
+        // 👇 AQUÍ ESTÁ EL NUEVO MÉTODO PARA VERIFICAR EL CORREO 👇
+        [HttpGet("confirmar")]
+        public async Task<IActionResult> ConfirmarCuenta([FromQuery] string token)
+        {
+            // Buscamos el token en la base de datos y activamos la cuenta
+            var resultado = await _usuarioService.ConfirmarCuenta(token);
+
+            if (!resultado)
+                return BadRequest(new { mensaje = "El enlace es inválido o ya fue utilizado." });
+
+            return Ok(new { mensaje = "Cuenta confirmada con éxito." });
         }
 
         [HttpGet("{id}")]

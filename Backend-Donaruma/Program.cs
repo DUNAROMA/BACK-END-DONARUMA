@@ -27,16 +27,16 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddHostedService<LogCleanupService>();
 builder.Services.AddScoped<IOfertasService, OfertasService>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
+builder.Services.AddScoped<IEmailService, GmailEmailService>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("PermitirWeb", policy =>
+    options.AddPolicy("PoliticaCors", app =>
     {
-        // ⚠️ Nota: Asegúrate de agregar aquí también tus dominios de Vercel y DunaromaStore
-        // como lo hicimos en el paso anterior.
-        policy.WithOrigins("http://localhost:4200")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        app.WithOrigins("http://localhost:4200") // 👈 1. Tienes que poner la URL exacta de tu Angular (sin diagonal al final)
+           .AllowAnyMethod()
+           .AllowAnyHeader()
+           .AllowCredentials(); // 👈 2. ¡ESTA ES LA LLAVE MÁGICA PARA LAS COOKIES!
     });
 });
 
@@ -89,15 +89,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseRouting();
-app.UseCors("PermitirWeb");
+app.UseHttpsRedirection(); // Es mejor poner esto arriba
 
-// 👇 3. ACTIVAMOS EL ESCUDO ANTI-SPAM (Debe ir aquí, después de CORS) 👇
+app.UseRouting(); // 1. Primero sabe a dónde va la petición
+
+// 👇 AQUÍ LLAMAMOS AL CADENERO CON EL NOMBRE CORRECTO ("PoliticaCors") 👇
+app.UseCors("PoliticaCors");
+
+// 👇 ACTIVAMOS EL ESCUDO ANTI-SPAM 👇
 app.UseRateLimiter();
 
-app.UseHttpsRedirection();
-
-// 👇 4. EL ORDEN SAGRADO (ESTO CURA LOS ERRORES DE AUTORIZACIÓN) 👇
+// 👇 EL ORDEN SAGRADO (ESTO CURA LOS ERRORES DE AUTORIZACIÓN) 👇
 app.UseAuthentication(); // PRIMERO verifica la identidad
 app.UseAuthorization();  // LUEGO verifica los permisos
 

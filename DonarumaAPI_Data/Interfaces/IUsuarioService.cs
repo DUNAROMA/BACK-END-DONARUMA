@@ -9,7 +9,9 @@ namespace DonarumaAPI_Data.Interfaces
 {
     public interface IUsuarioService
     {
-        Task<long> CrearUsuario(CrearUsuarioDTO usuario);
+        Task<long> CrearUsuario(CrearUsuarioDTO usuario, string tokenConfirmacion);
         Task<UsuarioDTO> ObtenerUsuarioPorId(long idUsuario);
+
+        Task<bool> ConfirmarCuenta(string token);
     }
 }

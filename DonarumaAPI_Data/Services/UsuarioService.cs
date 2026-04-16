@@ -15,19 +15,28 @@ namespace DonarumaAPI_Data.Services
             _connectionString = config.ConnectionString;
         }
         private IDbConnection Connection => new NpgsqlConnection(_connectionString);
-        public async Task<long> CrearUsuario(CrearUsuarioDTO usuario)
+        public async Task<long> CrearUsuario(CrearUsuarioDTO usuario, string tokenConfirmacion)
         {
             using var db = Connection;
 
+            // 1. Ejecutamos tu función original intacta
             var query = @"SELECT public.crear_usuario(
-                        @Nombre,
-                        @Apellidos,
-                        @Direccion,
-                        @Correo,
-                        @Contrasena,
-                        @Rol)";
+                @Nombre,
+                @Apellidos,
+                @Direccion,
+                @Correo,
+                @Contrasena,
+                @Rol)";
 
             var id = await db.ExecuteScalarAsync<long>(query, usuario);
+
+            // 2. 🔒 INYECTAMOS EL TOKEN: Buscamos al usuario recién creado y le guardamos su llave
+            var updateQuery = @"
+        UPDATE ""usuarios"" 
+        SET ""tokenconfirmacion"" = @Token 
+        WHERE ""idusuario"" = @Id;";
+
+            await db.ExecuteAsync(updateQuery, new { Token = tokenConfirmacion, Id = id });
 
             return id;
         }
@@ -46,5 +55,23 @@ namespace DonarumaAPI_Data.Services
             return usuario;
         }
 
+
+
+        public async Task<bool> ConfirmarCuenta(string token)
+        {
+            using var db = Connection;
+
+            // Todo en minúsculas para que coincida con tu pgAdmin
+            var sql = @"
+        UPDATE ""usuarios"" 
+        SET ""correoconfirmado"" = true, 
+            ""tokenconfirmacion"" = NULL 
+        WHERE ""tokenconfirmacion"" = @Token 
+        RETURNING ""idusuario"";";
+
+            var idUsuarioActualizado = await db.ExecuteScalarAsync<int?>(sql, new { Token = token });
+
+            return idUsuarioActualizado.HasValue;
+        }
     }
 }

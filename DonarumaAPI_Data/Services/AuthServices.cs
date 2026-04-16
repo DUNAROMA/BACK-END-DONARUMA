@@ -118,7 +118,9 @@ public sealed class AuthService : IAuthService
             Exito = true,
             Mensaje = "Autenticación exitosa",
             AccessToken = accessToken,
-            RefreshToken = refreshToken   // plano al cliente
+            RefreshToken = refreshToken,
+            Rol = usuario.Rol,           // 👈 Agregamos esto
+            IdUsuario = usuario.IdUsuario // 👈 Y esto
         };
     }
 

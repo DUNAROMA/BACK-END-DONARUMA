@@ -16,5 +16,7 @@ namespace DonarumaAPI_DTOs.LoginDTO
         public string Mensaje { get; init; } = string.Empty;
         public string? AccessToken { get; init; }
         public string? RefreshToken { get; init; }
+        public string Rol { get; set; }
+        public long IdUsuario { get; set; }
     }
 }
