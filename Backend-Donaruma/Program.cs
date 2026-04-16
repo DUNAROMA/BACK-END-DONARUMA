@@ -10,7 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
-using System; // Agregado para usar Uri()
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,32 +19,43 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // ========================================================================
-// 👇 1. EL TRADUCTOR DE RAILWAY A C# (Arregla el error de Base de Datos)
+// 👇 1. EL TRADUCTOR INDESTRUCTIBLE (Base de Datos)
 // ========================================================================
 var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 string connectionString;
 
-if (!string.IsNullOrEmpty(databaseUrl))
+if (!string.IsNullOrWhiteSpace(databaseUrl))
 {
-    // Convertimos el link raro de Railway al formato estricto que C# exige
-    var uri = new Uri(databaseUrl);
-    var userInfo = uri.UserInfo.Split(':');
-    connectionString = $"Host={uri.Host};Port={uri.Port};Database={uri.LocalPath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};Ssl Mode=Disable;";
+    // Si la variable empieza con postgres, es el link de Railway y lo traducimos
+    if (databaseUrl.StartsWith("postgres://", StringComparison.OrdinalIgnoreCase) ||
+        databaseUrl.StartsWith("postgresql://", StringComparison.OrdinalIgnoreCase))
+    {
+        var uri = new Uri(databaseUrl);
+        var userInfo = uri.UserInfo.Split(':');
+        connectionString = $"Host={uri.Host};Port={uri.Port};Database={uri.LocalPath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};Ssl Mode=Disable;";
+    }
+    else
+    {
+        // Si no es un link, asumimos que ya pegaste la cadena de conexión de C# directa
+        connectionString = databaseUrl;
+    }
 }
 else
 {
-    // Si estamos en tu compu local, usamos el appsettings
+    // Si estamos en tu compu local, usamos el appsettings.json
     connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
 }
 
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 
-// Inyección de dependencias
+// ========================================================================
+// 👇 INYECCIÓN DE DEPENDENCIAS
+// ========================================================================
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<INovedadService, NovedadService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-//builder.Services.AddHostedService<LogCleanupService>(); // 👈 Respetamos que lo tienes comentado
+//builder.Services.AddHostedService<LogCleanupService>(); // 👈 Mantenemos esto comentado como lo tenías
 builder.Services.AddScoped<IOfertasService, OfertasService>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
 builder.Services.AddScoped<IEmailService, GmailEmailService>();
@@ -67,7 +78,9 @@ builder.Services.AddCors(options =>
     });
 });
 
-// 👇 CONFIGURACIÓN DEL CADENERO ANTI-SPAM (RATE LIMITING) 👇
+// ========================================================================
+// 👇 CONFIGURACIÓN DEL CADENERO ANTI-SPAM (RATE LIMITING)
+// ========================================================================
 builder.Services.AddRateLimiter(options =>
 {
     options.AddPolicy("PoliticaRegistro", context =>
@@ -88,7 +101,9 @@ builder.Services.AddRateLimiter(options =>
     };
 });
 
-// 👇 CONFIGURACIÓN DE TOKENS JWT 👇
+// ========================================================================
+// 👇 CONFIGURACIÓN DE TOKENS JWT
+// ========================================================================
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
