@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
+using System; // Agregado para usar Uri()
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +18,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 👇 1. AJUSTE PARA RAILWAY: Busca primero en la nube, luego en local 👇
-var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL")
-                       ?? builder.Configuration.GetConnectionString("PostgreSQL");
+// ========================================================================
+// 👇 1. EL TRADUCTOR DE RAILWAY A C# (Arregla el error de Base de Datos)
+// ========================================================================
+var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+string connectionString;
+
+if (!string.IsNullOrEmpty(databaseUrl))
+{
+    // Convertimos el link raro de Railway al formato estricto que C# exige
+    var uri = new Uri(databaseUrl);
+    var userInfo = uri.UserInfo.Split(':');
+    connectionString = $"Host={uri.Host};Port={uri.Port};Database={uri.LocalPath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};Ssl Mode=Disable;";
+}
+else
+{
+    // Si estamos en tu compu local, usamos el appsettings
+    connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
+}
 
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 
@@ -28,12 +44,14 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<INovedadService, NovedadService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-//builder.Services.AddHostedService<LogCleanupService>();
+//builder.Services.AddHostedService<LogCleanupService>(); // 👈 Respetamos que lo tienes comentado
 builder.Services.AddScoped<IOfertasService, OfertasService>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
 builder.Services.AddScoped<IEmailService, GmailEmailService>();
 
-// 👇 2. AJUSTE DE CORS: Preparado para localhost y tu futuro Front-End en la nube 👇
+// ========================================================================
+// 👇 2. AJUSTE DE CORS: Preparado para localhost y donarumastore.com
+// ========================================================================
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PoliticaCors", app =>
@@ -45,7 +63,7 @@ builder.Services.AddCors(options =>
         )
         .AllowAnyMethod()
         .AllowAnyHeader()
-        .AllowCredentials();
+        .AllowCredentials(); // 👈 La llave mágica de las Cookies
     });
 });
 
