@@ -17,9 +17,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
+// 👇 1. AJUSTE PARA RAILWAY: Busca primero en la nube, luego en local 👇
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL")
+                       ?? builder.Configuration.GetConnectionString("PostgreSQL");
+
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 
+// Inyección de dependencias
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<INovedadService, NovedadService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
@@ -29,18 +33,19 @@ builder.Services.AddScoped<IOfertasService, OfertasService>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
 builder.Services.AddScoped<IEmailService, GmailEmailService>();
 
+// 👇 2. AJUSTE DE CORS: Preparado para localhost y tu futuro Front-End en la nube 👇
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PoliticaCors", app =>
     {
-        app.WithOrigins("http://localhost:4200") // 👈 1. Tienes que poner la URL exacta de tu Angular (sin diagonal al final)
+        app.WithOrigins("http://localhost:4200", "https://tu-futuro-frontend.com")
            .AllowAnyMethod()
            .AllowAnyHeader()
            .AllowCredentials(); // 👈 2. ¡ESTA ES LA LLAVE MÁGICA PARA LAS COOKIES!
     });
 });
 
-// 👇 1. CONFIGURACIÓN DEL CADENERO ANTI-SPAM (RATE LIMITING) 👇
+// 👇 CONFIGURACIÓN DEL CADENERO ANTI-SPAM (RATE LIMITING) 👇
 builder.Services.AddRateLimiter(options =>
 {
     options.AddPolicy("PoliticaRegistro", context =>
@@ -61,7 +66,7 @@ builder.Services.AddRateLimiter(options =>
     };
 });
 
-// 👇 2. CONFIGURACIÓN DE TOKENS JWT 👇
+// 👇 CONFIGURACIÓN DE TOKENS JWT 👇
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -90,7 +95,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection(); // Es mejor poner esto arriba
-
 app.UseRouting(); // 1. Primero sabe a dónde va la petición
 
 // 👇 AQUÍ LLAMAMOS AL CADENERO CON EL NOMBRE CORRECTO ("PoliticaCors") 👇

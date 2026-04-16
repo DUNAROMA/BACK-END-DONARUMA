@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "esVXIHVcueQ=",
+  "dgSpecHash": "QMXNgxm5L5Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\eclud\\OneDrive\\Documentos\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
+  "projectFilePath": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\DonarumaAPI_DTOs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eclud\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\eclud\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",

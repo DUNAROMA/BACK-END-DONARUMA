@@ -5588,11 +5588,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Backend-Donaruma.csproj",
+      "projectUniqueName": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Backend-Donaruma.csproj",
       "projectName": "Backend-Donaruma",
-      "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Backend-Donaruma.csproj",
+      "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Backend-Donaruma.csproj",
       "packagesPath": "C:\\Users\\eclud\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\obj\\",
+      "outputPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5614,8 +5614,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\eclud\\OneDrive\\Documentos\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {
-              "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj"
+            "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj": {
+              "projectPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj"
             }
           }
         }

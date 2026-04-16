@@ -575,6 +575,38 @@
   },
   {
     "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
+    "Method": "ActualizarPerfil",
+    "RelativePath": "api/Usuarios/actualizar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioDto",
+        "Type": "DonarumaAPI_DTOs.UsuarioDTo.ActualizarUsuarioDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
+    "Method": "CambiarPassword",
+    "RelativePath": "api/Usuarios/cambiar-password",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "datos",
+        "Type": "DonarumaAPI_DTOs.UsuarioDTo.CambiarPasswordDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
     "Method": "ConfirmarCuenta",
     "RelativePath": "api/Usuarios/confirmar",
     "HttpMethod": "GET",
