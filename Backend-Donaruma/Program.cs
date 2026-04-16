@@ -38,7 +38,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("PoliticaCors", app =>
     {
-        app.WithOrigins("http://localhost:4200", "https://tu-futuro-frontend.com")
+        app.WithOrigins("http://localhost:4200", "https://www.donarumastore.com", "https://donarumastore.com")
            .AllowAnyMethod()
            .AllowAnyHeader()
            .AllowCredentials(); // 👈 2. ¡ESTA ES LA LLAVE MÁGICA PARA LAS COOKIES!
