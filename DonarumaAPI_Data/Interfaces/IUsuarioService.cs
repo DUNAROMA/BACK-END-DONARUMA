@@ -11,5 +11,7 @@ namespace DonarumaAPI_Data.Interfaces
     {
         Task<long> CrearUsuario(CrearUsuarioDTO usuario);
         Task<UsuarioDTO> ObtenerUsuarioPorId(long idUsuario);
+        Task<bool> ActualizarUsuario(ActualizarUsuarioDTO usuario);
+        Task<(bool Exito, string Mensaje)> CambiarPassword(CambiarPasswordDTO datos);
     }
 }

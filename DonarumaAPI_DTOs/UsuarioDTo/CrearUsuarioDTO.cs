@@ -15,4 +15,5 @@ namespace DonarumaAPI_DTOs.UsuarioDTo
         public string? Contrasena { get; set; }
         public string? Rol { get; set; }
     }
+
 }
