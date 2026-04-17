@@ -1,8 +1,10 @@
 ﻿using DonarumaAPI_Data.Interfaces;
 using DonarumaAPI_Data.Services;
 using DonarumaAPI_DTOs.UsuarioDTo;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
+using System.Security.Claims;
 using System.Text.RegularExpressions;
 
 namespace Backend_Donaruma.Controllers
@@ -90,29 +92,47 @@ namespace Backend_Donaruma.Controllers
             return Ok(usuario);
         }
 
-        // ====================================================================
-        // 👇 MÉTODOS DE ALAN INTEGRADOS CORRECTAMENTE DENTRO DE LA CLASE 👇
-        // ====================================================================
-
+        
+        
+        
+        [Authorize]
         [HttpPut("actualizar")]
         public async Task<IActionResult> ActualizarPerfil([FromBody] ActualizarUsuarioDTO usuarioDto)
         {
+            // 🛡️ Candado 2: Extraemos la identidad REAL del usuario desde su Token insobornable
+            // Nota: Revisa cómo llamaste a tu Claim cuando creaste el Token. 
+            // Usualmente es NameIdentifier o "id".
+            var idUsuarioTokenString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                                    ?? User.FindFirst("id")?.Value;
+
+            if (string.IsNullOrEmpty(idUsuarioTokenString))
+            {
+                return Unauthorized(new { exito = false, mensaje = "Sesión inválida o expirada." });
+            }
+
+            int idUsuarioReal = int.Parse(idUsuarioTokenString);
+
+            // 🛡️ Candado 3: Prevención de "Cambio de Identidad" (IDOR)
+            // Comparamos el ID que el hacker intentó modificar con el ID de su propio Token
+            if (usuarioDto.IdUsuario != idUsuarioReal)
+            {
+                // ¡Alerta de Hacker! Intentó modificar a otra persona.
+                return StatusCode(403, new
+                {
+                    exito = false,
+                    mensaje = "Acceso denegado. No tienes permiso para modificar este perfil."
+                });
+            }
+
+            // Si pasó todos los escudos, ahora sí, actualizamos.
             var exito = await _usuarioService.ActualizarUsuario(usuarioDto);
 
             if (exito)
             {
-                return Ok(new
-                {
-                    exito = true,
-                    mensaje = "Perfil y dirección actualizados correctamente."
-                });
+                return Ok(new { exito = true, mensaje = "Perfil y dirección actualizados correctamente." });
             }
 
-            return BadRequest(new
-            {
-                exito = false,
-                mensaje = "No se pudo actualizar el perfil. Verifica la información."
-            });
+            return BadRequest(new { exito = false, mensaje = "No se pudo actualizar el perfil." });
         }
 
         [HttpPut("cambiar-password")]
