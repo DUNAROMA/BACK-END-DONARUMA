@@ -609,14 +609,14 @@
     "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
     "Method": "ConfirmarCuenta",
     "RelativePath": "api/Usuarios/confirmar",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "token",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "ConfirmarCuentaRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

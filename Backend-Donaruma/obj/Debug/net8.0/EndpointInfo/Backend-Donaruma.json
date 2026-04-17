@@ -958,19 +958,29 @@
       }
     },
     "/api/Usuarios/confirmar": {
-      "get": {
+      "post": {
         "tags": [
           "Usuarios"
         ],
-        "parameters": [
-          {
-            "name": "token",
-            "in": "query",
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmarCuentaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmarCuentaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmarCuentaRequest"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1212,6 +1222,16 @@
             "items": {
               "$ref": "#/components/schemas/ItemCarrito"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConfirmarCuentaRequest": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
             "nullable": true
           }
         },

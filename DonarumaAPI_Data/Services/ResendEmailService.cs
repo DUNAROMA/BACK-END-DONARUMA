@@ -36,7 +36,7 @@ namespace DonarumaAPI_Data.Services
                     <p>Tu código de seguridad es: <strong>{token}</strong></p>
                     <br>
                     <p>Para activar tu cuenta al instante, simplemente haz clic en el botón de abajo:</p>
-                    <a href='https://donarumastore.com/verificar-codigo?token={token}' 
+                    <a href='https://donarumastore.com/#/verificar-codigo?token={token}' 
                        style='display: inline-block; padding: 12px 24px; background-color: #facc15; color: #111827; text-decoration: none; font-weight: bold; border-radius: 6px;'>
                        Verificar mi cuenta
                     </a>
