@@ -27,7 +27,9 @@ namespace Backend_Donaruma.Controllers
         [HttpPost("crear-sesion")]
         public IActionResult CrearSesion([FromBody] CheckoutRequest request)
         {
-            var domain = "http://localhost:4200";
+            // 🔥 CAMBIO: Apuntamos al dominio real en internet
+            var domain = "https://www.donarumastore.com";
+
             var lineItems = new List<SessionLineItemOptions>();
 
             foreach (var item in request.items)
@@ -36,7 +38,6 @@ namespace Backend_Donaruma.Controllers
                 {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
-                        // 🔥 CAMBIO 2: Convertimos los decimales a los centavos enteros que exige Stripe
                         UnitAmount = (long)(item.precio * 100),
                         Currency = "mxn",
                         ProductData = new SessionLineItemPriceDataProductDataOptions

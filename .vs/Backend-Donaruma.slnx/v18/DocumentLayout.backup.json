@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\backend-donaruma\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\backend-donaruma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\services\\resendemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\resendemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\backend-donaruma\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\backend-donaruma\\backgroundservices\\logcleanupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\backend-donaruma\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\backend-donaruma\\controllers\\usuariosinfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -190,11 +194,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\UsuariosController.cs",
@@ -208,44 +212,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IEmailService.cs",
+              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\IEmailService.cs",
+              "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IEmailService.cs",
+              "RelativeToolTip": "DonarumaAPI_Data\\Interfaces\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T07:40:10.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ResendEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\ResendEmailService.cs",
+              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\ResendEmailService.cs",
+              "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\ResendEmailService.cs",
+              "RelativeToolTip": "DonarumaAPI_Data\\Services\\ResendEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T07:29:42.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Program.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Program.cs",
               "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Program.cs",
               "RelativeToolTip": "Backend-Donaruma\\Program.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAUwJQAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAqwDwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T04:01:01.019Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.json",
               "RelativeDocumentMoniker": "Backend-Donaruma\\appsettings.json",
               "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.json",
               "RelativeToolTip": "Backend-Donaruma\\appsettings.json",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-03-05T03:58:32.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Backend-Donaruma\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.Development.json",
-              "RelativeToolTip": "Backend-Donaruma\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-08T04:24:32.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "LogCleanupService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\BackgroundServices\\LogCleanupService.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\BackgroundServices\\LogCleanupService.cs",
@@ -257,7 +275,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Backend-Donaruma\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\appsettings.Development.json",
+              "RelativeToolTip": "Backend-Donaruma\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-08T04:24:32.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "IUsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IUsuarioService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\IUsuarioService.cs",
@@ -269,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "LoginResponse.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\LoginDTO\\LoginResponse.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\LoginDTO\\LoginResponse.cs",
@@ -281,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\LoginDTO\\LoginDTO.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\LoginDTO\\LoginDTO.cs",
@@ -293,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "AuthServices.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\AuthServices.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\AuthServices.cs",
@@ -305,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\UsuarioService.cs",
@@ -317,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "usuariosdatos.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\UsuarioDTo\\usuariosdatos.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\UsuarioDTo\\usuariosdatos.cs",
@@ -329,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CrearUsuarioDTO.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\UsuarioDTo\\CrearUsuarioDTO.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\UsuarioDTo\\CrearUsuarioDTO.cs",
@@ -341,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\AuthController.cs",
@@ -353,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "UsuarioDTO.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\UsuarioDTo\\UsuarioDTO.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\UsuarioDTo\\UsuarioDTO.cs",
@@ -365,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CarritoService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\CarritoService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\CarritoService.cs",
@@ -377,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "CarritoController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\CarritoController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\CarritoController.cs",
@@ -389,19 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\EmailService.cs",
-              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\EmailService.cs",
-              "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\EmailService.cs",
-              "RelativeToolTip": "DonarumaAPI_Data\\Services\\EmailService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwCwAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T01:41:17.373Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "UsuariosInfController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\UsuariosInfController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\UsuariosInfController.cs",
@@ -413,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "AgregarAlCarritoDTO.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\CarritoDTOs\\AgregarAlCarritoDTO.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\CarritoDTOs\\AgregarAlCarritoDTO.cs",
@@ -425,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "NovedadService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\NovedadService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\NovedadService.cs",
@@ -437,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ProcesarCompraDto.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\Compras\\ProcesarCompraDto.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\Compras\\ProcesarCompraDto.cs",
@@ -449,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "MetodoPagoDto.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\Compras\\MetodoPagoDto.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\Compras\\MetodoPagoDto.cs",
@@ -461,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "CarritoItem.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\CarritoModel\\CarritoItem.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\CarritoModel\\CarritoItem.cs",
@@ -473,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "INovedadService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\INovedadService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\INovedadService.cs",
@@ -485,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "ICarritoService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\ICarritoService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\ICarritoService.cs",
@@ -497,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ComprasController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\ComprasController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\ComprasController.cs",
@@ -509,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "PagosController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\PagosController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\PagosController.cs",
@@ -521,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\UsuariosModel\\Usuario.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\UsuariosModel\\Usuario.cs",
@@ -533,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "usuariosdatos.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\Compras\\usuariosdatos.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\Compras\\usuariosdatos.cs",
@@ -545,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Perfume.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\PerfumesModel\\Perfume.cs",
@@ -557,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "OfertasController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\OfertasController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\OfertasController.cs",
@@ -569,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "OfertasService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\OfertasService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\OfertasService.cs",
@@ -581,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "IOfertasService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IOfertasService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\IOfertasService.cs",
@@ -593,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "ConfiguracionReloj.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\OfertasModel\\ConfiguracionReloj.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\OfertasModel\\ConfiguracionReloj.cs",
@@ -605,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "DonarumaAPI_Model.csproj",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\DonarumaAPI_Model.csproj",
@@ -617,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "VistaGestionOferta.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\OfertasDTOs\\VistaGestionOferta.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\OfertasDTOs\\VistaGestionOferta.cs",
@@ -629,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "OfertasDTOs.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_DTOs\\OfertasDTOs\\OfertasDTOs.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_DTOs\\OfertasDTOs\\OfertasDTOs.cs",
@@ -641,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "Novedades.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\NovedadesModel\\Novedades.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\NovedadesModel\\Novedades.cs",
@@ -653,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "NovedadesController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\NovedadesController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\NovedadesController.cs",
@@ -665,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Interfaces\\IAuthService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Interfaces\\IAuthService.cs",
@@ -677,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "SecurityLog.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\SecurityLog.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\SecurityLog.cs",
@@ -689,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\WeatherForecastController.cs",
@@ -701,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "PostgreSQLConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\PostgreSQLConfiguration.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\PostgreSQLConfiguration.cs",
@@ -713,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "DonarumaAPI_Data.csproj",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\DonarumaAPI_Data.csproj",
@@ -725,7 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "Backend-Donaruma.csproj",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Backend-Donaruma.csproj",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Backend-Donaruma.csproj",
