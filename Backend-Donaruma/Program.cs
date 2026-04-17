@@ -58,7 +58,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 //builder.Services.AddHostedService<LogCleanupService>(); // 👈 Mantenemos esto comentado como lo tenías
 builder.Services.AddScoped<IOfertasService, OfertasService>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
-builder.Services.AddScoped<IEmailService, GmailEmailService>();
+builder.Services.AddScoped<IEmailService, ResendEmailService>();
 
 // ========================================================================
 // 👇 2. AJUSTE DE CORS: Preparado para localhost y donarumastore.com
