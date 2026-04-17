@@ -27,7 +27,7 @@ namespace DonarumaAPI_Data.Services
             // Armamos el correo
             var body = new
             {
-                from = "Dunaroma <onboarding@resend.dev>", // 👈 Obligatorio usar este mientras probamos
+                from =  "Dunaroma <soporte@donarumastore.com>", // 👈 Obligatorio usar este mientras probamos
                 to = new[] { correoDestino },
                 subject = "¡Bienvenido a Dunaroma! Confirma tu cuenta",
                 html = $"<h2>¡Hola! Gracias por unirte a Dunaroma.</h2><p>Por favor confirma tu cuenta. Tu código de seguridad es: <strong>{token}</strong></p>"

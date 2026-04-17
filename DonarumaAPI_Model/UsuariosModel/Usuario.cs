@@ -15,6 +15,8 @@ namespace DonarumaAPI_Model.UsuariosModel
         public string Correo { get; set; } = string.Empty;
         public string Contrasena { get; set; } = string.Empty;
         public string Rol { get; set; } = string.Empty;
+
+        public bool CorreoVerificado { get; set; } 
         public DateTime? RefreshTokenExpiry { get; init; }
 
     }

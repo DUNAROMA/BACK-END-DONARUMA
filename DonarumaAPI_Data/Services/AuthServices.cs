@@ -38,17 +38,27 @@ public sealed class AuthService : IAuthService
             )
         );
 
-        // Mismo mensaje para correo y contraseña incorrectos (no revelar cuál falló)
+        // 1. Verificamos que el usuario exista y la contraseña sea correcta
         if (usuario is null || !BCrypt.Net.BCrypt.Verify(login.Contrasena, usuario.Contrasena))
         {
-            // --- REGISTRO DE SEGURIDAD: INTENTO FALLIDO ---
             await GuardarLog(db, login.Correo, "Login Fallido", "IP Desconocida", ct);
             return Fallo("Correo o contraseña incorrectos");
         }
 
-        // --- REGISTRO DE SEGURIDAD: ACCESO EXITOSO ---
-        await GuardarLog(db, login.Correo, "Login Exitoso", "IP Aprobada", ct);
+        // 👇 AQUÍ ENTRA LA NUEVA REGLA (El Cadenero) 👇
+        // 2. Verificamos si el correo está confirmado
+        if (!usuario.CorreoVerificado)
+        {
+            // Registramos en tu log de seguridad que alguien intentó entrar sin verificar
+            await GuardarLog(db, login.Correo, "Login Fallido - Correo No Verificado", "IP Aprobada", ct);
 
+            // Retornamos un mensaje de fallo específico
+            return Fallo("Por favor, verifica tu correo antes de iniciar sesión. Te hemos enviado un código a tu bandeja.");
+        }
+        // 👆 FIN DE LA NUEVA REGLA 👆
+
+        // 3. Si pasa todo, le damos acceso
+        await GuardarLog(db, login.Correo, "Login Exitoso", "IP Aprobada", ct);
         return await GenerarRespuestaCompletaAsync(db, usuario, ct);
     }
 
