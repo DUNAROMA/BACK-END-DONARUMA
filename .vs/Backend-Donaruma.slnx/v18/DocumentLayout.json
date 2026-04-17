@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5B7B619-272B-4C15-94D9-A727579EFB7C}|DonarumaAPI_Model\\DonarumaAPI_Model.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_model\\usuariosmodel\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5B7B619-272B-4C15-94D9-A727579EFB7C}|DonarumaAPI_Model\\DonarumaAPI_Model.csproj|solutionrelative:donarumaapi_model\\usuariosmodel\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\backend-donaruma\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\services\\resendemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\resendemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,24 +27,12 @@
       "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5B7B619-272B-4C15-94D9-A727579EFB7C}|DonarumaAPI_Model\\DonarumaAPI_Model.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_model\\usuariosmodel\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5B7B619-272B-4C15-94D9-A727579EFB7C}|DonarumaAPI_Model\\DonarumaAPI_Model.csproj|solutionrelative:donarumaapi_model\\usuariosmodel\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\services\\perfumeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\perfumeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|solutionrelative:donarumaapi_data\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\backend-donaruma\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A560E47C-4161-6DFA-34E4-B5934EF90187}|Backend-Donaruma\\Backend-Donaruma.csproj|solutionrelative:backend-donaruma\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15BEE659-087F-46BB-954F-64A34523D5F8}|DonarumaAPI_Data\\DonarumaAPI_Data.csproj|c:\\users\\eclud\\onedrive\\documentos\\proyectodunaroma1.1\\backenddunaroma1232\\back-end-donaruma\\donarumaapi_data\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -202,11 +202,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\UsuariosController.cs",
@@ -220,20 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PerfumeService.cs",
-              "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\PerfumeService.cs",
-              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\PerfumeService.cs",
-              "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\PerfumeService.cs",
-              "RelativeToolTip": "DonarumaAPI_Data\\Services\\PerfumeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:00:58.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Program.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Program.cs",
@@ -246,20 +233,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "AuthServices.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\AuthServices.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\AuthServices.cs",
               "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\AuthServices.cs",
               "RelativeToolTip": "DonarumaAPI_Data\\Services\\AuthServices.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAcwC8AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAQwEsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T03:39:50.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ResendEmailService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\ResendEmailService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\ResendEmailService.cs",
@@ -272,20 +259,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\UsuariosModel\\Usuario.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Model\\UsuariosModel\\Usuario.cs",
               "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Model\\UsuariosModel\\Usuario.cs",
               "RelativeToolTip": "DonarumaAPI_Model\\UsuariosModel\\Usuario.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T04:04:05.566Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\Backend-Donaruma\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Backend-Donaruma\\Controllers\\AuthController.cs",
@@ -299,6 +286,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "PerfumeService.cs",
+              "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\PerfumeService.cs",
+              "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\PerfumeService.cs",
+              "ToolTip": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\PerfumeService.cs",
+              "RelativeToolTip": "DonarumaAPI_Data\\Services\\PerfumeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:00:58.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\eclud\\OneDrive\\Documentos\\PROYECTODUNAROMA1.1\\backenddunaroma1232\\BACK-END-DONARUMA\\DonarumaAPI_Data\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "DonarumaAPI_Data\\Services\\UsuarioService.cs",

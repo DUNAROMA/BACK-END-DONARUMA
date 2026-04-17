@@ -47,7 +47,7 @@ public sealed class AuthService : IAuthService
 
         // 👇 AQUÍ ENTRA LA NUEVA REGLA (El Cadenero) 👇
         // 2. Verificamos si el correo está confirmado
-        if (!usuario.CorreoVerificado)
+        if (!usuario.CorreoConfirmado)
         {
             // Registramos en tu log de seguridad que alguien intentó entrar sin verificar
             await GuardarLog(db, login.Correo, "Login Fallido - Correo No Verificado", "IP Aprobada", ct);
