@@ -27,10 +27,20 @@ namespace DonarumaAPI_Data.Services
             // Armamos el correo
             var body = new
             {
-                from =  "Dunaroma <soporte@donarumastore.com>", // 👈 Obligatorio usar este mientras probamos
+                from = "Dunaroma <soporte@donarumastore.com>",
                 to = new[] { correoDestino },
                 subject = "¡Bienvenido a Dunaroma! Confirma tu cuenta",
-                html = $"<h2>¡Hola! Gracias por unirte a Dunaroma.</h2><p>Por favor confirma tu cuenta. Tu código de seguridad es: <strong>{token}</strong></p>"
+                // 👇 AQUÍ ESTÁ EL NUEVO CORREO CON EL BOTÓN MÁGICO 👇
+                html = $@"
+                    <h2>¡Hola! Gracias por unirte a Dunaroma.</h2>
+                    <p>Tu código de seguridad es: <strong>{token}</strong></p>
+                    <br>
+                    <p>Para activar tu cuenta al instante, simplemente haz clic en el botón de abajo:</p>
+                    <a href='https://donarumastore.com/verificar-codigo?token={token}' 
+                       style='display: inline-block; padding: 12px 24px; background-color: #facc15; color: #111827; text-decoration: none; font-weight: bold; border-radius: 6px;'>
+                       Verificar mi cuenta
+                    </a>
+                "
             };
 
             var json = JsonSerializer.Serialize(body);
