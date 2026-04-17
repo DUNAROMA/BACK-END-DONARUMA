@@ -63,17 +63,21 @@ namespace Backend_Donaruma.Controllers
         }
 
         // 👇 AQUÍ ESTÁ EL NUEVO MÉTODO PARA VERIFICAR EL CORREO 👇
-        [HttpGet("confirmar")]
-        public async Task<IActionResult> ConfirmarCuenta([FromQuery] string token)
+
+
+        // 👇 NUEVA CERRADURA POR POST 👇
+        [HttpPost("confirmar")]
+        public async Task<IActionResult> ConfirmarCuenta([FromBody] ConfirmarCuentaRequest request)
         {
             // Buscamos el token en la base de datos y activamos la cuenta
-            var resultado = await _usuarioService.ConfirmarCuenta(token);
+            var resultado = await _usuarioService.ConfirmarCuenta(request.Token);
 
             if (!resultado)
-                return BadRequest(new { mensaje = "El enlace es inválido o ya fue utilizado." });
+                return BadRequest(new { mensaje = "El código es inválido o ya fue utilizado." });
 
-            return Ok(new { mensaje = "Cuenta confirmada con éxito." });
+            return Ok(new { mensaje = "¡Cuenta confirmada con éxito! Ya puedes iniciar sesión." });
         }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> ObtenerUsuario(long id)
@@ -133,4 +137,9 @@ namespace Backend_Donaruma.Controllers
             });
         }
     }
+}
+
+public class ConfirmarCuentaRequest
+{
+    public string Token { get; set; } = string.Empty;
 }
