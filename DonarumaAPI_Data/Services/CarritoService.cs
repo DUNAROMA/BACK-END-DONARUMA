@@ -30,11 +30,10 @@ namespace DonarumaAPI_Data.Services
         {
             var db = dbConnection();
 
-            
-            
             var sql = @"
         SELECT 
             c.""IdCarritoItem"", 
+            c.""IdPerfume"", 
             c.""Cantidad"", 
             p.nombreperfume as nombre, 
             p.precio as precio, 
