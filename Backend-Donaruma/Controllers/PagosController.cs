@@ -10,7 +10,7 @@ namespace Backend_Donaruma.Controllers
     public class ItemCarrito
     {
         public string nombre { get; set; }
-        // 🔥 CAMBIO 1: Ahora aceptamos decimales (ej. 732.89)
+        
         public decimal precio { get; set; }
         public int cantidad { get; set; }
     }
@@ -27,7 +27,7 @@ namespace Backend_Donaruma.Controllers
         [HttpPost("crear-sesion")]
         public IActionResult CrearSesion([FromBody] CheckoutRequest request)
         {
-            // 🔥 CAMBIO: Apuntamos al dominio real en internet
+            
             var domain = "https://www.donarumastore.com";
 
             var lineItems = new List<SessionLineItemOptions>();

@@ -25,7 +25,7 @@ public sealed class AuthService : IAuthService
         _config = configuration;
     }
 
-    // ─── LOGIN ────────────────────────────────────────────────────────────────
+    //LOGIN 
     public async Task<LoginResponse> Login(LoginDTO login, CancellationToken ct = default)
     {
         using var db = Connection;
@@ -45,24 +45,24 @@ public sealed class AuthService : IAuthService
             return Fallo("Correo o contraseña incorrectos");
         }
 
-        // 👇 AQUÍ ENTRA LA NUEVA REGLA (El Cadenero) 👇
+        
         // 2. Verificamos si el correo está confirmado
         if (!usuario.CorreoConfirmado)
         {
-            // Registramos en tu log de seguridad que alguien intentó entrar sin verificar
+            
             await GuardarLog(db, login.Correo, "Login Fallido - Correo No Verificado", "IP Aprobada", ct);
 
-            // Retornamos un mensaje de fallo específico
+            
             return Fallo("Por favor, verifica tu correo antes de iniciar sesión. Te hemos enviado un código a tu bandeja.");
         }
-        // 👆 FIN DE LA NUEVA REGLA 👆
+        
 
         // 3. Si pasa todo, le damos acceso
         await GuardarLog(db, login.Correo, "Login Exitoso", "IP Aprobada", ct);
         return await GenerarRespuestaCompletaAsync(db, usuario, ct);
     }
 
-    // ─── REFRESH ──────────────────────────────────────────────────────────────
+    // REFRESH 
     public async Task<LoginResponse> Refresh(string refreshToken, CancellationToken ct = default)
     {
         // El token viaja hasheado en BD — lo hasheamos para comparar
@@ -88,7 +88,7 @@ public sealed class AuthService : IAuthService
         return await GenerarRespuestaCompletaAsync(db, usuario, ct);
     }
 
-    // ─── LOGOUT ───────────────────────────────────────────────────────────────
+    // ─── LOGOUT 
     public async Task Logout(int idUsuario, CancellationToken ct = default)
     {
         using var db = Connection;
@@ -102,14 +102,14 @@ public sealed class AuthService : IAuthService
         );
     }
 
-    // ─── PRIVADOS ─────────────────────────────────────────────────────────────
+    // ─── PRIVADOS
     private async Task<LoginResponse> GenerarRespuestaCompletaAsync(
         IDbConnection db, Usuarios usuario, CancellationToken ct)
     {
 
         var accessToken = GenerarAccessToken(usuario);
-        var refreshToken = GenerarRefreshToken();           // valor plano → va al cliente
-        var hashGuardar = HashToken(refreshToken);        // hash      → va a la BD
+        var refreshToken = GenerarRefreshToken();           
+        var hashGuardar = HashToken(refreshToken);        
 
         var expiry = DateTime.UtcNow.AddDays(
             Convert.ToInt32(_config["JwtSettings:RefreshTokenDays"] ?? "7"));
@@ -129,8 +129,8 @@ public sealed class AuthService : IAuthService
             Mensaje = "Autenticación exitosa",
             AccessToken = accessToken,
             RefreshToken = refreshToken,
-            Rol = usuario.Rol,           // 👈 Agregamos esto
-            IdUsuario = usuario.IdUsuario // 👈 Y esto
+            Rol = usuario.Rol,           
+            IdUsuario = usuario.IdUsuario 
         };
     }
 
@@ -151,7 +151,7 @@ public sealed class AuthService : IAuthService
             issuer: _config["JwtSettings:Issuer"],
             audience: _config["JwtSettings:Audience"],
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(               // ✅ UtcNow
+            expires: DateTime.UtcNow.AddMinutes(               
                 Convert.ToDouble(_config["JwtSettings:DurationInMinutes"])),
             signingCredentials: creds
         );
@@ -159,7 +159,7 @@ public sealed class AuthService : IAuthService
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    // Refresh token: valor aleatorio criptográficamente seguro
+    
     private static string GenerarRefreshToken()
     {
         var bytes = new byte[64];
@@ -168,7 +168,7 @@ public sealed class AuthService : IAuthService
         return Convert.ToBase64String(bytes);
     }
 
-    // Hash SHA-256 del refresh token antes de guardarlo en BD
+    
     private static string HashToken(string token)
     {
         var hash = System.Security.Cryptography.SHA256.HashData(
@@ -179,7 +179,7 @@ public sealed class AuthService : IAuthService
     private static LoginResponse Fallo(string mensaje) =>
         new() { Exito = false, Mensaje = mensaje };
 
-    // ─── REGISTRO DE AUDITORÍA (OWASP A09) ────────────────────────────────────
+    
     private async Task GuardarLog(IDbConnection db, string email, string tipo, string ip, CancellationToken ct)
     {
         var sql = @"

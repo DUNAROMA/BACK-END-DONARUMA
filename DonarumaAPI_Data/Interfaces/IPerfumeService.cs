@@ -12,7 +12,7 @@ namespace DonarumaAPI_Data.Interfaces
     {
         Task<List<PerfumeDTO>> ObtenerTodos();
         Task<List<PerfumeDTO>> ObtenerDeNoche();
-        Task<List<PerfumeDTO>> ObtenerPorOcasion(string ocasion); // Puedes usar parámetros para no hacer 20 funciones
+        Task<List<PerfumeDTO>> ObtenerPorOcasion(string ocasion); 
         Task<List<PerfumeDTO>> ObtenerPorGenero(string genero);
         Task<int> CrearPerfume(PerfumeDTO perfume);
 

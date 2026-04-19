@@ -35,7 +35,7 @@ namespace Backend_Donaruma.Controllers
                 var idUsuario = token.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Sub)?.Value;
                 var rol = token.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value ?? "cliente";
 
-                // 👇 AHORA SÍ, LE MANDAMOS EL PAQUETE COMPLETO A ANGULAR 👇
+                
                 return Ok(new
                 {
                     exito = true,
@@ -51,7 +51,7 @@ namespace Backend_Donaruma.Controllers
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh(CancellationToken ct)
         {
-            // 🔒 Ahora el RefreshToken se lee directamente de la Cookie, no del body
+            
             var refreshToken = Request.Cookies["refreshToken"];
 
             if (string.IsNullOrWhiteSpace(refreshToken))
@@ -86,15 +86,15 @@ namespace Backend_Donaruma.Controllers
             return NoContent();
         }
 
-        // ─── MÉTODOS PRIVADOS DE SEGURIDAD ─────────────────────────────────────
+        
 
         private void SetCookiesSecretas(string accessToken, string refreshToken)
         {
             var accessOptions = GetCookieOptionsBase();
-            accessOptions.Expires = DateTime.UtcNow.AddMinutes(15); // Debe coincidir con la duración de tu JWT
+            accessOptions.Expires = DateTime.UtcNow.AddMinutes(15); 
 
             var refreshOptions = GetCookieOptionsBase();
-            refreshOptions.Expires = DateTime.UtcNow.AddDays(7); // Debe coincidir con la duración de tu Refresh
+            refreshOptions.Expires = DateTime.UtcNow.AddDays(7); 
 
             Response.Cookies.Append("accessToken", accessToken, accessOptions);
             Response.Cookies.Append("refreshToken", refreshToken, refreshOptions);
@@ -104,9 +104,9 @@ namespace Backend_Donaruma.Controllers
         {
             return new CookieOptions
             {
-                HttpOnly = true, // 🛡️ JavaScript (y los hackers) NO pueden leer esto
-                Secure = true,   // 🛡️ Solo viaja por HTTPS (Obligatorio en producción)
-                SameSite = SameSiteMode.None // 🛡️ Permite que Vercel se comunique con Railway
+                HttpOnly = true, 
+                Secure = true,   
+                SameSite = SameSiteMode.None 
             };
         }
     }

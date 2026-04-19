@@ -36,8 +36,7 @@ namespace PerfumeApi.Controllers
                     NumeroTarjeta = reader["numero_tarjeta"].ToString(),
                     NombreTitular = reader["nombre_titular"].ToString()
 
-                    // OJO: Si tu MetodoPagoDto tiene el ID, descomenta esta línea:
-                    // IdTarjeta = Convert.ToInt64(reader["id_tarjeta"])
+                    
                 });
             }
 

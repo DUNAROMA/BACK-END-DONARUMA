@@ -48,21 +48,21 @@ else
 
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 
-// ========================================================================
-// 👇 INYECCIÓN DE DEPENDENCIAS
-// ========================================================================
+
+ 
+
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<INovedadService, NovedadService>();
 builder.Services.AddScoped<IPerfumeService, PerfumeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-//builder.Services.AddHostedService<LogCleanupService>(); // 👈 Mantenemos esto comentado como lo tenías
+//builder.Services.AddHostedService<LogCleanupService>(); 
 builder.Services.AddScoped<IOfertasService, OfertasService>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
 builder.Services.AddScoped<IEmailService, ResendEmailService>();
 
-// ========================================================================
-// 👇 2. AJUSTE DE CORS: Preparado para localhost y donarumastore.com
-// ========================================================================
+
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PoliticaCors", app =>
@@ -74,13 +74,13 @@ builder.Services.AddCors(options =>
         )
         .AllowAnyMethod()
         .AllowAnyHeader()
-        .AllowCredentials(); // 👈 La llave mágica de las Cookies
+        .AllowCredentials(); 
     });
 });
 
-// ========================================================================
-// 👇 CONFIGURACIÓN DEL CADENERO ANTI-SPAM (RATE LIMITING)
-// ========================================================================
+
+
+
 builder.Services.AddRateLimiter(options =>
 {
     options.AddPolicy("PoliticaRegistro", context =>
@@ -88,8 +88,8 @@ builder.Services.AddRateLimiter(options =>
             partitionKey: context.Connection.RemoteIpAddress?.ToString() ?? context.Request.Headers.Host.ToString(),
             factory: partition => new FixedWindowRateLimiterOptions
             {
-                PermitLimit = 3, // Solo 3 intentos permitidos...
-                Window = TimeSpan.FromMinutes(25), // ...cada 25 minutos
+                PermitLimit = 3, 
+                Window = TimeSpan.FromMinutes(25), 
                 QueueLimit = 0,
                 AutoReplenishment = true
             }));
@@ -101,9 +101,9 @@ builder.Services.AddRateLimiter(options =>
     };
 });
 
-// ========================================================================
-// 👇 CONFIGURACIÓN DE TOKENS JWT
-// ========================================================================
+
+
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -131,18 +131,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection(); // Es mejor poner esto arriba
-app.UseRouting(); // 1. Primero sabe a dónde va la petición
+app.UseHttpsRedirection(); 
+app.UseRouting(); 
 
-// 👇 AQUÍ LLAMAMOS AL CADENERO CON EL NOMBRE CORRECTO ("PoliticaCors") 👇
+
 app.UseCors("PoliticaCors");
 
-// 👇 ACTIVAMOS EL ESCUDO ANTI-SPAM 👇
+
 app.UseRateLimiter();
 
-// 👇 EL ORDEN SAGRADO (ESTO CURA LOS ERRORES DE AUTORIZACIÓN) 👇
-app.UseAuthentication(); // PRIMERO verifica la identidad
-app.UseAuthorization();  // LUEGO verifica los permisos
+
+app.UseAuthentication(); 
+app.UseAuthorization();  
 
 app.MapControllers();
 

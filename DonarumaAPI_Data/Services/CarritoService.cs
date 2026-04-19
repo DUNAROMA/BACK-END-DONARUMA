@@ -30,8 +30,8 @@ namespace DonarumaAPI_Data.Services
         {
             var db = dbConnection();
 
-            // Mezclamos tu tabla "CarritoItems" (que sí tiene mayúsculas) 
-            // con tu tabla 'perfumes' (que está toda en minúsculas)
+            
+            
             var sql = @"
         SELECT 
             c.""IdCarritoItem"", 

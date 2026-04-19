@@ -16,7 +16,7 @@ namespace Backend_Donaruma.Controllers
         private readonly IUsuarioService _usuarioService;
         private readonly IEmailService _emailService;
 
-        // 👇 Definimos las Regex de forma estática y compilada
+        
         private static readonly Regex EmailRegex = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", RegexOptions.Compiled);
         private static readonly Regex PasswordRegex = new Regex(@"^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$", RegexOptions.Compiled);
         private static readonly Regex NameRegex = new Regex(@"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$", RegexOptions.Compiled);
@@ -39,24 +39,24 @@ namespace Backend_Donaruma.Controllers
             if (string.IsNullOrWhiteSpace(usuario.Contrasena) || !PasswordRegex.IsMatch(usuario.Contrasena))
                 return BadRequest(new { mensaje = "La contraseña no cumple con los requisitos de seguridad." });
 
-            // Validar Nombre y Apellidos
+            
             if (string.IsNullOrWhiteSpace(usuario.Nombre) || string.IsNullOrWhiteSpace(usuario.Apellidos) ||
                 !NameRegex.IsMatch(usuario.Nombre) || !NameRegex.IsMatch(usuario.Apellidos))
                 return BadRequest(new { mensaje = "El nombre y los apellidos solo deben contener letras." });
 
-            // Encriptamos la contraseña con BCrypt
+            
             usuario.Contrasena = BCrypt.Net.BCrypt.HashPassword(usuario.Contrasena);
 
-            // 1. 🎟️ GENERAMOS EL TOKEN ÚNICO DE SEGURIDAD PRIMERO
+            
             string tokenConfirmacion = Guid.NewGuid().ToString();
 
-            // 2. Guardamos en la base de datos INYECTANDO el token
+            
             var id = await _usuarioService.CrearUsuario(usuario, tokenConfirmacion);
 
-            // 3. 📧 ENVIAMOS EL CORREO REAL
+            
             await _emailService.EnviarCorreoConfirmacion(usuario.Correo, tokenConfirmacion);
 
-            // 4. Cambiamos el mensaje para que el Front-End sepa qué pasó
+            
             return Ok(new
             {
                 mensaje = "Usuario creado con éxito. Por favor revisa tu correo para confirmar tu cuenta.",
@@ -64,14 +64,14 @@ namespace Backend_Donaruma.Controllers
             });
         }
 
-        // 👇 AQUÍ ESTÁ EL NUEVO MÉTODO PARA VERIFICAR EL CORREO 👇
+        
 
 
-        // 👇 NUEVA CERRADURA POR POST 👇
+        
         [HttpPost("confirmar")]
         public async Task<IActionResult> ConfirmarCuenta([FromBody] ConfirmarCuentaRequest request)
         {
-            // Buscamos el token en la base de datos y activamos la cuenta
+            
             var resultado = await _usuarioService.ConfirmarCuenta(request.Token);
 
             if (!resultado)
@@ -99,9 +99,9 @@ namespace Backend_Donaruma.Controllers
         [HttpPut("actualizar")]
         public async Task<IActionResult> ActualizarPerfil([FromBody] ActualizarUsuarioDTO usuarioDto)
         {
-            // 🛡️ Candado 2: Extraemos la identidad REAL del usuario desde su Token insobornable
-            // Nota: Revisa cómo llamaste a tu Claim cuando creaste el Token. 
-            // Usualmente es NameIdentifier o "id".
+            
+           
+            
             var idUsuarioTokenString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
                                     ?? User.FindFirst("id")?.Value;
 
@@ -134,27 +134,51 @@ namespace Backend_Donaruma.Controllers
 
             return BadRequest(new { exito = false, mensaje = "No se pudo actualizar el perfil." });
         }
-
+        [Authorize] // Exigimos que el usuario tenga sesión iniciada
         [HttpPut("cambiar-password")]
         public async Task<IActionResult> CambiarPassword([FromBody] CambiarPasswordDTO datos)
         {
+            // 🛡️ Candado 2: Extraemos el ID real del Token
+            var idUsuarioTokenString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                                    ?? User.FindFirst("id")?.Value;
+
+            if (string.IsNullOrEmpty(idUsuarioTokenString))
+            {
+                return Unauthorized(new { exito = false, mensaje = "Sesión inválida o expirada." });
+            }
+
+            int idUsuarioReal = int.Parse(idUsuarioTokenString);
+
+            //  Prevención IDOR 
+            if (datos.IdUsuario != idUsuarioReal)
+            {
+                return StatusCode(403, new
+                {
+                    exito = false,
+                    mensaje = "Acceso denegado. No tienes permiso para modificar esta contraseña."
+                });
+            }
+
+            
+            if (string.IsNullOrWhiteSpace(datos.ContrasenaNueva) || !PasswordRegex.IsMatch(datos.ContrasenaNueva))
+            {
+                return BadRequest(new
+                {
+                    exito = false,
+                    mensaje = "La nueva contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial."
+                });
+            }
+
+           
             var resultado = await _usuarioService.CambiarPassword(datos);
 
             if (resultado.Exito)
             {
-                return Ok(new
-                {
-                    exito = true,
-                    mensaje = resultado.Mensaje
-                });
+                return Ok(new { exito = true, mensaje = resultado.Mensaje });
             }
 
-            // Si la contraseña era incorrecta, regresamos un BadRequest con el mensaje
-            return BadRequest(new
-            {
-                exito = false,
-                mensaje = resultado.Mensaje
-            });
+            
+            return BadRequest(new { exito = false, mensaje = resultado.Mensaje });
         }
     }
 }

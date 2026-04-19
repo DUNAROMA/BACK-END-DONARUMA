@@ -16,7 +16,7 @@ namespace Backend_Donaruma.Controllers
             _novedadService = novedadService;
         }
 
-        // 1. GET: Traer todas las novedades para mostrarlas tipo Facebook
+        
         [HttpGet("obtener-todas")]
         public async Task<IActionResult> ObtenerTodas()
         {
@@ -24,7 +24,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(lista);
         }
 
-        // 2. POST: Para cuando tú como Admin subas un nuevo chisme/noticia
+        
         [HttpPost("crear")]
         public async Task<IActionResult> CrearNovedad([FromBody] NovedadesDTO novedad)
         {
@@ -36,7 +36,7 @@ namespace Backend_Donaruma.Controllers
             return BadRequest(new { exito = false, mensaje = "No se pudo crear la publicación" });
         }
 
-        // 3. PUT: Por si te equivocas en algo y quieres editar la publicación
+        
         [HttpPut("actualizar")]
         public async Task<IActionResult> ActualizarNovedad([FromBody] NovedadesDTO novedad)
         {
@@ -48,7 +48,7 @@ namespace Backend_Donaruma.Controllers
             return BadRequest(new { exito = false, mensaje = "No se pudo actualizar la publicación" });
         }
 
-        // 4. DELETE: Para borrar una novedad
+        
         [HttpDelete("eliminar/{id}")]
         public async Task<IActionResult> EliminarNovedad(int id)
         {
@@ -59,7 +59,7 @@ namespace Backend_Donaruma.Controllers
 
             return BadRequest(new { exito = false, mensaje = "No se pudo eliminar la publicación" });
         }
-        // 5. GET: Traer 1 sola novedad por su ID
+        
         [HttpGet("obtener/{id}")]
         public async Task<IActionResult> ObtenerPorId(int id)
         {
@@ -70,7 +70,7 @@ namespace Backend_Donaruma.Controllers
 
             return Ok(novedad);
         }
-        // PUT: api/Novedades/actualizar/5
+        
         [HttpPut("actualizar/{id}")]
         public async Task<IActionResult> Actualizar(int id, [FromBody] NovedadesDTO novedad)
         {

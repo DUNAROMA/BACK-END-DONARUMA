@@ -93,13 +93,13 @@ namespace DonarumaAPI_Data.Services
             var filasAfectadas = await db.ExecuteAsync(sql, new { Id = id });
             return filasAfectadas > 0;
         }
-        // Función para actualizar una noticia existente
+        
         public async Task<bool> Actualizar(int id, NovedadesDTO novedad)
         {
             using var db = dbConnection();
 
-            // Comando SQL para actualizar. 
-            // OJO: Verifica que "idnovedad" sea el nombre correcto de tu llave primaria en PostgreSQL.
+            
+            
             var sql = @"UPDATE novedades 
                 SET titulo = @Titulo, 
                     descripcion = @Descripcion, 

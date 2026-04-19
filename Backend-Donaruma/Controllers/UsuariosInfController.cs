@@ -37,8 +37,8 @@ namespace PerfumeApi.Controllers
                 {
                     usuario = new UsuarioDatosDto
                     {
-                        // Asegúrate de que los nombres de las propiedades en UsuarioDatosDto 
-                        // coincidan con los nombres de las columnas que devuelve la función en SQL
+                        
+                        
                         NombreCompleto = reader["nombre_completo"].ToString() ?? "",
                         DireccionUsuario = reader["direccion_usuario"].ToString() ?? ""
                     };

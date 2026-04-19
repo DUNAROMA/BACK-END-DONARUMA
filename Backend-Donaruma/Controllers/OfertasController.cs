@@ -53,7 +53,7 @@ namespace Backend_Donaruma.Controllers
             }
         }
 
-        // --- ENDPOINTS DEL CATÁLOGO DE OFERTAS ---
+        //  ENDPOINTS DEL CATÁLOGO DE OFERTAS 
 
         [HttpGet("activas")]
         public async Task<IActionResult> ObtenerOfertas()
