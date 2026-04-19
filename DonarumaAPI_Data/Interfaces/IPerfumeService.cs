@@ -22,7 +22,7 @@ namespace DonarumaAPI_Data.Interfaces
         Task<IEnumerable<PerfumeDTO>> ObtenerPorPrecioMenorAsync();
         Task<bool> ActualizarPerfume(PerfumeDTO perfume);
         Task<bool> EliminarPerfume(int idPerfume);
-
+        Task<PerfumeDTO?> ObtenerPerfumePorId(int idPerfume);
     }
 }
        

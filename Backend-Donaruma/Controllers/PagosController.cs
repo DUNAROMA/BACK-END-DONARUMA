@@ -4,48 +4,71 @@ using Stripe.Checkout;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using DonarumaAPI_Data.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Backend_Donaruma.Controllers
 {
+    
     public class ItemCarrito
     {
-        public string nombre { get; set; }
-        
-        public decimal precio { get; set; }
+        public int IdPerfume { get; set; } 
         public int cantidad { get; set; }
+
+        
+        public string nombre { get; set; } = string.Empty;
+        public decimal precio { get; set; }
     }
 
     public class CheckoutRequest
     {
-        public List<ItemCarrito> items { get; set; }
+        public List<ItemCarrito> items { get; set; } = new List<ItemCarrito>();
     }
 
     [Route("api/[controller]")]
     [ApiController]
     public class PagosController : ControllerBase
     {
-        [HttpPost("crear-sesion")]
-        public IActionResult CrearSesion([FromBody] CheckoutRequest request)
-        {
-            
-            var domain = "https://www.donarumastore.com";
+        private readonly IPerfumeService _perfumeService;
 
+        
+        public PagosController(IPerfumeService perfumeService)
+        {
+            _perfumeService = perfumeService;
+        }
+
+        [Authorize] 
+        [HttpPost("crear-sesion")]
+        public async Task<IActionResult> CrearSesion([FromBody] CheckoutRequest request)
+        {
+            var domain = "https://www.donarumastore.com";
             var lineItems = new List<SessionLineItemOptions>();
 
             foreach (var item in request.items)
             {
+                
+                var perfumeReal = await _perfumeService.ObtenerPerfumePorId(item.IdPerfume);
+
+                if (perfumeReal == null)
+                {
+                    return BadRequest(new { mensaje = $"El producto con ID {item.IdPerfume} no existe o fue eliminado." });
+                }
+
                 lineItems.Add(new SessionLineItemOptions
                 {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
-                        UnitAmount = (long)(item.precio * 100),
+                       
+                        UnitAmount = (long)(perfumeReal.Precio * 100),
                         Currency = "mxn",
                         ProductData = new SessionLineItemPriceDataProductDataOptions
                         {
-                            Name = item.nombre,
+                            
+                            Name = perfumeReal.Nombre,
                         },
                     },
-                    Quantity = item.cantidad,
+                    
+                    Quantity = item.cantidad > 0 ? item.cantidad : 1,
                 });
             }
 
@@ -59,7 +82,7 @@ namespace Backend_Donaruma.Controllers
             };
 
             var service = new SessionService();
-            Session session = service.Create(options);
+            Session session = await service.CreateAsync(options); 
 
             return Ok(new { id = session.Id, url = session.Url });
         }
@@ -81,7 +104,12 @@ namespace Backend_Donaruma.Controllers
                 if (stripeEvent.Type == "checkout.session.completed")
                 {
                     var session = stripeEvent.Data.Object as Stripe.Checkout.Session;
-                    System.Console.WriteLine($"\n\n💰 ¡ÉXITO! Se recibió un pago de Stripe para la sesión: {session.Id}\n\n");
+
+                    
+                    if (session != null)
+                    {
+                        System.Console.WriteLine($"\n\n💰 ¡ÉXITO! Se recibió un pago de Stripe para la sesión: {session.Id}\n\n");
+                    }
                 }
 
                 return Ok();

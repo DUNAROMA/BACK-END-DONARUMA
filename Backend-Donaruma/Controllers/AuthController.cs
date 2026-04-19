@@ -26,7 +26,7 @@ namespace Backend_Donaruma.Controllers
             if (respuesta.Exito)
             {
                 // 🔒 Guardamos los tokens en la Bóveda del Navegador
-                SetCookiesSecretas(respuesta.AccessToken, respuesta.RefreshToken);
+                SetCookiesSecretas(respuesta.AccessToken!, respuesta.RefreshToken!);
 
                 // 🕵️‍♂️ Extraemos el ID y el Rol directamente del Token para dárselos a Angular
                 var handler = new JwtSecurityTokenHandler();
@@ -61,7 +61,7 @@ namespace Backend_Donaruma.Controllers
 
             if (respuesta.Exito)
             {
-                SetCookiesSecretas(respuesta.AccessToken, respuesta.RefreshToken);
+                SetCookiesSecretas(respuesta.AccessToken!, respuesta.RefreshToken!);
                 return Ok(new { exito = true, mensaje = respuesta.Mensaje });
             }
 

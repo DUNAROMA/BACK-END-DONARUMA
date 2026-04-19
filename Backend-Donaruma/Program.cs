@@ -40,7 +40,7 @@ if (!string.IsNullOrWhiteSpace(databaseUrl))
 else
 {
     
-    connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
+    connectionString = builder.Configuration.GetConnectionString("PostgreSQL")!;
 }
 builder.Services.AddSingleton(new PostgreSQLConfiguration(connectionString!));
 

@@ -73,7 +73,7 @@ namespace DonarumaAPI_Data.Services
             return filasAfectadas > 0;
         }
         // Buscar una sola publicación por su ID
-        public async Task<NovedadesDTO> ObtenerPorId(int id)
+        public async Task<NovedadesDTO?> ObtenerPorId(int id)
         {
             using var db = dbConnection();
             var sql = @"SELECT idnovedad AS IdNovedad, titulo AS Titulo, 

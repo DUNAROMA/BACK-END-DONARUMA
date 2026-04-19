@@ -45,6 +45,25 @@ namespace DonarumaAPI_Data.Services
             return lista;
         }
 
+        public async Task<PerfumeDTO?> ObtenerPerfumePorId(int id)
+        {
+            using var db = dbConnection();
+
+            // Usamos tu constante SelectPerfume y le agregamos la tabla y la condición
+            var sql = SelectPerfume + "perfumes WHERE idperfume = @Id";
+
+            // QueryFirstOrDefaultAsync devuelve 1 solo perfume, o null si no existe
+            var perfume = await db.QueryFirstOrDefaultAsync<PerfumeDTO>(sql, new { Id = id });
+
+            return perfume; 
+        }
+
+
+
+
+
+
+
         // --- FUNCIÓN 2: OBTENER DE NOCHE ---
         public async Task<List<PerfumeDTO>> ObtenerDeNoche()
         {
