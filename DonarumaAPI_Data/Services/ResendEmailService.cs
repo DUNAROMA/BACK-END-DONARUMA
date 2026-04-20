@@ -84,7 +84,7 @@ namespace DonarumaAPI_Data.Services
             await EnviarPeticionResend(httpClient, request, body);
         }
 
-        // Método privado para reutilizar la lógica de envío y manejo de errores
+       
         private async Task EnviarPeticionResend(HttpClient client, HttpRequestMessage request, object body)
         {
             var json = JsonSerializer.Serialize(body);

@@ -8,11 +8,11 @@ namespace DonarumaAPI_Model.CarritoModel
 {
     public class CarritoItem
     {
-        public int IdCarritoItem { get; set; } // Clave primaria
+        public int IdCarritoItem { get; set; } 
 
-        public int IdUsuario { get; set; } // ¿De quién es el carrito?
+        public int IdUsuario { get; set; } 
 
-        public int IdPerfume { get; set; } // ¿Qué perfume es?
+        public int IdPerfume { get; set; } 
 
         public int Cantidad { get; set; }
 

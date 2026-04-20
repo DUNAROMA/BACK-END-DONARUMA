@@ -54,17 +54,17 @@ namespace DonarumaAPI_Data.Services
                     }, transaction);
                 }
 
-                // PASO 4: Vaciamos el carrito
+                
                 var sqlVaciar = @"DELETE FROM ""CarritoItems"" WHERE ""IdUsuario"" = @IdUsuario";
                 await db.ExecuteAsync(sqlVaciar, new { IdUsuario = idUsuario }, transaction);
 
-                // ✅ Si todo sale bien, guardamos definitivamente
+               
                 await transaction.CommitAsync();
                 return true;
             }
             catch (Exception ex)
             {
-                // ❌ Si hay error, deshacemos todo
+                
                 await transaction.RollbackAsync();
                 System.Console.WriteLine("\n\n❌ Error al guardar la compra: " + ex.Message + "\n\n");
                 return false;

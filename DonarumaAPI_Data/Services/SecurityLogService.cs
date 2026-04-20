@@ -20,19 +20,19 @@ namespace DonarumaAPI_Data.Services
 
         private IDbConnection Connection => new NpgsqlConnection(_connectionString);
 
-        // --- 1. FUNCIÓN PARA LEER (Con buscador y límite dinámico) ---
+       
         public async Task<IEnumerable<SecurityLog>> ObtenerLogsFiltrados(string? buscar, int limite)
         {
             using var db = Connection;
 
-            // Si el buscador está vacío, solo traemos los últimos X registros
+            
             if (string.IsNullOrEmpty(buscar))
             {
                 var queryBasica = "SELECT * FROM \"SecurityLogs\" ORDER BY \"EventDate\" DESC LIMIT @Limite;";
                 return await db.QueryAsync<SecurityLog>(queryBasica, new { Limite = limite });
             }
 
-            // Si el usuario escribió algo, buscamos coincidencias (ILIKE no distingue mayúsculas/minúsculas)
+           
             var queryFiltrada = @"
                 SELECT * FROM ""SecurityLogs"" 
                 WHERE ""UserEmail"" ILIKE @Busqueda 
@@ -47,7 +47,7 @@ namespace DonarumaAPI_Data.Services
             });
         }
 
-        // --- 2. FUNCIÓN PARA ESCRIBIR (La "pluma" auditora) ---
+       
         public async Task RegistrarEvento(string correoUsuario, string tipoEvento, string direccionIp)
         {
             using var db = Connection;
@@ -59,7 +59,7 @@ namespace DonarumaAPI_Data.Services
             await db.ExecuteAsync(query, new
             {
                 Email = correoUsuario,
-                Fecha = DateTime.UtcNow, // Siempre guardamos la hora universal (UTC)
+                Fecha = DateTime.UtcNow, 
                 Evento = tipoEvento,
                 Ip = string.IsNullOrEmpty(direccionIp) ? "0.0.0.0" : direccionIp
             });

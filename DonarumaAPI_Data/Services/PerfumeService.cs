@@ -49,10 +49,10 @@ namespace DonarumaAPI_Data.Services
         {
             using var db = dbConnection();
 
-            // Usamos tu constante SelectPerfume y le agregamos la tabla y la condición
+          
             var sql = SelectPerfume + "perfumes WHERE idperfume = @Id";
 
-            // QueryFirstOrDefaultAsync devuelve 1 solo perfume, o null si no existe
+            
             var perfume = await db.QueryFirstOrDefaultAsync<PerfumeDTO>(sql, new { Id = id });
 
             return perfume; 
@@ -64,7 +64,7 @@ namespace DonarumaAPI_Data.Services
 
 
 
-        // --- FUNCIÓN 2: OBTENER DE NOCHE ---
+        
         public async Task<List<PerfumeDTO>> ObtenerDeNoche()
         {
             using var db = dbConnection();
@@ -72,7 +72,7 @@ namespace DonarumaAPI_Data.Services
             return result.ToList();
         }
 
-        // --- FUNCIÓN 3: POR OCASIÓN ---
+       
         public async Task<List<PerfumeDTO>> ObtenerPorOcasion(string ocasion)
         {
             using var db = dbConnection();

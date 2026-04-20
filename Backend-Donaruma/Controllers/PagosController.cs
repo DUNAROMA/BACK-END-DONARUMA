@@ -35,23 +35,23 @@ namespace Backend_Donaruma.Controllers
         private readonly IUsuarioService _usuarioService;
         private readonly IEmailService _emailService;
 
-        // 👇 1. DECLARAMOS LA PLUMA DE SEGURIDAD AQUÍ
+        
         private readonly ISecurityLogService _securityLogService;
 
-        // 👇 2. LA PEDIMOS EN EL CONSTRUCTOR
+        
         public PagosController(
             IPerfumeService perfumeService,
             ICompraService compraService,
             IUsuarioService usuarioService,
             IEmailService emailService,
-            ISecurityLogService securityLogService) // <--- Agregada aquí
+            ISecurityLogService securityLogService) 
         {
             _perfumeService = perfumeService;
             _compraService = compraService;
             _usuarioService = usuarioService;
             _emailService = emailService;
 
-            // 👇 3. LA INICIALIZAMOS
+            
             _securityLogService = securityLogService;
         }
 
@@ -130,23 +130,23 @@ namespace Backend_Donaruma.Controllers
                     {
                         if (session.Metadata.TryGetValue("IdUsuario", out string? idUsuarioString) && int.TryParse(idUsuarioString, out int idUsuario))
                         {
-                            // 1. Guardamos la compra y vaciamos el carrito
+                            
                             bool exito = await _compraService.ProcesarCompraExitosa(idUsuario, session.Id);
 
                             if (exito)
                             {
-                                // 2. Buscamos al cliente en la base de datos
+                                
                                 var usuario = await _usuarioService.ObtenerUsuarioPorId(idUsuario);
 
-                                // 3. Sacamos el resumen bonito que guardamos en la Metadata
+                                
                                 session.Metadata.TryGetValue("ResumenPedido", out string? resumen);
 
-                                // Creamos un número de orden corto
+                                
                                 string numeroOrden = session.Id.Substring(session.Id.Length - 8).ToUpper();
 
                                 if (usuario != null)
                                 {
-                                    // 4. Disparamos correo
+                                    
                                     await _emailService.EnviarReciboCompra(
                                         correoDestino: usuario.Correo ?? "",
                                         nombreCliente: usuario.Nombre ?? "Cliente",
@@ -154,7 +154,7 @@ namespace Backend_Donaruma.Controllers
                                         detallesProductos: resumen ?? "Productos en tu carrito"
                                     );
 
-                                    // 👇 5. REGISTRAMOS EL EVENTO EN LA AUDITORÍA (SÓLO EL DE LA COMPRA)
+                                    
                                     string ipCliente = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Stripe Webhook";
                                     await _securityLogService.RegistrarEvento(usuario.Correo ?? "Sistema", $"Compra Exitosa - Orden #{numeroOrden}", ipCliente);
 

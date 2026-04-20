@@ -17,10 +17,10 @@ namespace Backend_Donaruma.Controllers
         }
 
         [HttpGet]
-        // 👇 AQUÍ ESTÁ LA MAGIA: Ahora el endpoint acepta búsquedas y límites
+        
         public async Task<IActionResult> ObtenerLogs([FromQuery] string? buscar = null, [FromQuery] int limite = 200)
         {
-            // Usamos la nueva función que creamos en el servicio
+            
             var logs = await _securityLogService.ObtenerLogsFiltrados(buscar, limite);
             return Ok(logs);
         }
