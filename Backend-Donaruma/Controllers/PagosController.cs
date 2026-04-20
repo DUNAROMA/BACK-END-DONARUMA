@@ -32,13 +32,18 @@ namespace Backend_Donaruma.Controllers
     public class PagosController : ControllerBase
     {
         private readonly IPerfumeService _perfumeService;
-        private readonly ICompraService _compraService; 
+        private readonly ICompraService _compraService;
+        private readonly IUsuarioService _usuarioService;
+        private readonly IEmailService _emailService;
 
 
-        public PagosController(IPerfumeService perfumeService, ICompraService compraService) 
+        public PagosController(IPerfumeService perfumeService, ICompraService compraService, IUsuarioService usuarioService, IEmailService emailService) 
         {
             _perfumeService = perfumeService;
-            _compraService = compraService; 
+            _compraService = compraService;
+
+            _usuarioService = usuarioService;
+            _emailService = emailService;
         }
 
         [Authorize]
@@ -87,7 +92,8 @@ namespace Backend_Donaruma.Controllers
                 Metadata = new Dictionary<string, string>
                 {
                     { "IdUsuario", request.IdUsuario.ToString() },
-                    { "Items", string.Join(", ", request.items.Select(i => $"{i.IdPerfume}x{i.cantidad}")) }
+                    { "Items", string.Join(", ", request.items.Select(i => $"{i.IdPerfume}x{i.cantidad}")) },
+                    { "ResumenPedido", string.Join("\n", request.items.Select(i => $"• {i.cantidad}x {i.nombre}")) }
                 }
             };
 
@@ -125,8 +131,35 @@ namespace Backend_Donaruma.Controllers
                         {
                             System.Console.WriteLine($"\n\n💰 ¡ÉXITO! El usuario con ID {idUsuario} acaba de pagar la sesión {session.Id}\n\n");
 
-                            
-                            await _compraService.ProcesarCompraExitosa(idUsuario, session.Id);
+
+                            // 1. Guardamos la compra y vaciamos el carrito
+                            bool exito = await _compraService.ProcesarCompraExitosa(idUsuario, session.Id);
+
+                            if (exito)
+                            {
+                                // 2. Buscamos al cliente en la base de datos
+                                var usuario = await _usuarioService.ObtenerUsuarioPorId(idUsuario);
+
+                                // 3. Sacamos el resumen bonito que guardamos en la Metadata
+                                session.Metadata.TryGetValue("ResumenPedido", out string? resumen);
+
+                                // Creamos un número de orden corto usando el final del ID de Stripe
+                                string numeroOrden = session.Id.Substring(session.Id.Length - 8).ToUpper();
+
+                                if (usuario != null)
+                                {
+                                    // 4. ¡DISPARAMOS EL CORREO! ✉️🚀
+                                    await _emailService.EnviarReciboCompra(
+                                        correoDestino: usuario.Correo ?? "", // ⚠️ Si tu DTO usa otro nombre (ej. Email), cámbialo aquí
+                                        nombreCliente: usuario.Nombre ?? "Cliente",
+                                        numeroOrden: numeroOrden,
+                                        detallesProductos: resumen ?? "Productos en tu carrito"
+                                    );
+
+                                    System.Console.WriteLine($"\n\n✉️ ¡Correo de recibo enviado a {usuario.Correo}!\n\n");
+                                }
+                            }
+
 
                         }
                         else
