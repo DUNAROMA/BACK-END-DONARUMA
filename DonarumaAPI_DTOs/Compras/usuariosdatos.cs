@@ -22,7 +22,7 @@ namespace DonarumaAPI_DTOs.Compras
         public string? Direccion { get; set; }
     }
 
-    // DTO para la función de búsqueda (Sin Llave)
+    
     public class UsuarioDatosDto
     {
         [Column("nombre_completo")]

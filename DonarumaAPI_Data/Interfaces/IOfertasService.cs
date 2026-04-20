@@ -7,7 +7,7 @@ namespace DonarumaAPI_Data.Interfaces
     public interface IOfertasService
     {
         // Métodos para el Reloj
-        Task<ConfiguracionReloj> ObtenerRelojActivoAsync();
+        Task<ConfiguracionReloj?> ObtenerRelojActivoAsync();
         Task ActualizarRelojAsync(DateTime fechaFin);
 
         // Métodos para los Perfumes en Oferta

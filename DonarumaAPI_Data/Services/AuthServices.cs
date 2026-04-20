@@ -84,7 +84,7 @@ public sealed class AuthService : IAuthService
         if (usuario.RefreshTokenExpiry < DateTime.UtcNow)
             return Fallo("Refresh token expirado, inicia sesión nuevamente");
 
-        // Rotación: invalida el anterior, emite uno nuevo
+        
         return await GenerarRespuestaCompletaAsync(db, usuario, ct);
     }
 
@@ -114,7 +114,7 @@ public sealed class AuthService : IAuthService
         var expiry = DateTime.UtcNow.AddDays(
             Convert.ToInt32(_config["JwtSettings:RefreshTokenDays"] ?? "7"));
 
-        // Persiste el hash del refresh token
+        
         await db.ExecuteAsync(
             new CommandDefinition(
                 "SELECT fn_guardar_refresh_token(@id, @token, @expiry)",
@@ -143,7 +143,7 @@ public sealed class AuthService : IAuthService
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, usuario.IdUsuario.ToString()),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), // ID único
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), 
             new Claim(ClaimTypes.Role, usuario.Rol)
         };
 

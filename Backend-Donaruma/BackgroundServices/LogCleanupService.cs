@@ -18,8 +18,7 @@ public class LogCleanupService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        // Esperamos 30 segundos antes de la primera limpieza 
-        // para darle tiempo al servidor de que despierte bien.
+        
         await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
 
         while (!stoppingToken.IsCancellationRequested)
@@ -41,12 +40,11 @@ public class LogCleanupService : BackgroundService
             }
             catch (Exception ex)
             {
-                // 🛡️ ESCUDO: Si falla la conexión, la app NO se apaga. 
-                // Solo imprime el error en los logs de Railway para que lo veas.
+                
                 Console.WriteLine($"⚠️ Error silencioso en LogCleanupService: {ex.Message}");
             }
 
-            // El proceso se duerme y vuelve a limpiar dentro de 24 horas
+            
             await Task.Delay(TimeSpan.FromDays(1), stoppingToken);
         }
     }

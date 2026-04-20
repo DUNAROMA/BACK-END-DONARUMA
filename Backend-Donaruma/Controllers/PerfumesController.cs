@@ -17,7 +17,7 @@ namespace Backend_Donaruma.Controllers
             _perfumeService = perfumeService;
         }
 
-        // GET api/perfumes/todos
+        
         [HttpGet("todos")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerTodos()
         {
@@ -25,7 +25,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // GET api/perfumes/noche
+        
         [HttpGet("noche")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerDeNoche()
         {
@@ -33,7 +33,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // GET api/perfumes/ocasion/casual
+        
         [HttpGet("ocasion/{ocasion}")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerPorOcasion(string ocasion)
         {
@@ -41,7 +41,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // GET api/perfumes/genero/hombre
+        
         [HttpGet("genero/{genero}")]
         public async Task<ActionResult<List<PerfumeDTO>>> ObtenerPorGenero(string genero)
         {
@@ -49,7 +49,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // GET api/perfumes/marca/chanel
+        
         [HttpGet("marca/{marca}")]
         public async Task<IActionResult> ObtenerPorMarca(string marca)
         {
@@ -57,7 +57,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // GET api/perfumes/buscar/noir
+        
         [HttpGet("buscar/{nombre}")]
         public async Task<IActionResult> BuscarPorNombre(string nombre)
         {
@@ -65,7 +65,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // GET api/perfumes/precio-mayor
+        
         [HttpGet("precio-mayor")]
         public async Task<IActionResult> ObtenerPorPrecioMayor()
         {
@@ -73,7 +73,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // GET api/perfumes/precio-menor
+        
         [HttpGet("precio-menor")]
         public async Task<IActionResult> ObtenerPorPrecioMenor()
         {
@@ -81,7 +81,7 @@ namespace Backend_Donaruma.Controllers
             return Ok(perfumes);
         }
 
-        // POST api/perfumes/crear
+        
         [HttpPost("crear")]
         public async Task<IActionResult> CrearPerfume([FromBody] PerfumeDTO perfume)
         {
@@ -96,7 +96,7 @@ namespace Backend_Donaruma.Controllers
             }
         }
 
-        // PUT api/perfumes/actualizar/5
+        
         [HttpPut("actualizar/{id}")]
         public async Task<IActionResult> ActualizarPerfume(int id, [FromBody] PerfumeDTO perfume)
         {
@@ -118,7 +118,7 @@ namespace Backend_Donaruma.Controllers
             }
         }
 
-        // DELETE api/perfumes/eliminar/5
+        
         [HttpDelete("eliminar/{id}")]
         public async Task<IActionResult> EliminarPerfume(int id)
         {

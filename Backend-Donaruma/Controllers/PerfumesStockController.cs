@@ -18,7 +18,7 @@ namespace PerfumeApi.Controllers
         [HttpGet("disponibles")]
         public async Task<IActionResult> GetPerfumesDisponibles()
         {
-            var perfumes = new List<object>(); // O List<Perfume> si prefieres mapearlo completo
+            var perfumes = new List<object>(); 
 
             using var connection = new NpgsqlConnection(_config.ConnectionString);
             await connection.OpenAsync();

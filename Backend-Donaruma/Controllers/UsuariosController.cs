@@ -112,11 +112,10 @@ namespace Backend_Donaruma.Controllers
 
             int idUsuarioReal = int.Parse(idUsuarioTokenString);
 
-            // 🛡️ Candado 3: Prevención de "Cambio de Identidad" (IDOR)
-            // Comparamos el ID que el hacker intentó modificar con el ID de su propio Token
+            
             if (usuarioDto.IdUsuario != idUsuarioReal)
             {
-                // ¡Alerta de Hacker! Intentó modificar a otra persona.
+                
                 return StatusCode(403, new
                 {
                     exito = false,
@@ -124,7 +123,7 @@ namespace Backend_Donaruma.Controllers
                 });
             }
 
-            // Si pasó todos los escudos, ahora sí, actualizamos.
+           
             var exito = await _usuarioService.ActualizarUsuario(usuarioDto);
 
             if (exito)
@@ -134,11 +133,11 @@ namespace Backend_Donaruma.Controllers
 
             return BadRequest(new { exito = false, mensaje = "No se pudo actualizar el perfil." });
         }
-        [Authorize] // Exigimos que el usuario tenga sesión iniciada
+        [Authorize] 
         [HttpPut("cambiar-password")]
         public async Task<IActionResult> CambiarPassword([FromBody] CambiarPasswordDTO datos)
         {
-            // 🛡️ Candado 2: Extraemos el ID real del Token
+            
             var idUsuarioTokenString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
                                     ?? User.FindFirst("id")?.Value;
 

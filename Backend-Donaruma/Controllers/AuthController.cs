@@ -25,10 +25,10 @@ namespace Backend_Donaruma.Controllers
 
             if (respuesta.Exito)
             {
-                // 🔒 Guardamos los tokens en la Bóveda del Navegador
+                
                 SetCookiesSecretas(respuesta.AccessToken!, respuesta.RefreshToken!);
 
-                // 🕵️‍♂️ Extraemos el ID y el Rol directamente del Token para dárselos a Angular
+                
                 var handler = new JwtSecurityTokenHandler();
                 var token = handler.ReadJwtToken(respuesta.AccessToken);
 
@@ -79,7 +79,7 @@ namespace Backend_Donaruma.Controllers
                 await _authService.Logout(idUsuario, ct);
             }
 
-            // 🗑️ Borramos las cookies de seguridad para cerrar la bóveda
+            
             Response.Cookies.Delete("accessToken", GetCookieOptionsBase());
             Response.Cookies.Delete("refreshToken", GetCookieOptionsBase());
 

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DonarumaAPI_DTOs.LoginDTO
 {
-    // RefreshDTO.cs
+    
     public sealed record RefreshRequestDTO(string RefreshToken);
 
-    // Actualiza LoginResponse.cs
+    
     public sealed class LoginResponse
     {
         public bool Exito { get; init; }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DonarumaAPI_DTOs.Compras;
 using Npgsql;
-using DonarumaAPI_Data; // Para acceder a PostgreSQLConfiguration
+using DonarumaAPI_Data;
 
 namespace PerfumeApi.Controllers
 {

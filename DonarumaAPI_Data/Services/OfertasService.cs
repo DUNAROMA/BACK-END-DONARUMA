@@ -26,7 +26,7 @@ namespace DonarumaAPI_Data.Services
             return await db.QueryAsync<VistaGestionOferta>(sql);
         }
 
-        public async Task<ConfiguracionReloj> ObtenerRelojActivoAsync()
+        public async Task<ConfiguracionReloj?> ObtenerRelojActivoAsync()
         {
             using var db = dbConnection();
             var sql = "SELECT * FROM ConfiguracionVenta LIMIT 1;";

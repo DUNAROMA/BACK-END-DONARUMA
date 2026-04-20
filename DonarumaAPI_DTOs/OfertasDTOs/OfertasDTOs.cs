@@ -1,6 +1,6 @@
 ﻿namespace DonarumaAPI_DTOs.OfertasDTOs
 {
-    // DTO para recibir los datos desde Angular al crear/modificar
+    
     public class AgregarOfertaDTO
     {
         public int IdPerfume { get; set; }
@@ -8,13 +8,12 @@
         public decimal PrecioOferta { get; set; }
     }
 
-    // DTO para recibir la fecha del reloj desde Angular
     public class RelojDTO
     {
         public DateTime FechaFinOferta { get; set; }
     }
 
-    // DTO para enviar el catálogo completo a la página principal
+    
     public class OfertaResponseDTO
     {
         public int IdOferta { get; set; }

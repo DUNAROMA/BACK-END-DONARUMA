@@ -16,7 +16,7 @@ namespace PerfumeApi.Controllers
             _config = config;
         }
 
-        // GET: api/UsuariosInf/datos/1
+        
         [HttpGet("datos/{id}")]
         public async Task<IActionResult> GetDatosUsuario(long id)
         {

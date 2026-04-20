@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Backend_Donaruma.Controllers
 {
-    
+
     public class ItemCarrito
     {
-        public int IdPerfume { get; set; } 
+        public int IdPerfume { get; set; }
         public int cantidad { get; set; }
 
-        
+
         public string nombre { get; set; } = string.Empty;
         public decimal precio { get; set; }
     }
@@ -32,13 +32,13 @@ namespace Backend_Donaruma.Controllers
     {
         private readonly IPerfumeService _perfumeService;
 
-        
+
         public PagosController(IPerfumeService perfumeService)
         {
             _perfumeService = perfumeService;
         }
 
-        [Authorize] 
+        [Authorize]
         [HttpPost("crear-sesion")]
         public async Task<IActionResult> CrearSesion([FromBody] CheckoutRequest request)
         {
@@ -47,7 +47,7 @@ namespace Backend_Donaruma.Controllers
 
             foreach (var item in request.items)
             {
-                
+
                 var perfumeReal = await _perfumeService.ObtenerPerfumePorId(item.IdPerfume);
 
                 if (perfumeReal == null)
@@ -59,16 +59,16 @@ namespace Backend_Donaruma.Controllers
                 {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
-                       
+
                         UnitAmount = (long)(perfumeReal.Precio * 100),
                         Currency = "mxn",
                         ProductData = new SessionLineItemPriceDataProductDataOptions
                         {
-                            
+
                             Name = perfumeReal.Nombre,
                         },
                     },
-                    
+
                     Quantity = item.cantidad > 0 ? item.cantidad : 1,
                 });
             }
@@ -89,7 +89,7 @@ namespace Backend_Donaruma.Controllers
             };
 
             var service = new SessionService();
-            Session session = await service.CreateAsync(options); 
+            Session session = await service.CreateAsync(options);
 
             return Ok(new { id = session.Id, url = session.Url });
         }
@@ -98,7 +98,9 @@ namespace Backend_Donaruma.Controllers
         public async Task<IActionResult> StripeWebhook()
         {
             var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
-            var endpointSecret = "salomon dividiste al bebe ;--)";
+
+           
+            var endpointSecret = Environment.GetEnvironmentVariable("STRIPE_WEBHOOK_SECRET");
 
             try
             {
@@ -108,17 +110,30 @@ namespace Backend_Donaruma.Controllers
                   endpointSecret
                 );
 
+                
                 if (stripeEvent.Type == "checkout.session.completed")
                 {
                     var session = stripeEvent.Data.Object as Stripe.Checkout.Session;
 
-                    
                     if (session != null)
                     {
-                        System.Console.WriteLine($"\n\n💰 ¡ÉXITO! Se recibió un pago de Stripe para la sesión: {session.Id}\n\n");
+                        
+                        if (session.Metadata.TryGetValue("IdUsuario", out string? idUsuarioString) && int.TryParse(idUsuarioString, out int idUsuario))
+                        {
+                            System.Console.WriteLine($"\n\n💰 ¡ÉXITO! El usuario con ID {idUsuario} acaba de pagar la sesión {session.Id}\n\n");
+
+                           
+                            
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("\n\n⚠️ Se recibió un pago, pero la sesión no tenía un IdUsuario asociado.\n\n");
+                        }
                     }
                 }
 
+                 
+                
                 return Ok();
             }
             catch (StripeException e)
