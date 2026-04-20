@@ -91,7 +91,7 @@ namespace Backend_Donaruma.Controllers
         public async Task<IActionResult> StripeWebhook()
         {
             var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
-            var endpointSecret = "whsec_bl57sf7wHp1L6u1TDPdvCmCBMCcyHHx3";
+            var endpointSecret = "salomon dividiste al bebe ;--)";
 
             try
             {
