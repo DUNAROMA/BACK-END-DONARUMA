@@ -926,6 +926,18 @@
         }
       }
     },
+    "/api/SecurityLogs": {
+      "get": {
+        "tags": [
+          "SecurityLogs"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuarios/crear": {
       "post": {
         "tags": [
@@ -1217,6 +1229,10 @@
       "CheckoutRequest": {
         "type": "object",
         "properties": {
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
           "items": {
             "type": "array",
             "items": {
@@ -1270,6 +1286,14 @@
       "ItemCarrito": {
         "type": "object",
         "properties": {
+          "idPerfume": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
           "nombre": {
             "type": "string",
             "nullable": true
@@ -1277,10 +1301,6 @@
           "precio": {
             "type": "number",
             "format": "double"
-          },
-          "cantidad": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false

@@ -6,7 +6,10 @@ namespace DonarumaAPI_Data.Interfaces
 {
     public interface ISecurityLogService
     {
-        
-        Task<IEnumerable<SecurityLog>> ObtenerTodosLosLogs();
+
+        Task<IEnumerable<SecurityLog>> ObtenerLogsFiltrados(string? buscar, int limite);
+
+        Task RegistrarEvento(string correoUsuario, string tipoEvento, string direccionIp);
+
     }
 }

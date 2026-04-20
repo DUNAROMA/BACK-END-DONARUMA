@@ -1,22 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DonarumaAPI_Data.Interfaces;
+using DonarumaAPI_Data.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Stripe;
 using Stripe.Checkout;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq; 
+using System.Linq;
 using System.Threading.Tasks;
-using DonarumaAPI_Data.Interfaces;
-using Microsoft.AspNetCore.Authorization;
-using System;
 
 namespace Backend_Donaruma.Controllers
 {
-
     public class ItemCarrito
     {
         public int IdPerfume { get; set; }
         public int cantidad { get; set; }
-
         public string nombre { get; set; } = string.Empty;
         public decimal precio { get; set; }
     }
@@ -36,14 +35,24 @@ namespace Backend_Donaruma.Controllers
         private readonly IUsuarioService _usuarioService;
         private readonly IEmailService _emailService;
 
+        // 👇 1. DECLARAMOS LA PLUMA DE SEGURIDAD AQUÍ
+        private readonly ISecurityLogService _securityLogService;
 
-        public PagosController(IPerfumeService perfumeService, ICompraService compraService, IUsuarioService usuarioService, IEmailService emailService) 
+        // 👇 2. LA PEDIMOS EN EL CONSTRUCTOR
+        public PagosController(
+            IPerfumeService perfumeService,
+            ICompraService compraService,
+            IUsuarioService usuarioService,
+            IEmailService emailService,
+            ISecurityLogService securityLogService) // <--- Agregada aquí
         {
             _perfumeService = perfumeService;
             _compraService = compraService;
-
             _usuarioService = usuarioService;
             _emailService = emailService;
+
+            // 👇 3. LA INICIALIZAMOS
+            _securityLogService = securityLogService;
         }
 
         [Authorize]
@@ -55,7 +64,6 @@ namespace Backend_Donaruma.Controllers
 
             foreach (var item in request.items)
             {
-
                 var perfumeReal = await _perfumeService.ObtenerPerfumePorId(item.IdPerfume);
 
                 if (perfumeReal == null)
@@ -67,16 +75,13 @@ namespace Backend_Donaruma.Controllers
                 {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
-
                         UnitAmount = (long)(perfumeReal.Precio * 100),
                         Currency = "mxn",
                         ProductData = new SessionLineItemPriceDataProductDataOptions
                         {
-
                             Name = perfumeReal.Nombre,
                         },
                     },
-
                     Quantity = item.cantidad > 0 ? item.cantidad : 1,
                 });
             }
@@ -107,8 +112,6 @@ namespace Backend_Donaruma.Controllers
         public async Task<IActionResult> StripeWebhook()
         {
             var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
-
-
             var endpointSecret = Environment.GetEnvironmentVariable("STRIPE_WEBHOOK_SECRET");
 
             try
@@ -119,19 +122,14 @@ namespace Backend_Donaruma.Controllers
                   endpointSecret
                 );
 
-
                 if (stripeEvent.Type == "checkout.session.completed")
                 {
                     var session = stripeEvent.Data.Object as Stripe.Checkout.Session;
 
                     if (session != null)
                     {
-
                         if (session.Metadata.TryGetValue("IdUsuario", out string? idUsuarioString) && int.TryParse(idUsuarioString, out int idUsuario))
                         {
-                            System.Console.WriteLine($"\n\n💰 ¡ÉXITO! El usuario con ID {idUsuario} acaba de pagar la sesión {session.Id}\n\n");
-
-
                             // 1. Guardamos la compra y vaciamos el carrito
                             bool exito = await _compraService.ProcesarCompraExitosa(idUsuario, session.Id);
 
@@ -143,28 +141,26 @@ namespace Backend_Donaruma.Controllers
                                 // 3. Sacamos el resumen bonito que guardamos en la Metadata
                                 session.Metadata.TryGetValue("ResumenPedido", out string? resumen);
 
-                                // Creamos un número de orden corto usando el final del ID de Stripe
+                                // Creamos un número de orden corto
                                 string numeroOrden = session.Id.Substring(session.Id.Length - 8).ToUpper();
 
                                 if (usuario != null)
                                 {
-                                    // 4. ¡DISPARAMOS EL CORREO! ✉️🚀
+                                    // 4. Disparamos correo
                                     await _emailService.EnviarReciboCompra(
-                                        correoDestino: usuario.Correo ?? "", // ⚠️ Si tu DTO usa otro nombre (ej. Email), cámbialo aquí
+                                        correoDestino: usuario.Correo ?? "",
                                         nombreCliente: usuario.Nombre ?? "Cliente",
                                         numeroOrden: numeroOrden,
                                         detallesProductos: resumen ?? "Productos en tu carrito"
                                     );
 
-                                    System.Console.WriteLine($"\n\n✉️ ¡Correo de recibo enviado a {usuario.Correo}!\n\n");
+                                    // 👇 5. REGISTRAMOS EL EVENTO EN LA AUDITORÍA (SÓLO EL DE LA COMPRA)
+                                    string ipCliente = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Stripe Webhook";
+                                    await _securityLogService.RegistrarEvento(usuario.Correo ?? "Sistema", $"Compra Exitosa - Orden #{numeroOrden}", ipCliente);
+
+                                    System.Console.WriteLine($"\n\n✉️ ¡Correo de recibo enviado a {usuario.Correo} y log registrado!\n\n");
                                 }
                             }
-
-
-                        }
-                        else
-                        {
-                            System.Console.WriteLine("\n\n⚠️ Se recibió un pago, pero la sesión no tenía un IdUsuario asociado.\n\n");
                         }
                     }
                 }

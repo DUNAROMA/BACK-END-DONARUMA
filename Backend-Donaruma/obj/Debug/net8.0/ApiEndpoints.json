@@ -558,6 +558,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend_Donaruma.Controllers.SecurityLogsController",
+    "Method": "ObtenerLogs",
+    "RelativePath": "api/SecurityLogs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
     "Method": "ObtenerUsuario",
     "RelativePath": "api/Usuarios/{id}",

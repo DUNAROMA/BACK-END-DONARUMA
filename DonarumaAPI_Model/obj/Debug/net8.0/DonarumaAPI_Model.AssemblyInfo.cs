@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DonarumaAPI_Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb9d4939c126e58bb7af1ed1482662c98f3856bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+496980d7ce97ea3aaa6e2f535a8f15d3e3fac9d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DonarumaAPI_Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DonarumaAPI_Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
