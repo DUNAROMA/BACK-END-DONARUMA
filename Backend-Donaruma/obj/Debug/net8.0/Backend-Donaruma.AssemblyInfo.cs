@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Backend-Donaruma")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+901e43c3af383557665bfdb3e33068fb30554759")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e9f8d33320be14d3ae04c2d1175001792a55244")]
 [assembly: System.Reflection.AssemblyProductAttribute("Backend-Donaruma")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Backend-Donaruma")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

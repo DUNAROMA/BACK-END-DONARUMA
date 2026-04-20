@@ -54,6 +54,7 @@ builder.Services.AddScoped<IOfertasService, OfertasService>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
 builder.Services.AddScoped<IEmailService, ResendEmailService>();
 builder.Services.AddScoped<ICompraService, CompraService>();
+builder.Services.AddScoped<ISecurityLogService, SecurityLogService>();
 
 builder.Services.AddCors(options =>
 {
