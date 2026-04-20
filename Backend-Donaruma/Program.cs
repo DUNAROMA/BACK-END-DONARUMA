@@ -53,6 +53,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IOfertasService, OfertasService>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
 builder.Services.AddScoped<IEmailService, ResendEmailService>();
+builder.Services.AddScoped<ICompraService, CompraService>();
 
 builder.Services.AddCors(options =>
 {

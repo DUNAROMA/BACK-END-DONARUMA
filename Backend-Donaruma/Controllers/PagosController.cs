@@ -3,9 +3,11 @@ using Stripe;
 using Stripe.Checkout;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq; 
 using System.Threading.Tasks;
 using DonarumaAPI_Data.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace Backend_Donaruma.Controllers
 {
@@ -14,7 +16,6 @@ namespace Backend_Donaruma.Controllers
     {
         public int IdPerfume { get; set; }
         public int cantidad { get; set; }
-
 
         public string nombre { get; set; } = string.Empty;
         public decimal precio { get; set; }
@@ -31,11 +32,13 @@ namespace Backend_Donaruma.Controllers
     public class PagosController : ControllerBase
     {
         private readonly IPerfumeService _perfumeService;
+        private readonly ICompraService _compraService; 
 
 
-        public PagosController(IPerfumeService perfumeService)
+        public PagosController(IPerfumeService perfumeService, ICompraService compraService) 
         {
             _perfumeService = perfumeService;
+            _compraService = compraService; 
         }
 
         [Authorize]
@@ -99,7 +102,7 @@ namespace Backend_Donaruma.Controllers
         {
             var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
 
-           
+
             var endpointSecret = Environment.GetEnvironmentVariable("STRIPE_WEBHOOK_SECRET");
 
             try
@@ -110,20 +113,21 @@ namespace Backend_Donaruma.Controllers
                   endpointSecret
                 );
 
-                
+
                 if (stripeEvent.Type == "checkout.session.completed")
                 {
                     var session = stripeEvent.Data.Object as Stripe.Checkout.Session;
 
                     if (session != null)
                     {
-                        
+
                         if (session.Metadata.TryGetValue("IdUsuario", out string? idUsuarioString) && int.TryParse(idUsuarioString, out int idUsuario))
                         {
                             System.Console.WriteLine($"\n\n💰 ¡ÉXITO! El usuario con ID {idUsuario} acaba de pagar la sesión {session.Id}\n\n");
 
-                           
                             
+                            await _compraService.ProcesarCompraExitosa(idUsuario, session.Id);
+
                         }
                         else
                         {
@@ -132,8 +136,6 @@ namespace Backend_Donaruma.Controllers
                     }
                 }
 
-                 
-                
                 return Ok();
             }
             catch (StripeException e)
