@@ -22,6 +22,7 @@ namespace Backend_Donaruma.Controllers
 
     public class CheckoutRequest
     {
+        public int IdUsuario { get; set; }
         public List<ItemCarrito> items { get; set; } = new List<ItemCarrito>();
     }
 
@@ -79,6 +80,12 @@ namespace Backend_Donaruma.Controllers
                 Mode = "payment",
                 SuccessUrl = domain + "/pago-exitoso",
                 CancelUrl = domain + "/carrito",
+
+                Metadata = new Dictionary<string, string>
+                {
+                    { "IdUsuario", request.IdUsuario.ToString() },
+                    { "Items", string.Join(", ", request.items.Select(i => $"{i.IdPerfume}x{i.cantidad}")) }
+                }
             };
 
             var service = new SessionService();
