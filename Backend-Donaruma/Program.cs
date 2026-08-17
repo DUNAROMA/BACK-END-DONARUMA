@@ -60,11 +60,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("PoliticaCors", app =>
     {
-        app.WithOrigins(
-            "http://localhost:4200",
-            "https://www.donarumastore.com",
-            "https://donarumastore.com"
-        )
+    app.SetIsOriginAllowed(origin => true)
+        
         .AllowAnyMethod()
         .AllowAnyHeader()
         .AllowCredentials();
@@ -107,7 +104,23 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false
     };
 
-    
+    // 👇 AQUÍ ESTÁ LA SOLUCIÓN: Le enseñamos a .NET a buscar el token en las Cookies
+    options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            // ⚠️ IMPORTANTE: Si la cookie que crea tu Login se llama distinto, cambia "jwt" por su nombre real
+            var token = context.Request.Cookies["jwt"];
+
+            if (!string.IsNullOrEmpty(token))
+            {
+                context.Token = token;
+            }
+            return Task.CompletedTask;
+        }
+    };
+
+
     options.Events = new JwtBearerEvents
     {
         OnMessageReceived = context =>
@@ -133,10 +146,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("PoliticaCors");
 app.UseRateLimiter();
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

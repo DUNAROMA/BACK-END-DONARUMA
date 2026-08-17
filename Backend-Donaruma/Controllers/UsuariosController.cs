@@ -54,7 +54,7 @@ namespace Backend_Donaruma.Controllers
             var id = await _usuarioService.CrearUsuario(usuario, tokenConfirmacion);
 
             
-            await _emailService.EnviarCorreoConfirmacion(usuario.Correo, tokenConfirmacion);
+            //await _emailService.EnviarCorreoConfirmacion(usuario.Correo, tokenConfirmacion);
 
             
             return Ok(new
@@ -68,17 +68,17 @@ namespace Backend_Donaruma.Controllers
 
 
         
-        [HttpPost("confirmar")]
-        public async Task<IActionResult> ConfirmarCuenta([FromBody] ConfirmarCuentaRequest request)
-        {
+      //  [HttpPost("confirmar")]
+       // public async Task<IActionResult> ConfirmarCuenta([FromBody] ConfirmarCuentaRequest request)
+        //{
             
-            var resultado = await _usuarioService.ConfirmarCuenta(request.Token);
+          //  var resultado = await _usuarioService.ConfirmarCuenta(request.Token);
 
-            if (!resultado)
-                return BadRequest(new { mensaje = "El código es inválido o ya fue utilizado." });
+//            if (!resultado)
+  //              return BadRequest(new { mensaje = "El código es inválido o ya fue utilizado." });
 
-            return Ok(new { mensaje = "¡Cuenta confirmada con éxito! Ya puedes iniciar sesión." });
-        }
+          //  return Ok(new { mensaje = "¡Cuenta confirmada con éxito! Ya puedes iniciar sesión." });
+    //    }
 
 
         [HttpGet("{id}")]

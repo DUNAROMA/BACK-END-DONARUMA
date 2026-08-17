@@ -47,6 +47,7 @@ public sealed class AuthService : IAuthService
 
         
         // 2. Verificamos si el correo está confirmado
+        /*
         if (!usuario.CorreoConfirmado)
         {
             
@@ -55,7 +56,7 @@ public sealed class AuthService : IAuthService
             
             return Fallo("Por favor, verifica tu correo antes de iniciar sesión. Te hemos enviado un código a tu bandeja.");
         }
-        
+        */
 
         // 3. Si pasa todo, le damos acceso
         await GuardarLog(db, login.Correo, "Login Exitoso", "IP Aprobada", ct);

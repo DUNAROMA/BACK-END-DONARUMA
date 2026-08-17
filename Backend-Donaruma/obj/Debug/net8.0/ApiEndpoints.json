@@ -1,41 +1,5 @@
 [
   {
-    "ContainingType": "Backend_Donaruma.Controllers.AuthController",
-    "Method": "Login",
-    "RelativePath": "api/Auth/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "login",
-        "Type": "DonarumaAPI_DTOs.LoginDTO.LoginDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Backend_Donaruma.Controllers.AuthController",
-    "Method": "Logout",
-    "RelativePath": "api/Auth/logout",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Backend_Donaruma.Controllers.AuthController",
-    "Method": "Refresh",
-    "RelativePath": "api/Auth/refresh",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Backend_Donaruma.Controllers.CarritoController",
     "Method": "AgregarItem",
     "RelativePath": "api/Carrito/agregar",
@@ -104,6 +68,32 @@
     "Method": "GetTodosLosPerfumes",
     "RelativePath": "api/FamiliaOlfativa/todos",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "DonarumaAPI_DTOs.LoginDTO.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend_Donaruma.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "api/logout",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
@@ -558,13 +548,34 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend_Donaruma.Controllers.AuthController",
+    "Method": "Refresh",
+    "RelativePath": "api/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend_Donaruma.Controllers.SecurityLogsController",
     "Method": "ObtenerLogs",
     "RelativePath": "api/SecurityLogs",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "buscar",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "limite",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -610,22 +621,6 @@
       {
         "Name": "datos",
         "Type": "DonarumaAPI_DTOs.UsuarioDTo.CambiarPasswordDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Backend_Donaruma.Controllers.UsuariosController",
-    "Method": "ConfirmarCuenta",
-    "RelativePath": "api/Usuarios/confirmar",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "ConfirmarCuentaRequest",
         "IsRequired": true
       }
     ],

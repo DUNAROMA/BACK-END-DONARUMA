@@ -55,7 +55,7 @@ namespace Backend_Donaruma.Controllers
             _securityLogService = securityLogService;
         }
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpPost("crear-sesion")]
         public async Task<IActionResult> CrearSesion([FromBody] CheckoutRequest request)
         {
@@ -91,9 +91,12 @@ namespace Backend_Donaruma.Controllers
                 PaymentMethodTypes = new List<string> { "card" },
                 LineItems = lineItems,
                 Mode = "payment",
+                /*
                 SuccessUrl = domain + "/pago-exitoso",
                 CancelUrl = domain + "/carrito",
-
+                */
+                SuccessUrl =  "http://localhost:4200/#/pago-exitoso",
+                CancelUrl =  "http://localhost:4200/#/carrito",
                 Metadata = new Dictionary<string, string>
                 {
                     { "IdUsuario", request.IdUsuario.ToString() },

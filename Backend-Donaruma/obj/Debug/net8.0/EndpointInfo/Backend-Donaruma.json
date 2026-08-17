@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Auth/login": {
+    "/api/login": {
       "post": {
         "tags": [
           "Auth"
@@ -36,7 +36,7 @@
         }
       }
     },
-    "/api/Auth/refresh": {
+    "/api/refresh": {
       "post": {
         "tags": [
           "Auth"
@@ -48,7 +48,7 @@
         }
       }
     },
-    "/api/Auth/logout": {
+    "/api/logout": {
       "post": {
         "tags": [
           "Auth"
@@ -931,6 +931,24 @@
         "tags": [
           "SecurityLogs"
         ],
+        "parameters": [
+          {
+            "name": "buscar",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limite",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 200
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -958,37 +976,6 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/CrearUsuarioDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Usuarios/confirmar": {
-      "post": {
-        "tags": [
-          "Usuarios"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConfirmarCuentaRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConfirmarCuentaRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConfirmarCuentaRequest"
               }
             }
           }
@@ -1238,16 +1225,6 @@
             "items": {
               "$ref": "#/components/schemas/ItemCarrito"
             },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ConfirmarCuentaRequest": {
-        "type": "object",
-        "properties": {
-          "token": {
-            "type": "string",
             "nullable": true
           }
         },

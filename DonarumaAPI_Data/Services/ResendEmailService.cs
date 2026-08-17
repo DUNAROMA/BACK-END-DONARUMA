@@ -16,12 +16,16 @@ namespace DonarumaAPI_Data.Services
         public ResendEmailService(IConfiguration config)
         {
             // Busca la API Key en Railway (Variables) o appsettings.json
-            _apiKey = config["Resend:ApiKey"] ?? throw new ArgumentNullException("Resend ApiKey no configurada");
+            //_apiKey = config["Resend:ApiKey"] ?? throw new ArgumentNullException("Resend ApiKey no configurada");
         }
 
         // --- FUNCIÓN 1: CONFIRMACIÓN DE CUENTA ---
         public async Task EnviarCorreoConfirmacion(string correoDestino, string token)
         {
+            // --- DESACTIVADO TEMPORALMENTE PARA DESARROLLO LOCAL ---
+            // Se comenta el código original para no perder el diseño del correo
+
+            /*
             using var httpClient = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.resend.com/emails");
 
@@ -32,20 +36,14 @@ namespace DonarumaAPI_Data.Services
                 from = "Dunaroma <soporte@donarumastore.com>",
                 to = new[] { correoDestino },
                 subject = "¡Bienvenido a Dunaroma! Confirma tu cuenta",
-                html = $@"
-                    <div style='font-family: sans-serif; max-width: 600px; margin: 0 auto;'>
-                        <h2>¡Hola! Gracias por unirte a Dunaroma.</h2>
-                        <p>Tu código de seguridad es: <strong>{token}</strong></p>
-                        <br>
-                        <p>Para activar tu cuenta al instante, simplemente haz clic en el botón de abajo:</p>
-                        <a href='https://donarumastore.com/#/verificar-codigo?token={token}' 
-                           style='display: inline-block; padding: 12px 24px; background-color: #facc15; color: #111827; text-decoration: none; font-weight: bold; border-radius: 6px;'>
-                           Verificar mi cuenta
-                        </a>
-                    </div>"
+                html = $@"            <div style='font-family: sans-serif; max-width: 600px; margin: 0 auto;'>                <h2>¡Hola! Gracias por unirte a Dunaroma.</h2>                <p>Tu código de seguridad es: <strong>{token}</strong></p>                <br>                <p>Para activar tu cuenta al instante, simplemente haz clic en el botón de abajo:</p>                <a href='https://donarumastore.com/#/verificar-codigo?token={token}'                    style='display: inline-block; padding: 12px 24px; background-color: #facc15; color: #111827; text-decoration: none; font-weight: bold; border-radius: 6px;'>                   Verificar mi cuenta                </a>            </div>"
             };
 
             await EnviarPeticionResend(httpClient, request, body);
+            */
+
+            // Simula que el correo se envió correctamente para que el sistema siga avanzando
+            await Task.CompletedTask;
         }
 
         // --- FUNCIÓN 2: RECIBO DE COMPRA ---

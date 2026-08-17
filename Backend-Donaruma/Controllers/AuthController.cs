@@ -8,7 +8,7 @@ using System.Security.Claims;
 namespace Backend_Donaruma.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
